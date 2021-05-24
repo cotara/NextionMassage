@@ -12,50 +12,77 @@ uint8_t command[11]="sendme";
 uint32_t st=0;
 uint8_t endMes[3]={0xFF,0xFF,0xFF};
 static uint8_t StrBuff[64]; 
+uint8_t page,element,value,waveform=1,valvePower,pumpPower=0,nasosPower=0;
 
 void USART_IRQProcessFunc(uint8_t RXc){
     toBuf(RXc);
     TIM_Cmd(TIM3, DISABLE);
-    if (RXc == 0xFF)                                                            //Если пришел признак окончания команды (их должно быть 3)
+    if (RXc == 0xFF)                                                            //Р•СЃР»Рё РїСЂРёС€РµР» РїСЂРёР·РЅР°Рє РѕРєРѕРЅС‡Р°РЅРёСЏ РєРѕРјР°РЅРґС‹ (РёС… РґРѕР»Р¶РЅРѕ Р±С‹С‚СЊ 3)
        RX_FLAG_END_LINE++;
-    if(RX_FLAG_END_LINE!=3)                                                     //Если команда пришла еще не полностью, запускаем таймер сброса
-         TIM_Cmd(TIM3, ENABLE);   
+    if(RX_FLAG_END_LINE!=3)                                                     //Р•СЃР»Рё РєРѕРјР°РЅРґР° РїСЂРёС€Р»Р° РµС‰Рµ РЅРµ РїРѕР»РЅРѕСЃС‚СЊСЋ, Р·Р°РїСѓСЃРєР°РµРј С‚Р°Р№РјРµСЂ СЃР±СЂРѕСЃР°
+      TIM_Cmd(TIM3, ENABLE);
 }
 
 void nextionEvent(void){
-      //fromBuf(0) - номер страницы
-      //fromBuf(1) - номер кнопки (элемента). 0 - переход на страницу
-      //fromBuf(3) - значение 
+      page = fromBuf(0);                                                        // РЅРѕРјРµСЂ СЃС‚СЂР°РЅРёС†С‹
+      element = fromBuf(1);                                                     //РЅРѕРјРµСЂ РєРЅРѕРїРєРё (СЌР»РµРјРµРЅС‚Р°). 
+      value = fromBuf(3);                                                       //Р·РЅР°С‡РµРЅРёРµ 
       
       RX_FLAG_END_LINE=0;
-      
-      if(fromBuf(0) == 0x02 && fromBuf(1) == 0x01){                             //СТАРТ Массаж 1
-        GPIO_SetBits(GPIOC,GPIO_Pin_12);
-        TIM4->CCR1=fromBuf(3);
+
+      if(page==3){                                                              //mode1
+        if(element == 0)                                                        //РЎРўРђР Рў РњРђРЎРЎРђР– 1
+          GPIO_SetBits(GPIOC,GPIO_Pin_12);
+        else if(element == 1)                                                   //РџРђРЈР—Рђ РњРђРЎРЎРђР– 1
+          GPIO_ResetBits(GPIOC,GPIO_Pin_12);
+        else if(element==3)                                                     //РЎРўРћРџ РњРђРЎРЎРђР– 1
+          GPIO_ResetBits(GPIOC,GPIO_Pin_12);
       }
-      else if(fromBuf(0) == 0x02 && fromBuf(1) == 0x02){                        //ПАУЗА Массаж 1
-        GPIO_ResetBits(GPIOC,GPIO_Pin_12);
-        TIM4->CCR1=0;
+      else if(page==4){                                                         //mode2
+        if(element == 0)                                                        //РЎРўРђР Рў РњРђРЎРЎРђР– 2
+          GPIO_SetBits(GPIOC,GPIO_Pin_13);
+        else if(element == 1)                                                   //РџРђРЈР—Рђ РњРђРЎРЎРђР– 2
+          GPIO_ResetBits(GPIOC,GPIO_Pin_13);
+        else if(element==3)                                                     //РЎРўРћРџ РњРђРЎРЎРђР– 2
+          GPIO_ResetBits(GPIOC,GPIO_Pin_13);
+        else if(element==2){                                                    ////С„РѕСЂРјР° СЃРёРіРЅР°Р»Р° 1 - РјРµР°РЅРґСЂ, 2-РЅРѕРіРѕРґСЂС‹Рі, 3- СЃРёРЅСѓСЃ
+          waveform=value;
+        }         
+      } 
+      else if(page==11){                                                        //manual
+        if(element == 0){                                                       //Р­Р»РµРєС‚СЂРѕРјР°РіРЅРёС‚РЅС‹Р№ РєР»Р°РїР°РЅ 1
+          if(value==1)
+            GPIO_SetBits(GPIOD,GPIO_Pin_1);
+          else if(value==0)
+            GPIO_ResetBits(GPIOD,GPIO_Pin_1);
+        }
+        if(element == 1){                                                       //Р­Р»РµРєС‚СЂРѕРјР°РіРЅРёС‚РЅС‹Р№ РєР»Р°РїР°РЅ 2
+          if(value==1)
+            GPIO_SetBits(GPIOD,GPIO_Pin_2);
+          else if(value==0)
+            GPIO_ResetBits(GPIOD,GPIO_Pin_2);
+        } 
+        if(element == 2){                                                       //Р РµРіСѓР»РёСЂСѓРµРјС‹Р№ РєР»Р°РїР°РЅ (С€Р°СЂ)
+            valvePower=value;
+        } 
+        if(element == 3){                                                       //РљРѕРјРїСЂРµСЃСЃРѕСЂ
+          pumpPower=value;
+          if(value!=0)          
+            GPIO_SetBits(GPIOD,GPIO_Pin_3);
+          else if(value==0)
+            GPIO_ResetBits(GPIOD,GPIO_Pin_3);                       
+        }  
+        if(element == 4){                                                       //РњРѕС‚РѕСЂ РЅР°СЃРѕСЃР°
+            nasosPower=value;
+        } 
       }
-      else if(fromBuf(0) == 0x02 && fromBuf(1) == 0x03){                        //СТОП Массаж 1
-        GPIO_ResetBits(GPIOC,GPIO_Pin_12);
-        TIM4->CCR1=0;
-      }
-      else if(fromBuf(0) == 0x03 && fromBuf(1) == 0x01){                        //СТАРТ Массаж 2
-        GPIO_SetBits(GPIOC,GPIO_Pin_13);
-        TIM4->CCR2=fromBuf(3);
-      }
-      else if(fromBuf(0) == 0x03 && fromBuf(1) == 0x02){                        //ПАУЗА Массаж 2
-        GPIO_ResetBits(GPIOC,GPIO_Pin_13);
-        TIM4->CCR2=0;
-      }
-      else if(fromBuf(0) == 0x03 && fromBuf(1) == 0x03){                        //СТОП Массаж 2
-        GPIO_ResetBits(GPIOC,GPIO_Pin_13);
-        TIM4->CCR2=0;
-      }
-      else if(fromBuf(0) == 0x01 && fromBuf(1) == 0x00 &&  fromBuf(3) == 0x01){ //Запрос комплектации
-          st = GPIO_ReadInputDataBit (GPIOC, GPIO_Pin_8)*2 + GPIO_ReadInputDataBit (GPIOC, GPIO_Pin_6);
-          Nextion_SetValue_Number("mode.val", st);
+      else if(page==2){                                                         //Р—Р°РїСЂРѕСЃ РєРѕРјРїР»РµРєС‚Р°С†РёРё
+        if(element==0){
+          if(value==1){
+            st = GPIO_ReadInputDataBit (GPIOD, GPIO_Pin_14)*2 + GPIO_ReadInputDataBit (GPIOD, GPIO_Pin_15);
+            Nextion_SetValue_Number("mode.val", st);
+          }
+        }
       }
      clear_RXBuffer();
 }
@@ -70,7 +97,7 @@ void Nextion_SetValue_Number(char *ValueName, uint32_t Value)
 }
 void Nextion_SetValue_String(char *ValueName, char *Value)
 {
-  sprintf((char *)StrBuff, "%s=\"%s\"", ValueName, Value);
+  sprintf((char *)StrBuff, "%s%s", ValueName, Value);
   uint16_t Len = strlen((char *)StrBuff);
   
   USART1_put_string(StrBuff, Len);

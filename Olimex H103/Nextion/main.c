@@ -63,8 +63,9 @@ int main()
        
   GPIO_init();     
   usart_init();
-  tim4_init();
-  tim3_init();
+  //tim4_init();ШИМ
+  tim3_init();//USART ERROR
+  tim2_init();
   
   while(1){
     if(getFLAG_END_LINE() == 3)

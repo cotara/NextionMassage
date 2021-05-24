@@ -20,6 +20,22 @@ void tim3_init(void){
     NVIC_EnableIRQ (TIM3_IRQn);
 }
 
+void tim2_init(void){
+    // TIMER45
+    TIM_TimeBaseInitTypeDef TIMER_InitStructure;
+    RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM2, ENABLE);
+
+    TIM_TimeBaseStructInit(&TIMER_InitStructure);
+    TIMER_InitStructure.TIM_CounterMode = TIM_CounterMode_Up;
+    TIMER_InitStructure.TIM_Prescaler = 24000-1;                                //1 мc
+    TIMER_InitStructure.TIM_Period = 10;                                        //10 мс при 24 МГц
+    TIM_TimeBaseInit(TIM2, &TIMER_InitStructure);
+    TIM_ITConfig(TIM2, TIM_IT_Update, ENABLE);
+    TIM_Cmd(TIM2, ENABLE);
+  
+    NVIC_SetPriority (TIM2_IRQn, 3);
+    NVIC_EnableIRQ (TIM2_IRQn);
+}
 //ШИМ
 void tim4_init(void){
     
