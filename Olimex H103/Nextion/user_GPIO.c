@@ -1,10 +1,12 @@
 #include "user_GPIO.h"
 #include "stm32f10x_gpio.h"
 #include "stm32f10x_rcc.h"
-
+#include "stm32f10x_exti.h"
 void GPIO_init(void)
 {
   GPIO_InitTypeDef GPIO_InitStructure;
+  NVIC_InitTypeDef NVIC_InitStruct;
+  EXTI_InitTypeDef EXTI_InitStruct;
   /* Enable USART1 and GPIOA clock */
   RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOD | RCC_APB2Periph_GPIOA, ENABLE);
   

@@ -7,7 +7,7 @@
 
 extern volatile uint8_t   tx_buffer[TX_BUFFER_SIZE];
 extern volatile unsigned long  tx_wr_index,tx_rd_index,tx_counter;
-
+uint32_t counter=0;
 
 void HardFault_Handler(void){
   while (1)
@@ -40,7 +40,9 @@ void TIM3_IRQHandler(void){
 }
 void TIM2_IRQHandler(void){
     TIM_ClearITPendingBit(TIM2, TIM_IT_Update);
-
+    counter++;
+    
+  //  USART_SendData(USART1,0xAA);
 }
 
 void USART1_IRQHandler(void){

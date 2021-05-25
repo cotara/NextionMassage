@@ -32,6 +32,7 @@ void usart_init(void)
 
 	/* Configure USART1 Rx (PA.10) as input floating */
 	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_10;
+        GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
 	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IN_FLOATING;
 	GPIO_Init(GPIOA, &GPIO_InitStructure);
 

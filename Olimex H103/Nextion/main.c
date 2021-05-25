@@ -54,12 +54,12 @@ void RCC_Configuration(void)
 
 int main()
 {
-  SystemInit();
+//  SystemInit();
     
-  RCC_ClocksTypeDef RCC_Clocks;
-  RCC_GetClocksFreq(&RCC_Clocks);
-  RCC_Configuration();
-  SysTick_Config(SystemCoreClock/3000);//1ms
+ // RCC_ClocksTypeDef RCC_Clocks;
+//  RCC_GetClocksFreq(&RCC_Clocks);
+ // RCC_Configuration();
+  //SysTick_Config(SystemCoreClock/3000);//1ms
        
   GPIO_init();     
   usart_init();
