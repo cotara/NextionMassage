@@ -1,0 +1,35 @@
+#Generating source browse information for project Nextion
+
+
+#Abbreviations
+cc = C$:\Program$ Files$ (x86)\IAR$ Systems\Embedded$ Workbench$ 8.3\common\bin\SourceIndexer.exe
+ll = C$:\Program$ Files$ (x86)\IAR$ Systems\Embedded$ Workbench$ 8.3\common\bin\PbdLink.exe
+bd = C$:\Program$ Files$ (x86)\IAR$ Systems\Embedded$ Workbench$ 8.3\common\bin\makeBrowseData.exe
+
+
+
+#Rules
+rule index
+  depfile = $out.dep
+  command = $cc -out=$out -f $in
+rule link
+  command = $ll -M $out $in
+rule browsedata
+  command = $bd $in -output  $out
+
+
+
+#Build steps
+build myNextion.pbi : index myNextion.xcl
+build user_GPIO.pbi : index user_GPIO.xcl
+build user_TIMER.pbi : index user_TIMER.xcl
+build user_USART.pbi : index user_USART.xcl
+build main.pbi : index main.xcl
+build stm32f10x_it.pbi : index stm32f10x_it.xcl
+build Nextion_part0.pbi : link myNextion.pbi user_GPIO.pbi
+build Nextion_part1.pbi : link user_TIMER.pbi user_USART.pbi
+build Nextion_part2.pbi : link main.pbi stm32f10x_it.pbi
+build Nextion.pbd : link Nextion_part0.pbi Nextion_part1.pbi Nextion_part2.pbi
+build Nextion.pbw : browsedata Nextion.pbd
+
+

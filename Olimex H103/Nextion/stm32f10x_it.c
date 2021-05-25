@@ -59,5 +59,22 @@ void USART1_IRQHandler(void){
    } 
 }
 
+
+void EXTI0_IRQHandler(void) {
+	/* Make sure that interrupt flag is set */
+	if (EXTI_GetITStatus(EXTI_Line0) != RESET) {
+		if (GPIO_ReadInputDataBit(GPIOB, GPIO_Pin_0) != 0) {
+			// Rising
+                          
+		}
+		if (GPIO_ReadInputDataBit(GPIOB, GPIO_Pin_0) == 0) {
+			// Falling
+			
+		}
+
+		/* Clear interrupt flag */
+		EXTI_ClearITPendingBit(EXTI_Line0);
+	}
+}
 /*******************************************************************************/
 

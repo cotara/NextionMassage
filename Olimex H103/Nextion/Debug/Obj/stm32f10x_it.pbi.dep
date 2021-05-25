@@ -1,0 +1,3 @@
+stm32f10x_it.pbi: \
+  C:\STM\NextionMassage\Olimex\ H103\Nextion\stm32f10x_it.c \
+  C:\STM\NextionMassage\Olimex\ H103\Nextion/stm32f10x_it.h
