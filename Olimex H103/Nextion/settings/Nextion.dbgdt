@@ -152,7 +152,7 @@
                     <item>st</item>
                     <item>RCC_Clocks</item>
                     <item>SystemCoreClock</item>
-                    <item></item>
+                    <item />
                 </expressions>
                 <col-names>
                     <item>Expression</item>
@@ -957,7 +957,7 @@
                     <item>counter</item>
                     <item>element</item>
                     <item>value</item>
-                    <item></item>
+                    <item />
                 </expressions>
                 <col-names>
                     <item>Expression</item>

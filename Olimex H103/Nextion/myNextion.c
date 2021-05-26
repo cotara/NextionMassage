@@ -71,8 +71,15 @@ void nextionEvent(void){
             GPIO_SetBits(GPIOD,GPIO_Pin_3);
           else if(value==0)
             GPIO_ResetBits(GPIOD,GPIO_Pin_3);                       
-        }  
-        if(element == 4){                                                       //Мотор насоса
+        }
+        if(element == 4){                                                       //Компрессор
+          pumpPower=value;
+          if(value!=0)          
+            GPIO_SetBits(GPIOD,GPIO_Pin_4);
+          else if(value==0)
+            GPIO_ResetBits(GPIOD,GPIO_Pin_4);                       
+        }         
+        if(element == 5){                                                       //Мотор насоса
             nasosPower=value;
         } 
       }
