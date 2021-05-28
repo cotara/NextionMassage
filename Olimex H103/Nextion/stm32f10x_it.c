@@ -40,9 +40,10 @@ void TIM3_IRQHandler(void){
 }
 void TIM2_IRQHandler(void){
     TIM_ClearITPendingBit(TIM2, TIM_IT_Update);
-    counter++;
-    
-  //  USART_SendData(USART1,0xAA);
+    //counter++;
+    //GPIOD->ODR ^= GPIO_Pin_4;
+    GPIO_ResetBits(GPIOA,GPIO_Pin_6);
+    TIM_Cmd(TIM2, DISABLE);
 }
 
 void USART1_IRQHandler(void){
@@ -65,15 +66,9 @@ void USART1_IRQHandler(void){
 void EXTI0_IRQHandler(void) {
 	/* Make sure that interrupt flag is set */
 	if (EXTI_GetITStatus(EXTI_Line0) != RESET) {
-		if (GPIO_ReadInputDataBit(GPIOB, GPIO_Pin_0) != 0) {
-			// Rising
-                          
-		}
-		if (GPIO_ReadInputDataBit(GPIOB, GPIO_Pin_0) == 0) {
-			// Falling
-			
-		}
-
+                GPIO_SetBits(GPIOA,GPIO_Pin_6);
+                TIM_SetCounter(TIM2,(uint16_t)getMotorPower());
+                TIM_Cmd(TIM2, ENABLE);
 		/* Clear interrupt flag */
 		EXTI_ClearITPendingBit(EXTI_Line0);
 	}

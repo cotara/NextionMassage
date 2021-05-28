@@ -12,7 +12,7 @@ uint8_t command[11]="sendme";
 uint32_t st=0;
 uint8_t endMes[3]={0xFF,0xFF,0xFF};
 static uint8_t StrBuff[64]; 
-uint8_t page,element,value,waveform=1,valvePower,pumpPower=0,nasosPower=0;
+uint8_t page,element,value,waveform=1,valvePower,pump1Power=0,pump2Power=0,motorPower=0;
 
 void USART_IRQProcessFunc(uint8_t RXc){
     toBuf(RXc);
@@ -52,35 +52,39 @@ void nextionEvent(void){
       else if(page==11){                                                        //manual
         if(element == 0){                                                       //Электромагнитный клапан 1
           if(value==1)
-            GPIO_SetBits(GPIOD,GPIO_Pin_1);
-          else if(value==0)
             GPIO_ResetBits(GPIOD,GPIO_Pin_1);
+          else if(value==0)
+            GPIO_SetBits(GPIOD,GPIO_Pin_1);
         }
         if(element == 1){                                                       //Электромагнитный клапан 2
           if(value==1)
-            GPIO_SetBits(GPIOD,GPIO_Pin_2);
-          else if(value==0)
             GPIO_ResetBits(GPIOD,GPIO_Pin_2);
+          else if(value==0)
+            GPIO_SetBits(GPIOD,GPIO_Pin_2);
         } 
         if(element == 2){                                                       //Регулируемый клапан (шар)
             valvePower=value;
         } 
-        if(element == 3){                                                       //Компрессор
-          pumpPower=value;
+        if(element == 3){                                                       //Компрессор 1
+          pump1Power=value;
           if(value!=0)          
-            GPIO_SetBits(GPIOD,GPIO_Pin_3);
-          else if(value==0)
-            GPIO_ResetBits(GPIOD,GPIO_Pin_3);                       
+            GPIO_ResetBits(GPIOD,GPIO_Pin_3);
+          else 
+            GPIO_SetBits(GPIOD,GPIO_Pin_3);                       
         }
-        if(element == 4){                                                       //Компрессор
-          pumpPower=value;
+        if(element == 4){                                                       //Компрессор 2
+          pump2Power=value;
           if(value!=0)          
             GPIO_SetBits(GPIOD,GPIO_Pin_4);
-          else if(value==0)
+          else 
             GPIO_ResetBits(GPIOD,GPIO_Pin_4);                       
         }         
         if(element == 5){                                                       //Мотор насоса
-            nasosPower=value;
+            motorPower=value;
+            if(value!=0)          
+              GPIO_ResetBits(GPIOD,GPIO_Pin_5);
+            else 
+              GPIO_SetBits(GPIOD,GPIO_Pin_5); 
         } 
       }
       else if(page==2){                                                         //Запрос комплектации
@@ -119,4 +123,8 @@ void resetFLAG_END_LINE(void){
 }
 uint8_t getFLAG_END_LINE(void){
   return RX_FLAG_END_LINE;
+}
+
+uint8_t getMotorPower(){
+  return motorPower;
 }

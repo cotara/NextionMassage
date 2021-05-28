@@ -2412,7 +2412,7 @@
         <name>$PROJ_DIR$\main.c</name>
     </file>
     <file>
-        <name>$PROJ_DIR$\..\..\..\!STM32F10x_StdPeriph_Lib_V3.5.0_8MGz\Libraries\CMSIS\CM3\DeviceSupport\ST\STM32F10x\stm32f10x.h</name>
+        <name>$PROJ_DIR$\stm32f10x.h</name>
     </file>
     <file>
         <name>$PROJ_DIR$\stm32f10x_it.c</name>

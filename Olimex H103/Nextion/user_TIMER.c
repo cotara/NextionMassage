@@ -4,14 +4,13 @@
 volatile uint32_t TimingDelay;
 
 void tim3_init(void){
-    // TIMER4
     TIM_TimeBaseInitTypeDef TIMER_InitStructure;
     RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM3, ENABLE);
 
     TIM_TimeBaseStructInit(&TIMER_InitStructure);
     TIMER_InitStructure.TIM_CounterMode = TIM_CounterMode_Up;
-    TIMER_InitStructure.TIM_Prescaler = 240-1;                                   //10 мкс
-    TIMER_InitStructure.TIM_Period = 1000;                                      //10 мс при 24 МГц
+    TIMER_InitStructure.TIM_Prescaler = 720-1;                                  //10 мкс
+    TIMER_InitStructure.TIM_Period = 1000;                                      //10 мс при 72 МГц
     TIM_TimeBaseInit(TIM3, &TIMER_InitStructure);
     TIM_ITConfig(TIM3, TIM_IT_Update, ENABLE);
     //TIM_Cmd(TIM3, ENABLE);
@@ -21,17 +20,17 @@ void tim3_init(void){
 }
 
 void tim2_init(void){
-    // TIMER45
+   
     TIM_TimeBaseInitTypeDef TIMER_InitStructure;
     RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM2, ENABLE);
 
     TIM_TimeBaseStructInit(&TIMER_InitStructure);
     TIMER_InitStructure.TIM_CounterMode = TIM_CounterMode_Up;
-    TIMER_InitStructure.TIM_Prescaler = 48000-1;                                //1 мc
-    TIMER_InitStructure.TIM_Period = 1000;                                        //10 мс при 24 МГц
+    TIMER_InitStructure.TIM_Prescaler = 7200-1;                                 //100мкс
+    TIMER_InitStructure.TIM_Period = 100;                                       //10мс
     TIM_TimeBaseInit(TIM2, &TIMER_InitStructure);
     TIM_ITConfig(TIM2, TIM_IT_Update, ENABLE);
-    TIM_Cmd(TIM2, ENABLE);
+    //TIM_Cmd(TIM2, ENABLE);
   
     NVIC_SetPriority (TIM2_IRQn, 3);
     NVIC_EnableIRQ (TIM2_IRQn);
