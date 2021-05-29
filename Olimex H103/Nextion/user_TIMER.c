@@ -35,7 +35,23 @@ void tim2_init(void){
     NVIC_SetPriority (TIM2_IRQn, 3);
     NVIC_EnableIRQ (TIM2_IRQn);
 }
-//ШИМ
+void tim4_init(void){
+   
+    TIM_TimeBaseInitTypeDef TIMER_InitStructure;
+    RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM4, ENABLE);
+
+    TIM_TimeBaseStructInit(&TIMER_InitStructure);
+    TIMER_InitStructure.TIM_CounterMode = TIM_CounterMode_Up;
+    TIMER_InitStructure.TIM_Prescaler = 36000-1;                                //500мкс
+    TIMER_InitStructure.TIM_Period = 100;                                       //50мс
+    TIM_TimeBaseInit(TIM4, &TIMER_InitStructure);
+    TIM_ITConfig(TIM4, TIM_IT_Update, ENABLE);
+    //TIM_Cmd(TIM4, ENABLE);
+  
+    NVIC_SetPriority (TIM4_IRQn, 3);
+    NVIC_EnableIRQ (TIM4_IRQn);
+}
+/*
 void tim4_init(void){
     
 	GPIO_InitTypeDef port;
@@ -70,7 +86,7 @@ void tim4_init(void){
       
     TIM_Cmd(TIM4, ENABLE);
 }
-
+*/
 
 
 /*Задержка в nTime 10мс*/

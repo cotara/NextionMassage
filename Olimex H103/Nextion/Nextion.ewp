@@ -66,7 +66,7 @@
                 </option>
                 <option>
                     <name>OGLastSavedByProductVersion</name>
-                    <state>8.30.2.18207</state>
+                    <state>8.40.1.21529</state>
                 </option>
                 <option>
                     <name>GeneralEnableMisra</name>
@@ -116,7 +116,7 @@
                 </option>
                 <option>
                     <name>GBECoreSlave</name>
-                    <version>26</version>
+                    <version>27</version>
                     <state>38</state>
                 </option>
                 <option>
@@ -133,7 +133,7 @@
                 </option>
                 <option>
                     <name>CoreVariant</name>
-                    <version>26</version>
+                    <version>27</version>
                     <state>38</state>
                 </option>
                 <option>
@@ -156,7 +156,7 @@
                 </option>
                 <option>
                     <name>GFPUCoreSlave2</name>
-                    <version>26</version>
+                    <version>27</version>
                     <state>38</state>
                 </option>
                 <option>
@@ -215,7 +215,7 @@
             <name>ICCARM</name>
             <archiveVersion>2</archiveVersion>
             <data>
-                <version>34</version>
+                <version>35</version>
                 <wantNonLocal>1</wantNonLocal>
                 <debug>1</debug>
                 <option>
@@ -470,6 +470,10 @@
                     <name>IccRTTI2</name>
                     <state>0</state>
                 </option>
+                <option>
+                    <name>OICompilerExtraOption</name>
+                    <state>1</state>
+                </option>
             </data>
         </settings>
         <settings>
@@ -690,7 +694,7 @@
             <name>ILINK</name>
             <archiveVersion>0</archiveVersion>
             <data>
-                <version>21</version>
+                <version>23</version>
                 <wantNonLocal>1</wantNonLocal>
                 <debug>1</debug>
                 <option>
@@ -771,7 +775,7 @@
                 </option>
                 <option>
                     <name>IlinkIcfFile</name>
-                    <state>C:\Users\User\Documents\Projects\Nextion\Olimex H103\Nextion\Config\STM32F10x_FLASH.icf</state>
+                    <state>C:\STM\NextionMassage\Olimex H103\Nextion\Config\STM32F10x_FLASH.icf</state>
                 </option>
                 <option>
                     <name>IlinkIcfFileSlave</name>
@@ -1006,6 +1010,26 @@
                     <name>IlinkTrustzoneImportLibraryOut</name>
                     <state>Nextion_import_lib.o</state>
                 </option>
+                <option>
+                    <name>OILinkExtraOption</name>
+                    <state>1</state>
+                </option>
+                <option>
+                    <name>IlinkRawBinaryFile2</name>
+                    <state></state>
+                </option>
+                <option>
+                    <name>IlinkRawBinarySymbol2</name>
+                    <state></state>
+                </option>
+                <option>
+                    <name>IlinkRawBinarySegment2</name>
+                    <state></state>
+                </option>
+                <option>
+                    <name>IlinkRawBinaryAlign2</name>
+                    <state></state>
+                </option>
             </data>
         </settings>
         <settings>
@@ -1150,7 +1174,7 @@
                 </option>
                 <option>
                     <name>GBECoreSlave</name>
-                    <version>26</version>
+                    <version>27</version>
                     <state>38</state>
                 </option>
                 <option>
@@ -1167,7 +1191,7 @@
                 </option>
                 <option>
                     <name>CoreVariant</name>
-                    <version>26</version>
+                    <version>27</version>
                     <state>38</state>
                 </option>
                 <option>
@@ -1190,7 +1214,7 @@
                 </option>
                 <option>
                     <name>GFPUCoreSlave2</name>
-                    <version>26</version>
+                    <version>27</version>
                     <state>38</state>
                 </option>
                 <option>
@@ -1249,7 +1273,7 @@
             <name>ICCARM</name>
             <archiveVersion>2</archiveVersion>
             <data>
-                <version>34</version>
+                <version>35</version>
                 <wantNonLocal>1</wantNonLocal>
                 <debug>0</debug>
                 <option>
@@ -1497,6 +1521,10 @@
                     <name>IccRTTI2</name>
                     <state>0</state>
                 </option>
+                <option>
+                    <name>OICompilerExtraOption</name>
+                    <state>1</state>
+                </option>
             </data>
         </settings>
         <settings>
@@ -1717,7 +1745,7 @@
             <name>ILINK</name>
             <archiveVersion>0</archiveVersion>
             <data>
-                <version>21</version>
+                <version>23</version>
                 <wantNonLocal>1</wantNonLocal>
                 <debug>0</debug>
                 <option>
@@ -2033,6 +2061,26 @@
                     <name>IlinkTrustzoneImportLibraryOut</name>
                     <state>###Unitialized###</state>
                 </option>
+                <option>
+                    <name>OILinkExtraOption</name>
+                    <state>1</state>
+                </option>
+                <option>
+                    <name>IlinkRawBinaryFile2</name>
+                    <state></state>
+                </option>
+                <option>
+                    <name>IlinkRawBinarySymbol2</name>
+                    <state></state>
+                </option>
+                <option>
+                    <name>IlinkRawBinarySegment2</name>
+                    <state></state>
+                </option>
+                <option>
+                    <name>IlinkRawBinaryAlign2</name>
+                    <state></state>
+                </option>
             </data>
         </settings>
         <settings>
@@ -2071,6 +2119,9 @@
             <name>$PROJ_DIR$\..\..\..\!STM32F10x_StdPeriph_Lib_V3.5.0_8MGz\Libraries\CMSIS\CM3\DeviceSupport\ST\STM32F10x\startup\iar\startup_stm32f10x_hd.s</name>
         </file>
         <file>
+            <name>$PROJ_DIR$\..\..\..\!STM32F10x_StdPeriph_Lib_V3.5.0_8MGz\Libraries\CMSIS\CM3\DeviceSupport\ST\STM32F10x\stm32f10x.h</name>
+        </file>
+        <file>
             <name>$PROJ_DIR$\..\..\..\!STM32F10x_StdPeriph_Lib_V3.5.0_8MGz\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_exti.c</name>
         </file>
         <file>
@@ -2084,6 +2135,12 @@
         </file>
         <file>
             <name>$PROJ_DIR$\..\..\..\!STM32F10x_StdPeriph_Lib_V3.5.0_8MGz\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_usart.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\!STM32F10x_StdPeriph_Lib_V3.5.0_8MGz\Libraries\CMSIS\CM3\DeviceSupport\ST\STM32F10x\system_stm32f10x.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\!STM32F10x_StdPeriph_Lib_V3.5.0_8MGz\Libraries\CMSIS\CM3\DeviceSupport\ST\STM32F10x\system_stm32f10x.h</name>
         </file>
     </group>
     <group>
@@ -2105,15 +2162,6 @@
         <name>$PROJ_DIR$\main.c</name>
     </file>
     <file>
-        <name>$PROJ_DIR$\stm32f10x.h</name>
-    </file>
-    <file>
         <name>$PROJ_DIR$\stm32f10x_it.c</name>
-    </file>
-    <file>
-        <name>$PROJ_DIR$\..\..\..\!STM32F10x_StdPeriph_Lib_V3.5.0_8MGz\Libraries\CMSIS\CM3\DeviceSupport\ST\STM32F10x\system_stm32f10x.c</name>
-    </file>
-    <file>
-        <name>$PROJ_DIR$\..\..\..\!STM32F10x_StdPeriph_Lib_V3.5.0_8MGz\Libraries\CMSIS\CM3\DeviceSupport\ST\STM32F10x\system_stm32f10x.h</name>
     </file>
 </project>

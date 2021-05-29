@@ -35,7 +35,7 @@ void RCC_Configuration(void)
         RCC->CFGR|= 0x01<<17;
           
         /* PLLCLK = 8MHz * 3 = 24 MHz */
-        RCC_PLLConfig(RCC_PLLSource_HSE_Div1, RCC_PLLMul_3);
+        RCC_PLLConfig(RCC_PLLSource_HSE_Div2, RCC_PLLMul_9);
 
         /* Enable PLL */
         RCC_PLLCmd(ENABLE);
@@ -53,13 +53,12 @@ void RCC_Configuration(void)
 
 
 int main()
-{
-       
+{    
   GPIO_init();     
   usart_init();
   tim3_init();//USART ERROR
   tim2_init();
-  
+  tim4_init();
   while(1){
     if(getFLAG_END_LINE() == 3)
       nextionEvent();

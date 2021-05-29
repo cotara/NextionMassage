@@ -36,17 +36,19 @@
         <CStepIntDis>_ 0</CStepIntDis>
         <LeaveTargetRunning>_ 0</LeaveTargetRunning>
         <stlinkResetStyle>0</stlinkResetStyle>
-        <stlinkResetStrategy>1</stlinkResetStrategy>
+        <stlinkResetStrategy>0</stlinkResetStrategy>
     </StLinkDriver>
     <DebugChecksum>
-        <Checksum>2336539814</Checksum>
+        <Checksum>1497491051</Checksum>
     </DebugChecksum>
     <Exceptions>
         <StopOnUncaught>_ 0</StopOnUncaught>
         <StopOnThrow>_ 0</StopOnThrow>
     </Exceptions>
     <CodeCoverage>
-        <Enabled>_ 0</Enabled>
+        <Enabled>0</Enabled>
+        <ShowSource>0</ShowSource>
+        <HideCovered>0</HideCovered>
     </CodeCoverage>
     <Disassembly>
         <MixedMode>1</MixedMode>

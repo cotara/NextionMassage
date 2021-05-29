@@ -8,7 +8,7 @@
 extern volatile uint8_t   tx_buffer[TX_BUFFER_SIZE];
 extern volatile unsigned long  tx_wr_index,tx_rd_index,tx_counter;
 uint32_t counter=0;
-
+uint8_t waveformCounter=0;
 void HardFault_Handler(void){
   while (1)
   {}
@@ -45,7 +45,15 @@ void TIM2_IRQHandler(void){
     GPIO_ResetBits(GPIOA,GPIO_Pin_6);
     TIM_Cmd(TIM2, DISABLE);
 }
-
+void TIM4_IRQHandler(void){
+    TIM_ClearITPendingBit(TIM4, TIM_IT_Update);
+    waveformCounter++;
+    if(waveformCounter >= getWaveform()){
+      GPIOD->ODR ^= GPIO_Pin_1;
+      GPIOD->ODR ^= GPIO_Pin_2;
+      waveformCounter=0;
+    }
+}
 void USART1_IRQHandler(void){
   if ((USART1->SR & USART_FLAG_RXNE))
    USART_IRQProcessFunc(USART_ReceiveData(USART1));    

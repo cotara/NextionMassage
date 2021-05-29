@@ -5,7 +5,6 @@
 void GPIO_init(void)
 {
   GPIO_InitTypeDef GPIO_InitStructure;
-  NVIC_InitTypeDef NVIC_InitStruct;
   EXTI_InitTypeDef EXTI_InitStruct;
   /* Enable USART1 and GPIOA clock */
   RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOD | RCC_APB2Periph_GPIOA | RCC_APB2Periph_GPIOB| RCC_APB2Periph_GPIOE, ENABLE);
@@ -41,23 +40,15 @@ void GPIO_init(void)
   RCC_APB2PeriphClockCmd(RCC_APB2Periph_AFIO, ENABLE);
   
   NVIC_SetPriority (EXTI0_IRQn, 0);
-    NVIC_EnableIRQ (EXTI0_IRQn);
-    
-
+  NVIC_EnableIRQ (EXTI0_IRQn);
+  
   GPIO_EXTILineConfig(GPIO_PortSourceGPIOB, GPIO_PinSource0);
 
   EXTI_InitStruct.EXTI_Line = EXTI_Line0;
   EXTI_InitStruct.EXTI_LineCmd = ENABLE;
   EXTI_InitStruct.EXTI_Mode = EXTI_Mode_Interrupt;
   EXTI_InitStruct.EXTI_Trigger = EXTI_Trigger_Rising;
-  EXTI_Init(&EXTI_InitStruct);  
-
-  /*
-        EXTI->IMR |= EXTI_IMR_MR0; // Line 9            (GPIOA)
-        EXTI->FTSR |= EXTI_FTSR_TR0; // falling edge
-        NVIC_EnableIRQ(EXTI9_5_IRQn);
-        NVIC_SetPriority (EXTI9_5_IRQn, 1);*/
-		       
+  EXTI_Init(&EXTI_InitStruct);  	       
 }
 
 
