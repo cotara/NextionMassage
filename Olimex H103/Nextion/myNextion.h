@@ -7,4 +7,6 @@ void Nextion_SetValue_String(char *ValueName, char *Value);
 uint8_t getFLAG_END_LINE(void);
 uint8_t getMotorPower();
 uint8_t getWaveform();
-void setSharPos(uint8_t);
+int8_t getValvePower();
+void setSharPos();
+void sendAck();

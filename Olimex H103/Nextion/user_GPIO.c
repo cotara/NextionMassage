@@ -14,17 +14,22 @@ void GPIO_init(void)
   GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;	
   GPIO_Init(GPIOA, &GPIO_InitStructure);
   
+  
   GPIO_InitStructure.GPIO_Pin = GPIO_Pin_0;		                        //Управление семистором
   GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;	
   GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;	
   GPIO_Init(GPIOE, &GPIO_InitStructure);
   
-                                //ШАР           //ЭМ1     //ЭМ2        //компрессор1//компрессор2 /реле включения цепи мотора
-  GPIO_InitStructure.GPIO_Pin = GPIO_Pin_0 | GPIO_Pin_1 | GPIO_Pin_2 | GPIO_Pin_3 | GPIO_Pin_4 | GPIO_Pin_5;        		
+                                //ШАР           //ЭМ1     //ЭМ2      //компрессор1//компрессор2 /реле вкл.мотора /стоп шар
+  GPIO_InitStructure.GPIO_Pin = GPIO_Pin_0 | GPIO_Pin_1 | GPIO_Pin_2 | GPIO_Pin_3 | GPIO_Pin_4 | GPIO_Pin_5 | GPIO_Pin_6;        		
   GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;	
   GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;	
   GPIO_Init(GPIOD, &GPIO_InitStructure);
-  
+
+  GPIO_SetBits(GPIOD,GPIO_Pin_3);
+  GPIO_SetBits(GPIOD,GPIO_Pin_4);
+  GPIO_SetBits(GPIOD,GPIO_Pin_5);
+
                                 //Комплектация1/Комплектация 2
   GPIO_InitStructure.GPIO_Pin = GPIO_Pin_14 | GPIO_Pin_15 ;        	        //Джамперы комплектаций	
   GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;	

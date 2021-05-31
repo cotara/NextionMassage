@@ -3,12 +3,13 @@
 #include "user_TIMER.h"
 #include "user_USART.h"
 #include "myNextion.h"
+#include <stdlib.h>
 #define TX_BUFFER_SIZE 100
 
 extern volatile uint8_t   tx_buffer[TX_BUFFER_SIZE];
 extern volatile unsigned long  tx_wr_index,tx_rd_index,tx_counter;
 uint32_t counter=0;
-uint8_t waveformCounter=0;
+uint8_t waveformCounter=0, valvePowerCounter=0;
 void HardFault_Handler(void){
   while (1)
   {}
@@ -32,12 +33,13 @@ void SysTick_Handler(void){
 /******************************************************************************/
 /*            STM32F10x Peripherals Interrupt Handlers                        */
 /******************************************************************************/
-
+//USART bads
 void TIM3_IRQHandler(void){
     TIM_ClearITPendingBit(TIM3, TIM_IT_Update);
     TIM_Cmd(TIM3, DISABLE);
     setRxi(0);
 }
+//Control tiristor
 void TIM2_IRQHandler(void){
     TIM_ClearITPendingBit(TIM2, TIM_IT_Update);
     //counter++;
@@ -45,13 +47,29 @@ void TIM2_IRQHandler(void){
     GPIO_ResetBits(GPIOA,GPIO_Pin_6);
     TIM_Cmd(TIM2, DISABLE);
 }
+//Control 1,2 valves
 void TIM4_IRQHandler(void){
     TIM_ClearITPendingBit(TIM4, TIM_IT_Update);
+    if(waveformCounter < getWaveform()*8/10){
+      GPIO_SetBits(GPIOD,GPIO_Pin_1); 
+      GPIO_SetBits(GPIOD,GPIO_Pin_2); 
+    }
+    else{
+      GPIO_ResetBits(GPIOD,GPIO_Pin_1);
+      GPIO_ResetBits(GPIOD,GPIO_Pin_1); 
+    }
     waveformCounter++;
-    if(waveformCounter >= getWaveform()){
-      GPIOD->ODR ^= GPIO_Pin_1;
-      GPIOD->ODR ^= GPIO_Pin_2;
+    if(waveformCounter >= getWaveform())
       waveformCounter=0;
+}
+//200 ms for 5% change valve position
+void TIM5_IRQHandler(void){
+    TIM_ClearITPendingBit(TIM4, TIM_IT_Update);
+    valvePowerCounter+=5;
+    if(valvePowerCounter >= abs(getValvePower())){                              //reach position                                
+        GPIO_SetBits(GPIOD,GPIO_Pin_6);                                        //Stops valve
+        valvePowerCounter=0;
+        TIM_Cmd(TIM5, DISABLE);  
     }
 }
 void USART1_IRQHandler(void){

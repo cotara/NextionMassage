@@ -12,7 +12,8 @@ uint8_t command[11]="sendme";
 uint32_t st=0;
 uint8_t endMes[3]={0xFF,0xFF,0xFF};
 static uint8_t StrBuff[64]; 
-uint8_t page,element,value,waveform=15,valvePower,pump1Power=0,pump2Power=0,motorPower=0;
+uint8_t page,element,value,waveform=150,valvePower,pump1Power=0,pump2Power=0,motorPower=0;
+int8_t valveDiff=0;
 
 void USART_IRQProcessFunc(uint8_t RXc){
     toBuf(RXc);
@@ -27,70 +28,117 @@ void nextionEvent(void){
       page = fromBuf(0);                                                        // номер страницы
       element = fromBuf(1);                                                     //номер кнопки (элемента). 
       value = fromBuf(3);                                                       //значение 
-      
       RX_FLAG_END_LINE=0;
-
-      if(page==3){                                                              //mode1
+      
+      /********************************MASSAGE 1*******************************/
+      if(page==3){                                                              
         motorPower=value;
-        if(element == 0)                                                        //СТАРТ МАССАЖ 1 
+        if(element == 0){                                                        //СТАРТ МАССАЖ 1 
             if(value!=0)                                                        
               GPIO_ResetBits(GPIOD,GPIO_Pin_5);                                 //реле вкл мотора
             else 
               GPIO_SetBits(GPIOD,GPIO_Pin_5); 
-        else if(element == 1)                                                   //ПАУЗА МАССАЖ 1
+            sendAck();
+        }
+        else if(element == 1){                                                   //ПАУЗА МАССАЖ 1
           GPIO_SetBits(GPIOD,GPIO_Pin_5); 
-        else if(element==3)                                                     //СТОП МАССАЖ 1
+          sendAck();
+        }
+        else if(element==3){                                                     //СТОП МАССАЖ 1
           GPIO_SetBits(GPIOD,GPIO_Pin_5); 
+          sendAck();
+        }
+        else if(element==5){                                                     //-мощность
+          sendAck();
+        } 
+        else if(element==6){                                                     //+мощность
+          sendAck();
+        }         
       }
       
-      
-      else if(page==4){                                                         //mode2
+      /********************************MASSAGE 2*******************************/
+      else if(page==4){                                                         
         if(element == 0){                                                        //СТАРТ МАССАЖ 2
-         setSharPos(value);                                                     //устанавливаем мощность рег клапаном
-         GPIO_ResetBits(GPIOD,GPIO_Pin_3);                                      //включаем компрессор
-         TIM_Cmd(TIM4, ENABLE);                                                 //запускаем алгоритм щелкания клапанами
+          setSharPos();                                                          //устанавливаем мощность рег клапаном
+          if(value!=0){
+             GPIO_ResetBits(GPIOD,GPIO_Pin_3);                                      //включаем компрессоры
+             GPIO_ResetBits(GPIOD,GPIO_Pin_4);
+             TIM_Cmd(TIM4, ENABLE);                                                 //запускаем алгоритм щелкания клапанами
+          }
+          else{
+            GPIO_SetBits(GPIOD,GPIO_Pin_3);                                        
+            GPIO_SetBits(GPIOD,GPIO_Pin_4); 
+            TIM_Cmd(TIM4, DISABLE);
+          }
+          sendAck();
         } 
         else if(element == 1){                                                 //ПАУЗА МАССАЖ 2
          GPIO_SetBits(GPIOD,GPIO_Pin_3);                                        
+         GPIO_SetBits(GPIOD,GPIO_Pin_4); 
          TIM_Cmd(TIM4, DISABLE);
+         sendAck();
         }
         else if(element==3){                                                     //СТОП МАССАЖ 2
-          GPIO_SetBits(GPIOD,GPIO_Pin_3);                                        
-          TIM_Cmd(TIM4, DISABLE); 
+          GPIO_SetBits(GPIOD,GPIO_Pin_3); 
+          GPIO_SetBits(GPIOD,GPIO_Pin_4);
+          TIM_Cmd(TIM4, DISABLE);
+          sendAck();
         }
         else if(element==2){                                                    ////форма сигнала 1 - меандр, 2-ногодрыг, 3- синус
           waveform=value;
+          sendAck();
+        } 
+        else if(element==5){                                                     //-мощность
+          setSharPos();
+          sendAck();
+        } 
+        else if(element==6){                                                     //+мощность
+          setSharPos();
+          sendAck();
         }         
       } 
-      else if(page==11){                                                        //manual
+      
+      /********************************MANUAL*********************************/
+      else if(page==11){                                                        
         if(element == 0){                                                       //Электромагнитный клапан 1
-          if(value==1)
-            GPIO_ResetBits(GPIOD,GPIO_Pin_1);
-          else if(value==0)
+          if(value==1){
             GPIO_SetBits(GPIOD,GPIO_Pin_1);
+            sendAck();
+          }
+          else if(value==0){
+            GPIO_ResetBits(GPIOD,GPIO_Pin_1);
+            sendAck();
+          }
         }
         if(element == 1){                                                       //Электромагнитный клапан 2
-          if(value==1)
-            GPIO_ResetBits(GPIOD,GPIO_Pin_2);
-          else if(value==0)
+          if(value==1){
             GPIO_SetBits(GPIOD,GPIO_Pin_2);
+            sendAck();
+          }
+          else if(value==0){
+            GPIO_ResetBits(GPIOD,GPIO_Pin_2);
+            sendAck();
+          }
         } 
         if(element == 2){                                                       //Регулируемый клапан (шар)
-            valvePower=value;
+          setSharPos();
+          sendAck();
         } 
         if(element == 3){                                                       //Компрессор 1
           pump1Power=value;
           if(value!=0)          
             GPIO_ResetBits(GPIOD,GPIO_Pin_3);
           else 
-            GPIO_SetBits(GPIOD,GPIO_Pin_3);                       
+            GPIO_SetBits(GPIOD,GPIO_Pin_3);  
+          sendAck();
         }
         if(element == 4){                                                       //Компрессор 2
           pump2Power=value;
           if(value!=0)          
             GPIO_ResetBits(GPIOD,GPIO_Pin_4);
           else 
-            GPIO_SetBits(GPIOD,GPIO_Pin_4);                       
+            GPIO_SetBits(GPIOD,GPIO_Pin_4);  
+          sendAck();
         }         
         if(element == 5){                                                       //Мотор насоса
             motorPower=value;
@@ -98,15 +146,18 @@ void nextionEvent(void){
               GPIO_ResetBits(GPIOD,GPIO_Pin_5);
             else 
               GPIO_SetBits(GPIOD,GPIO_Pin_5); 
-        } 
+            sendAck();
+        }      
       }
+      
+      /********************************EDITION*********************************/
       else if(page==2){                                                         //Запрос комплектации
         if(element==0){
           if(value==1){
             st = GPIO_ReadInputDataBit (GPIOD, GPIO_Pin_14)*2 + GPIO_ReadInputDataBit (GPIOD, GPIO_Pin_15);
             Nextion_SetValue_Number("mode.val", st);
           }
-        }
+        }     
       }
      clear_RXBuffer();
 }
@@ -144,6 +195,27 @@ uint8_t getMotorPower(){
 uint8_t getWaveform(){
   return waveform;
 }
-void setSharPos(uint8_t pos){
-  return;
+int8_t getValvePower(){
+  return valveDiff;
+}
+//подтверждение получния управляющего сообщения
+void sendAck(){
+  Nextion_SetValue_Number("transpState.val", 0);
+}
+void setSharPos(){
+    if(value==0)
+      valveDiff=-120;                                                           //С запасом, чтобы точно закрылся
+    else if(value==100)
+      valveDiff=120;                                                            //С запасом, чтобы точно открылся
+    else
+      valveDiff=value-valvePower;                                               //На сколько повернуть клапан
+    if(valveDiff!=0){                                                           //Если надо хоть на сколько повернуть
+      valvePower=value;                                                         //Сохраняем новое положени еклапана
+      if(valveDiff>0)
+        GPIO_SetBits(GPIOD,GPIO_Pin_0);                                         //открываем
+      else
+        GPIO_ResetBits(GPIOD,GPIO_Pin_0);                                       //Закрываем
+      GPIO_ResetBits(GPIOD,GPIO_Pin_6);                                         //Отпускам клапан со стопора
+      TIM_Cmd(TIM5, ENABLE);                                                    //Включаем клапан повотора 
+    }   
 }
