@@ -56,7 +56,7 @@ void TIM4_IRQHandler(void){
     }
     else{
       GPIO_ResetBits(GPIOD,GPIO_Pin_1);
-      GPIO_ResetBits(GPIOD,GPIO_Pin_1); 
+      GPIO_ResetBits(GPIOD,GPIO_Pin_2); 
     }
     waveformCounter++;
     if(waveformCounter >= getWaveform())
