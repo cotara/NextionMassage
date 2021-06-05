@@ -5,151 +5,128 @@
     <configuration>
         <name>Debug</name>
         <outputs>
-            <file>$PROJ_DIR$\Debug\Obj\main.xcl</file>
-            <file>$PROJ_DIR$\Debug\Exe\Nextion.bin</file>
-            <file>$PROJ_DIR$\Debug\Obj\user_TIMER.o</file>
-            <file>$PROJ_DIR$\stm32f10x_it.h</file>
-            <file>$TOOLKIT_DIR$\CMSIS\Core\Include\cmsis_version.h</file>
-            <file>$PROJ_DIR$\..\..\..\!STM32F10x_StdPeriph_Lib_V3.5.0_8MGz\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_rcc.c</file>
-            <file>$PROJ_DIR$\main.c</file>
-            <file>$PROJ_DIR$\stm32f10x_it.c</file>
-            <file>$PROJ_DIR$\system_stm32f10x.c</file>
-            <file>$PROJ_DIR$\Debug\Obj\stm32f10x_tim.__cstat.et</file>
-            <file>$PROJ_DIR$\..\..\..\!STM32F10x_StdPeriph_Lib_V3.5.0_8MGz\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_usart.c</file>
             <file>$PROJ_DIR$\user_GPIO.c</file>
-            <file>$PROJ_DIR$\user_USART.c</file>
-            <file>$PROJ_DIR$\Debug\Obj\stm32f10x_tim.xcl</file>
-            <file>$TOOLKIT_DIR$\inc\c\DLib_Product.h</file>
-            <file>$PROJ_DIR$\Debug\Obj\main.o</file>
-            <file>$PROJ_DIR$\Debug\Obj\stm32f10x_tim.o</file>
-            <file>$PROJ_DIR$\system_stm32f10x.h</file>
-            <file>$PROJ_DIR$\Debug\Obj\stm32f10x_usart.xcl</file>
-            <file>$TOOLKIT_DIR$\inc\c\stdio.h</file>
-            <file>$PROJ_DIR$\Debug\Obj\stm32f10x_usart.o</file>
-            <file>$PROJ_DIR$\user_TIMER.c</file>
             <file>$TOOLKIT_DIR$\inc\c\iccarm_builtin.h</file>
-            <file>$PROJ_DIR$\..\..\..\!STM32F10x_StdPeriph_Lib_V3.5.0_8MGz\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_tim.c</file>
-            <file>$PROJ_DIR$\Debug\Obj\stm32f10x_exti.xcl</file>
-            <file>$PROJ_DIR$\Debug\Obj\user_USART.xcl</file>
-            <file>$PROJ_DIR$\..\..\..\!STM32F10x_StdPeriph_Lib_V3.5.0_8MGz\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_gpio.c</file>
-            <file>$PROJ_DIR$\myNextion.c</file>
             <file>$PROJ_DIR$\..\..\..\!STM32F10x_StdPeriph_Lib_V3.5.0_8MGz\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_rcc.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\stm32f10x_exti.xcl</file>
+            <file>$PROJ_DIR$\myNextion.c</file>
+            <file>$PROJ_DIR$\user_USART.c</file>
             <file>$PROJ_DIR$\Debug\Obj\user_TIMER.__cstat.et</file>
             <file>$PROJ_DIR$\..\..\..\!STM32F10x_StdPeriph_Lib_V3.5.0_8MGz\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_gpio.h</file>
+            <file>$PROJ_DIR$\..\..\..\!STM32F10x_StdPeriph_Lib_V3.5.0_8MGz\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_tim.c</file>
             <file>$TOOLKIT_DIR$\inc\c\DLib_Config_Full.h</file>
+            <file>$PROJ_DIR$\main.c</file>
+            <file>$PROJ_DIR$\Debug\Obj\stm32f10x_tim.xcl</file>
+            <file>$PROJ_DIR$\Debug\Obj\stm32f10x_tim.o</file>
+            <file>$PROJ_DIR$\Debug\Obj\stm32f10x_tim.__cstat.et</file>
+            <file>$PROJ_DIR$\..\..\..\!STM32F10x_StdPeriph_Lib_V3.5.0_8MGz\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_rcc.c</file>
+            <file>$PROJ_DIR$\system_stm32f10x.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\main.xcl</file>
+            <file>$PROJ_DIR$\system_stm32f10x.c</file>
+            <file>$PROJ_DIR$\user_TIMER.c</file>
+            <file>$PROJ_DIR$\Debug\Obj\main.o</file>
+            <file>$PROJ_DIR$\Debug\Obj\stm32f10x_usart.xcl</file>
+            <file>$PROJ_DIR$\stm32f10x_it.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\user_USART.xcl</file>
+            <file>$PROJ_DIR$\..\..\..\!STM32F10x_StdPeriph_Lib_V3.5.0_8MGz\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_usart.c</file>
+            <file>$PROJ_DIR$\..\..\..\!STM32F10x_StdPeriph_Lib_V3.5.0_8MGz\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_gpio.c</file>
+            <file>$PROJ_DIR$\Debug\Obj\user_TIMER.o</file>
+            <file>$TOOLKIT_DIR$\CMSIS\Core\Include\cmsis_version.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\DLib_Product.h</file>
+            <file>$PROJ_DIR$\stm32f10x_it.c</file>
+            <file>$PROJ_DIR$\Debug\Exe\Nextion.bin</file>
+            <file>$TOOLKIT_DIR$\inc\c\stdio.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\stm32f10x_usart.o</file>
             <file>$PROJ_DIR$\..\..\..\!STM32F10x_StdPeriph_Lib_V3.5.0_8MGz\Libraries\STM32F10x_StdPeriph_Driver\src\misc.c</file>
-            <file>$PROJ_DIR$\..\..\..\!STM32F10x_StdPeriph_Lib_V3.5.0_8MGz\Libraries\CMSIS\CM3\DeviceSupport\ST\STM32F10x\startup\iar\startup_stm32f10x_hd.s</file>
             <file>$PROJ_DIR$\stm32f10x.h</file>
+            <file>$PROJ_DIR$\..\..\..\!STM32F10x_StdPeriph_Lib_V3.5.0_8MGz\Libraries\CMSIS\CM3\DeviceSupport\ST\STM32F10x\startup\iar\startup_stm32f10x_hd.s</file>
             <file>$PROJ_DIR$\..\..\..\!STM32F10x_StdPeriph_Lib_V3.5.0_8MGz\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_exti.c</file>
-            <file>$PROJ_DIR$\Debug\Obj\user_USART.o</file>
-            <file>$PROJ_DIR$\Debug\Obj\user_GPIO.xcl</file>
-            <file>$PROJ_DIR$\..\..\..\!STM32F10x_StdPeriph_Lib_V3.5.0_8MGz\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_adc.h</file>
-            <file>$PROJ_DIR$\..\..\..\!STM32F10x_StdPeriph_Lib_V3.5.0_8MGz\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_usart.h</file>
-            <file>$PROJ_DIR$\Debug\Obj\stm32f10x_it.xcl</file>
-            <file>$PROJ_DIR$\Debug\Obj\stm32f10x_it.o</file>
-            <file>$PROJ_DIR$\Debug\Obj\user_GPIO.__cstat.et</file>
-            <file>$PROJ_DIR$\..\..\..\!STM32F10x_StdPeriph_Lib_V3.5.0_8MGz\Libraries\CMSIS\CM3\DeviceSupport\ST\STM32F10x\stm32f10x.h</file>
-            <file>$PROJ_DIR$\Debug\Obj\myNextion.xcl</file>
-            <file>$TOOLKIT_DIR$\lib\m7M_tl.a</file>
-            <file>$PROJ_DIR$\Debug\Obj\system_stm32f10x.__cstat.et</file>
-            <file>$PROJ_DIR$\..\..\..\!STM32F10x_StdPeriph_Lib_V3.5.0_8MGz\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_tim.h</file>
-            <file>$PROJ_DIR$\Debug\Obj\stm32f10x_adc.o</file>
-            <file>$PROJ_DIR$\Debug\Obj\myNextion.o</file>
-            <file>$PROJ_DIR$\Debug\Obj\stm32f10x_rcc.xcl</file>
-            <file>$PROJ_DIR$\Debug\Obj\startup_stm32f10x_hd.o</file>
-            <file>$PROJ_DIR$\Debug\Obj\stm32f10x_exti.o</file>
-            <file>$TOOLKIT_DIR$\inc\c\DLib_Defaults.h</file>
-            <file>$PROJ_DIR$\startup_stm32f10x_md.s</file>
-            <file>$PROJ_DIR$\user_TIMER.h</file>
-            <file>$PROJ_DIR$\Debug\Obj\system_stm32f10x.o</file>
-            <file>$PROJ_DIR$\Debug\Obj\system_stm32f10x.xcl</file>
-            <file>$PROJ_DIR$\Debug\Obj\stm32f10x_gpio.xcl</file>
-            <file>$PROJ_DIR$\Debug\Obj\misc.xcl</file>
-            <file>$PROJ_DIR$\Debug\Obj\stm32f10x_exti.__cstat.et</file>
-            <file>$PROJ_DIR$\stm32f10x_conf.h</file>
-            <file>$PROJ_DIR$\myNextion.h</file>
-            <file>$TOOLKIT_DIR$\CMSIS\Core\Include\cmsis_iccarm.h</file>
-            <file>$PROJ_DIR$\Debug\Obj\startup_stm32f10x_md.o</file>
-            <file>$PROJ_DIR$\Debug\Obj\user_TIMER.xcl</file>
-            <file>$PROJ_DIR$\Debug\Obj\stm32f10x_it.__cstat.et</file>
-            <file>$PROJ_DIR$\Debug\Obj\Nextion.pbd</file>
-            <file>$TOOLKIT_DIR$\lib\shb_l.a</file>
+            <file>$TOOLKIT_DIR$\inc\c\ysizet.h</file>
             <file>$PROJ_DIR$\..\..\..\!STM32F10x_StdPeriph_Lib_V3.5.0_8MGz\Libraries\CMSIS\CM3\DeviceSupport\ST\STM32F10x\system_stm32f10x.h</file>
-            <file>$PROJ_DIR$\Debug\Obj\misc.__cstat.et</file>
             <file>$PROJ_DIR$\Debug\Obj\stm32f10x_rcc.o</file>
-            <file>$TOOLKIT_DIR$\lib\dl7M_tlf.a</file>
-            <file>$PROJ_DIR$\Debug\Exe\Nextion.out</file>
-            <file>$PROJ_DIR$\..\..\..\!STM32F10x_StdPeriph_Lib_V3.5.0_8MGz\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_exti.h</file>
-            <file>$PROJ_DIR$\..\..\..\!STM32F10x_StdPeriph_Lib_V3.5.0_8MGz\Libraries\STM32F10x_StdPeriph_Driver\inc\misc.h</file>
             <file>$TOOLKIT_DIR$\inc\c\stdint.h</file>
-            <file>$PROJ_DIR$\Debug\Obj\user_USART.__cstat.et</file>
-            <file>$PROJ_DIR$\..\..\..\!STM32F10x_StdPeriph_Lib_V3.5.0_8MGz\Libraries\CMSIS\CM3\DeviceSupport\ST\STM32F10x\system_stm32f10x.c</file>
-            <file>$TOOLKIT_DIR$\inc\c\ycheck.h</file>
-            <file>$PROJ_DIR$\Debug\Obj\main.__cstat.et</file>
-            <file>$PROJ_DIR$\Debug\Obj\stm32f10x_gpio.o</file>
+            <file>$PROJ_DIR$\Debug\Obj\myNextion.__cstat.et</file>
+            <file>$PROJ_DIR$\Debug\Obj\user_GPIO.o</file>
+            <file>$PROJ_DIR$\Debug\Obj\misc.__cstat.et</file>
+            <file>$TOOLKIT_DIR$\lib\dl7M_tlf.a</file>
+            <file>$PROJ_DIR$\..\..\..\!STM32F10x_StdPeriph_Lib_V3.5.0_8MGz\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_exti.h</file>
             <file>$TOOLKIT_DIR$\lib\rt7M_tl.a</file>
-            <file>$TOOLKIT_DIR$\inc\c\DLib_Product_string.h</file>
-            <file>$PROJ_DIR$\Debug\Obj\misc.o</file>
+            <file>$PROJ_DIR$\Debug\Obj\stm32f10x_usart.__cstat.et</file>
+            <file>$PROJ_DIR$\..\..\..\!STM32F10x_StdPeriph_Lib_V3.5.0_8MGz\Libraries\CMSIS\CM3\DeviceSupport\ST\STM32F10x\system_stm32f10x.c</file>
+            <file>$PROJ_DIR$\Debug\Obj\Nextion.pbd</file>
+            <file>$PROJ_DIR$\Debug\Obj\main.__cstat.et</file>
             <file>$PROJ_DIR$\..\..\..\!STM32F10x_StdPeriph_Lib_V3.5.0_8MGz\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_adc.c</file>
             <file>$TOOLKIT_DIR$\CMSIS\Core\Include\core_cm3.h</file>
+            <file>$PROJ_DIR$\..\..\..\!STM32F10x_StdPeriph_Lib_V3.5.0_8MGz\Libraries\STM32F10x_StdPeriph_Driver\inc\misc.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\ycheck.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\misc.o</file>
+            <file>$PROJ_DIR$\Debug\Obj\user_USART.__cstat.et</file>
             <file>$PROJ_DIR$\Debug\Obj\stm32f10x_gpio.__cstat.et</file>
             <file>$TOOLKIT_DIR$\inc\c\string.h</file>
             <file>$TOOLKIT_DIR$\inc\c\yvals.h</file>
-            <file>$PROJ_DIR$\Debug\Obj\stm32f10x_adc.pbi</file>
+            <file>$TOOLKIT_DIR$\lib\shb_l.a</file>
+            <file>$PROJ_DIR$\Debug\Exe\Nextion.out</file>
             <file>$PROJ_DIR$\user_USART.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\DLib_Product_string.h</file>
             <file>$PROJ_DIR$\Debug\Obj\stm32f10x_rcc.__cstat.et</file>
             <file>$PROJ_DIR$\Config\STM32F10x_FLASH.icf</file>
+            <file>$PROJ_DIR$\Debug\Obj\stm32f10x_adc.pbi</file>
             <file>$PROJ_DIR$\user_GPIO.h</file>
-            <file>$TOOLKIT_DIR$\inc\c\ysizet.h</file>
-            <file>$PROJ_DIR$\Debug\Obj\myNextion.__cstat.et</file>
-            <file>$PROJ_DIR$\Debug\Obj\user_GPIO.o</file>
-            <file>$PROJ_DIR$\Debug\Obj\stm32f10x_usart.__cstat.et</file>
-            <file>$TOOLKIT_DIR$\inc\c\stdlib.h</file>
-            <file>$TOOLKIT_DIR$\inc\c\DLib_Product_stdlib.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\stm32f10x_gpio.o</file>
             <file>$TOOLKIT_DIR$\CMSIS\Core\Include\cmsis_compiler.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\DLib_Product_stdlib.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\stdlib.h</file>
+            <file>$TOOLKIT_DIR$\CMSIS\Core\Include\cmsis_iccarm.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\startup_stm32f10x_md.o</file>
+            <file>$PROJ_DIR$\Debug\Obj\system_stm32f10x.__cstat.et</file>
+            <file>$PROJ_DIR$\Debug\Obj\user_TIMER.xcl</file>
+            <file>$PROJ_DIR$\Debug\Obj\stm32f10x_it.__cstat.et</file>
+            <file>$PROJ_DIR$\startup_stm32f10x_md.s</file>
+            <file>$PROJ_DIR$\Debug\Obj\stm32f10x_it.xcl</file>
+            <file>$PROJ_DIR$\Debug\Obj\startup_stm32f10x_hd.o</file>
+            <file>$PROJ_DIR$\Debug\Obj\user_GPIO.xcl</file>
+            <file>$PROJ_DIR$\Debug\Obj\user_GPIO.__cstat.et</file>
+            <file>$PROJ_DIR$\Debug\Obj\myNextion.xcl</file>
+            <file>$PROJ_DIR$\Debug\Obj\stm32f10x_exti.o</file>
+            <file>$PROJ_DIR$\Debug\Obj\user_USART.o</file>
+            <file>$PROJ_DIR$\user_TIMER.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\system_stm32f10x.o</file>
+            <file>$PROJ_DIR$\..\..\..\!STM32F10x_StdPeriph_Lib_V3.5.0_8MGz\Libraries\CMSIS\CM3\DeviceSupport\ST\STM32F10x\stm32f10x.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\system_stm32f10x.xcl</file>
+            <file>$PROJ_DIR$\Debug\Obj\stm32f10x_adc.o</file>
+            <file>$PROJ_DIR$\Debug\Obj\stm32f10x_gpio.xcl</file>
+            <file>$PROJ_DIR$\Debug\Obj\stm32f10x_it.o</file>
+            <file>$PROJ_DIR$\Debug\Obj\misc.xcl</file>
+            <file>$PROJ_DIR$\..\..\..\!STM32F10x_StdPeriph_Lib_V3.5.0_8MGz\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_tim.h</file>
+            <file>$TOOLKIT_DIR$\lib\m7M_tl.a</file>
+            <file>$PROJ_DIR$\Debug\Obj\myNextion.o</file>
+            <file>$PROJ_DIR$\Debug\Obj\stm32f10x_rcc.xcl</file>
+            <file>$TOOLKIT_DIR$\inc\c\DLib_Defaults.h</file>
+            <file>$PROJ_DIR$\..\..\..\!STM32F10x_StdPeriph_Lib_V3.5.0_8MGz\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_adc.h</file>
+            <file>$PROJ_DIR$\..\..\..\!STM32F10x_StdPeriph_Lib_V3.5.0_8MGz\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_usart.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\stm32f10x_exti.__cstat.et</file>
+            <file>$PROJ_DIR$\stm32f10x_conf.h</file>
+            <file>$PROJ_DIR$\myNextion.h</file>
         </outputs>
         <file>
             <name>[ROOT_NODE]</name>
             <outputs>
                 <tool>
                     <name>ILINK</name>
-                    <file> 73</file>
+                    <file> 60</file>
                 </tool>
             </outputs>
         </file>
         <file>
-            <name>$PROJ_DIR$\..\..\..\!STM32F10x_StdPeriph_Lib_V3.5.0_8MGz\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_rcc.c</name>
+            <name>$PROJ_DIR$\user_GPIO.c</name>
             <outputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 71</file>
+                    <file> 41</file>
                 </tool>
                 <tool>
                     <name>BICOMP</name>
-                    <file> 50</file>
-                </tool>
-                <tool>
-                    <name>__cstat</name>
-                    <file> 92</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 28 34 86 76 79 89 53 31 14 4 101 63 22 17 61 30 47 39 75</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\main.c</name>
-            <outputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 15</file>
-                </tool>
-                <tool>
-                    <name>BICOMP</name>
-                    <file> 0</file>
+                    <file> 79</file>
                 </tool>
                 <tool>
                     <name>__cstat</name>
@@ -159,30 +136,122 @@
             <inputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 34 86 76 79 89 53 31 14 4 101 63 22 17 61 30 28 47 39 75 91 94 55 62</file>
+                    <file> 66 39 53 58 96 9 27 7 33 51 26 68 71 1 15 100 2 92 98 52 44</file>
                 </tool>
             </inputs>
         </file>
         <file>
-            <name>$PROJ_DIR$\stm32f10x_it.c</name>
+            <name>$PROJ_DIR$\myNextion.c</name>
             <outputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 41</file>
+                    <file> 94</file>
                 </tool>
                 <tool>
                     <name>BICOMP</name>
-                    <file> 40</file>
+                    <file> 81</file>
                 </tool>
                 <tool>
                     <name>__cstat</name>
-                    <file> 66</file>
+                    <file> 40</file>
                 </tool>
             </outputs>
             <inputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 3 34 86 76 79 89 53 31 14 4 101 63 22 17 61 30 28 47 39 75 74 55 91 62 99 95 100</file>
+                    <file> 101 39 53 58 96 9 27 61 84 7 33 51 26 68 71 1 15 100 2 92 98 52 30 36 57 62</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\user_USART.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 83</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 22</file>
+                </tool>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 55</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 61 39 53 58 96 9 27 7 33 51 26 68 71 1 15 100 2 92 98 52</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\!STM32F10x_StdPeriph_Lib_V3.5.0_8MGz\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_tim.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 12</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 11</file>
+                </tool>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 13</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 92 33 51 39 53 58 96 9 27 26 68 71 1 15 100 7 2 98 52</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\main.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 19</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 16</file>
+                </tool>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 49</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 33 51 39 53 58 96 9 27 26 68 71 1 15 100 7 2 92 98 52 61 66 84 101</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\!STM32F10x_StdPeriph_Lib_V3.5.0_8MGz\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_rcc.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 38</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 95</file>
+                </tool>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 63</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 2 33 51 39 53 58 96 9 27 26 68 71 1 15 100 7 92 98 52</file>
                 </tool>
             </inputs>
         </file>
@@ -191,11 +260,57 @@
             <outputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 56</file>
+                    <file> 85</file>
                 </tool>
                 <tool>
                     <name>BICOMP</name>
-                    <file> 57</file>
+                    <file> 87</file>
+                </tool>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 73</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 33 51 39 53 58 96 9 27 26 68 71 1 15 100 7 2 92 98 52</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\user_TIMER.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 25</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 74</file>
+                </tool>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 6</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 84 39 53 58 96 9 27 92 33 51 26 68 71 1 15 100 7 2 98 52</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\!STM32F10x_StdPeriph_Lib_V3.5.0_8MGz\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_usart.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 31</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 20</file>
                 </tool>
                 <tool>
                     <name>__cstat</name>
@@ -205,43 +320,66 @@
             <inputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 34 86 76 79 89 53 31 14 4 101 63 22 17 61 30 28 47 39 75</file>
+                    <file> 98 33 51 39 53 58 96 9 27 26 68 71 1 15 100 7 2 92 52</file>
                 </tool>
             </inputs>
         </file>
         <file>
-            <name>$PROJ_DIR$\..\..\..\!STM32F10x_StdPeriph_Lib_V3.5.0_8MGz\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_usart.c</name>
+            <name>$PROJ_DIR$\..\..\..\!STM32F10x_StdPeriph_Lib_V3.5.0_8MGz\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_gpio.c</name>
             <outputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 20</file>
+                    <file> 67</file>
                 </tool>
                 <tool>
                     <name>BICOMP</name>
-                    <file> 18</file>
+                    <file> 89</file>
                 </tool>
                 <tool>
                     <name>__cstat</name>
-                    <file> 98</file>
+                    <file> 56</file>
                 </tool>
             </outputs>
             <inputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 39 34 86 76 79 89 53 31 14 4 101 63 22 17 61 30 28 47 75</file>
+                    <file> 7 33 51 39 53 58 96 9 27 26 68 71 1 15 100 2 92 98 52</file>
                 </tool>
             </inputs>
         </file>
         <file>
-            <name>$PROJ_DIR$\user_GPIO.c</name>
+            <name>$PROJ_DIR$\stm32f10x_it.c</name>
             <outputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 97</file>
+                    <file> 90</file>
                 </tool>
                 <tool>
                     <name>BICOMP</name>
-                    <file> 37</file>
+                    <file> 77</file>
+                </tool>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 75</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 21 33 51 39 53 58 96 9 27 26 68 71 1 15 100 7 2 92 98 52 44 84 61 101 70 36 69</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\!STM32F10x_StdPeriph_Lib_V3.5.0_8MGz\Libraries\STM32F10x_StdPeriph_Driver\src\misc.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 54</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 91</file>
                 </tool>
                 <tool>
                     <name>__cstat</name>
@@ -251,145 +389,7 @@
             <inputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 94 76 79 89 53 31 14 30 34 86 4 101 63 22 17 61 28 47 39 75 74</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\user_USART.c</name>
-            <outputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 36</file>
-                </tool>
-                <tool>
-                    <name>BICOMP</name>
-                    <file> 25</file>
-                </tool>
-                <tool>
-                    <name>__cstat</name>
-                    <file> 77</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 91 76 79 89 53 31 14 30 34 86 4 101 63 22 17 61 28 47 39 75</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\user_TIMER.c</name>
-            <outputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 2</file>
-                </tool>
-                <tool>
-                    <name>BICOMP</name>
-                    <file> 65</file>
-                </tool>
-                <tool>
-                    <name>__cstat</name>
-                    <file> 29</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 55 76 79 89 53 31 14 47 34 86 4 101 63 22 17 61 30 28 39 75</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\..\..\!STM32F10x_StdPeriph_Lib_V3.5.0_8MGz\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_tim.c</name>
-            <outputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 16</file>
-                </tool>
-                <tool>
-                    <name>BICOMP</name>
-                    <file> 13</file>
-                </tool>
-                <tool>
-                    <name>__cstat</name>
-                    <file> 9</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 47 34 86 76 79 89 53 31 14 4 101 63 22 17 61 30 28 39 75</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\..\..\!STM32F10x_StdPeriph_Lib_V3.5.0_8MGz\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_gpio.c</name>
-            <outputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 81</file>
-                </tool>
-                <tool>
-                    <name>BICOMP</name>
-                    <file> 58</file>
-                </tool>
-                <tool>
-                    <name>__cstat</name>
-                    <file> 87</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 30 34 86 76 79 89 53 31 14 4 101 63 22 17 61 28 47 39 75</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\myNextion.c</name>
-            <outputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 49</file>
-                </tool>
-                <tool>
-                    <name>BICOMP</name>
-                    <file> 44</file>
-                </tool>
-                <tool>
-                    <name>__cstat</name>
-                    <file> 96</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 62 76 79 89 53 31 14 91 55 30 34 86 4 101 63 22 17 61 28 47 39 75 19 95 88 83</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\..\..\!STM32F10x_StdPeriph_Lib_V3.5.0_8MGz\Libraries\STM32F10x_StdPeriph_Driver\src\misc.c</name>
-            <outputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 84</file>
-                </tool>
-                <tool>
-                    <name>BICOMP</name>
-                    <file> 59</file>
-                </tool>
-                <tool>
-                    <name>__cstat</name>
-                    <file> 70</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 75 34 86 76 79 89 53 31 14 4 101 63 22 17 61 30 28 47 39</file>
+                    <file> 52 33 51 39 53 58 96 9 27 26 68 71 1 15 100 7 2 92 98</file>
                 </tool>
             </inputs>
         </file>
@@ -398,7 +398,7 @@
             <outputs>
                 <tool>
                     <name>AARM</name>
-                    <file> 51</file>
+                    <file> 78</file>
                 </tool>
             </outputs>
         </file>
@@ -407,45 +407,21 @@
             <outputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 52</file>
+                    <file> 82</file>
                 </tool>
                 <tool>
                     <name>BICOMP</name>
-                    <file> 24</file>
+                    <file> 3</file>
                 </tool>
                 <tool>
                     <name>__cstat</name>
-                    <file> 60</file>
+                    <file> 99</file>
                 </tool>
             </outputs>
             <inputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 74 34 86 76 79 89 53 31 14 4 101 63 22 17 61 30 28 47 39 75</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\startup_stm32f10x_md.s</name>
-            <outputs>
-                <tool>
-                    <name>AARM</name>
-                    <file> 64</file>
-                </tool>
-            </outputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\Debug\Exe\Nextion.out</name>
-            <outputs>
-                <tool>
-                    <name>OBJCOPY</name>
-                    <file> 1</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>ILINK</name>
-                    <file> 93 15 84 49 51 52 81 41 71 16 20 56 97 2 36 68 82 45 72</file>
+                    <file> 44 33 51 39 53 58 96 9 27 26 68 71 1 15 100 7 2 92 98 52</file>
                 </tool>
             </inputs>
         </file>
@@ -454,21 +430,21 @@
             <outputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 56</file>
+                    <file> 85</file>
                 </tool>
                 <tool>
                     <name>BICOMP</name>
-                    <file> 57</file>
+                    <file> 87</file>
                 </tool>
                 <tool>
                     <name>__cstat</name>
-                    <file> 46</file>
+                    <file> 73</file>
                 </tool>
             </outputs>
             <inputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 43 86 76 79 89 53 31 14 4 101 63 22 69 61 30 34 28 47 39 75</file>
+                    <file> 86 51 39 53 58 96 9 27 26 68 71 1 37 100 7 33 2 92 98 52</file>
                 </tool>
             </inputs>
         </file>
@@ -477,19 +453,43 @@
             <outputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 48</file>
+                    <file> 88</file>
                 </tool>
                 <tool>
                     <name>BICOMP</name>
-                    <file> 90</file>
+                    <file> 65</file>
                 </tool>
             </outputs>
             <inputs>
                 <tool>
                     <name>BICOMP</name>
-                    <file> 79 34 69 76 101 22 28 86 61 89 39 38 4 53 31 14 63 30 47 75</file>
+                    <file> 53 33 37 39 68 1 2 51 100 58 98 97 26 96 9 27 71 7 92 52</file>
                 </tool>
             </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\Debug\Exe\Nextion.out</name>
+            <outputs>
+                <tool>
+                    <name>OBJCOPY</name>
+                    <file> 29</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ILINK</name>
+                    <file> 64 19 54 94 78 82 67 90 38 12 31 85 41 25 83 59 45 93 43</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\startup_stm32f10x_md.s</name>
+            <outputs>
+                <tool>
+                    <name>AARM</name>
+                    <file> 72</file>
+                </tool>
+            </outputs>
         </file>
     </configuration>
     <configuration>

@@ -52,15 +52,16 @@ void tim4_init(void){
     NVIC_SetPriority (TIM4_IRQn, 3);
     NVIC_EnableIRQ (TIM4_IRQn);
 }
-void tim5_init(void){
+void tim5_init(uint16_t period){
    
+    TIM_DeInit(TIM5);
     TIM_TimeBaseInitTypeDef TIMER_InitStructure;
     RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM5, ENABLE);
 
     TIM_TimeBaseStructInit(&TIMER_InitStructure);
     TIMER_InitStructure.TIM_CounterMode = TIM_CounterMode_Up;
     TIMER_InitStructure.TIM_Prescaler = 36000-1;                                //500мкс
-    TIMER_InitStructure.TIM_Period = 400;                                       //200мс
+    TIMER_InitStructure.TIM_Period = period;                                    
     TIM_TimeBaseInit(TIM5, &TIMER_InitStructure);
     TIM_ITConfig(TIM5, TIM_IT_Update, ENABLE);
     //TIM_Cmd(TIM5, ENABLE);

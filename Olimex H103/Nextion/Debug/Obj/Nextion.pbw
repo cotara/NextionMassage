@@ -112876,216 +112876,6 @@
     "scope": null
   },
   {
-    "ID": "c:system_stm32f10x.c@4715@macro@SYSCLK_FREQ_72MHz",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "SYSCLK_FREQ_72MHz",
-    "location": {
-      "column": "9",
-      "line": "115",
-      "path": "C:\\STM\\NextionMassage\\Olimex H103\\Nextion\\system_stm32f10x.c"
-    },
-    "name": "SYSCLK_FREQ_72MHz",
-    "origin": "project_file",
-    "scope": null
-  },
-  {
-    "ID": "c:system_stm32f10x.c@5262@macro@VECT_TAB_OFFSET",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "VECT_TAB_OFFSET",
-    "location": {
-      "column": "9",
-      "line": "128",
-      "path": "C:\\STM\\NextionMassage\\Olimex H103\\Nextion\\system_stm32f10x.c"
-    },
-    "name": "VECT_TAB_OFFSET",
-    "origin": "project_file",
-    "scope": null
-  },
-  {
-    "ID": "c:@SystemCoreClock",
-    "What": "Variable",
-    "defdec": "Def",
-    "display": "SystemCoreClock",
-    "location": {
-      "column": "12",
-      "line": "162",
-      "path": "C:\\STM\\NextionMassage\\Olimex H103\\Nextion\\system_stm32f10x.c"
-    },
-    "name": "SystemCoreClock",
-    "origin": "project_file",
-    "scope": null
-  },
-  {
-    "ID": "c:@AHBPrescTable",
-    "What": "Variable",
-    "defdec": "Def",
-    "display": "AHBPrescTable",
-    "location": {
-      "column": "13",
-      "line": "167",
-      "path": "C:\\STM\\NextionMassage\\Olimex H103\\Nextion\\system_stm32f10x.c"
-    },
-    "name": "AHBPrescTable",
-    "origin": "project_file",
-    "scope": null
-  },
-  {
-    "ID": "c:system_stm32f10x.c@F@SetSysClock",
-    "What": "Function",
-    "defdec": "Dec",
-    "display": "void SetSysClock(void)",
-    "location": {
-      "column": "13",
-      "line": "176",
-      "path": "C:\\STM\\NextionMassage\\Olimex H103\\Nextion\\system_stm32f10x.c"
-    },
-    "name": "SetSysClock",
-    "origin": "project_file",
-    "scope": null
-  },
-  {
-    "ID": "c:system_stm32f10x.c@F@SetSysClockTo72",
-    "What": "Function",
-    "defdec": "Dec",
-    "display": "void SetSysClockTo72(void)",
-    "location": {
-      "column": "15",
-      "line": "189",
-      "path": "C:\\STM\\NextionMassage\\Olimex H103\\Nextion\\system_stm32f10x.c"
-    },
-    "name": "SetSysClockTo72",
-    "origin": "project_file",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@SystemInit",
-    "What": "Function",
-    "defdec": "Def",
-    "display": "void SystemInit(void)",
-    "location": {
-      "column": "6",
-      "line": "212",
-      "path": "C:\\STM\\NextionMassage\\Olimex H103\\Nextion\\system_stm32f10x.c"
-    },
-    "name": "SystemInit",
-    "origin": "project_file",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@SystemCoreClockUpdate",
-    "What": "Function",
-    "defdec": "Def",
-    "display": "void SystemCoreClockUpdate(void)",
-    "location": {
-      "column": "6",
-      "line": "306",
-      "path": "C:\\STM\\NextionMassage\\Olimex H103\\Nextion\\system_stm32f10x.c"
-    },
-    "name": "SystemCoreClockUpdate",
-    "origin": "project_file",
-    "scope": null
-  },
-  {
-    "ID": "c:system_stm32f10x.c@11640@F@SystemCoreClockUpdate@tmp",
-    "What": "Variable",
-    "defdec": "Def",
-    "display": "tmp",
-    "location": {
-      "column": "12",
-      "line": "308",
-      "path": "C:\\STM\\NextionMassage\\Olimex H103\\Nextion\\system_stm32f10x.c"
-    },
-    "name": "tmp",
-    "origin": "project_file",
-    "scope": null
-  },
-  {
-    "ID": "c:system_stm32f10x.c@11640@F@SystemCoreClockUpdate@pllmull",
-    "What": "Variable",
-    "defdec": "Dec",
-    "display": "pllmull",
-    "location": {
-      "column": "21",
-      "line": "308",
-      "path": "C:\\STM\\NextionMassage\\Olimex H103\\Nextion\\system_stm32f10x.c"
-    },
-    "name": "pllmull",
-    "origin": "project_file",
-    "scope": null
-  },
-  {
-    "ID": "c:system_stm32f10x.c@11640@F@SystemCoreClockUpdate@pllsource",
-    "What": "Variable",
-    "defdec": "Dec",
-    "display": "pllsource",
-    "location": {
-      "column": "34",
-      "line": "308",
-      "path": "C:\\STM\\NextionMassage\\Olimex H103\\Nextion\\system_stm32f10x.c"
-    },
-    "name": "pllsource",
-    "origin": "project_file",
-    "scope": null
-  },
-  {
-    "ID": "c:system_stm32f10x.c@F@SetSysClock",
-    "What": "Function",
-    "defdec": "Def",
-    "display": "void SetSysClock(void)",
-    "location": {
-      "column": "13",
-      "line": "419",
-      "path": "C:\\STM\\NextionMassage\\Olimex H103\\Nextion\\system_stm32f10x.c"
-    },
-    "name": "SetSysClock",
-    "origin": "project_file",
-    "scope": null
-  },
-  {
-    "ID": "c:system_stm32f10x.c@F@SetSysClockTo72",
-    "What": "Function",
-    "defdec": "Def",
-    "display": "void SetSysClockTo72(void)",
-    "location": {
-      "column": "13",
-      "line": "987",
-      "path": "C:\\STM\\NextionMassage\\Olimex H103\\Nextion\\system_stm32f10x.c"
-    },
-    "name": "SetSysClockTo72",
-    "origin": "project_file",
-    "scope": null
-  },
-  {
-    "ID": "c:system_stm32f10x.c@33426@F@SetSysClockTo72@StartUpCounter",
-    "What": "Variable",
-    "defdec": "Def",
-    "display": "StartUpCounter",
-    "location": {
-      "column": "17",
-      "line": "989",
-      "path": "C:\\STM\\NextionMassage\\Olimex H103\\Nextion\\system_stm32f10x.c"
-    },
-    "name": "StartUpCounter",
-    "origin": "project_file",
-    "scope": null
-  },
-  {
-    "ID": "c:system_stm32f10x.c@33426@F@SetSysClockTo72@HSEStatus",
-    "What": "Variable",
-    "defdec": "Dec",
-    "display": "HSEStatus",
-    "location": {
-      "column": "37",
-      "line": "989",
-      "path": "C:\\STM\\NextionMassage\\Olimex H103\\Nextion\\system_stm32f10x.c"
-    },
-    "name": "HSEStatus",
-    "origin": "project_file",
-    "scope": null
-  },
-  {
     "ID": "c:@RX_FLAG_END_LINE",
     "What": "Variable",
     "defdec": "Def",
@@ -113330,7 +113120,7 @@
     "display": "void Nextion_SetValue_Number(char *, uint32_t)",
     "location": {
       "column": "6",
-      "line": "165",
+      "line": "176",
       "path": "C:\\STM\\NextionMassage\\Olimex H103\\Nextion\\myNextion.c"
     },
     "name": "Nextion_SetValue_Number",
@@ -113338,13 +113128,13 @@
     "scope": null
   },
   {
-    "ID": "c:myNextion.c@7496@F@Nextion_SetValue_Number@Len",
+    "ID": "c:myNextion.c@8227@F@Nextion_SetValue_Number@Len",
     "What": "Variable",
     "defdec": "Def",
     "display": "Len",
     "location": {
       "column": "12",
-      "line": "168",
+      "line": "179",
       "path": "C:\\STM\\NextionMassage\\Olimex H103\\Nextion\\myNextion.c"
     },
     "name": "Len",
@@ -113358,7 +113148,7 @@
     "display": "void Nextion_SetValue_String(char *, char *)",
     "location": {
       "column": "6",
-      "line": "173",
+      "line": "183",
       "path": "C:\\STM\\NextionMassage\\Olimex H103\\Nextion\\myNextion.c"
     },
     "name": "Nextion_SetValue_String",
@@ -113366,13 +113156,13 @@
     "scope": null
   },
   {
-    "ID": "c:myNextion.c@7744@F@Nextion_SetValue_String@Len",
+    "ID": "c:myNextion.c@8471@F@Nextion_SetValue_String@Len",
     "What": "Variable",
     "defdec": "Def",
     "display": "Len",
     "location": {
       "column": "12",
-      "line": "176",
+      "line": "186",
       "path": "C:\\STM\\NextionMassage\\Olimex H103\\Nextion\\myNextion.c"
     },
     "name": "Len",
@@ -113386,7 +113176,7 @@
     "display": "void incFLAG_END_LINE(void)",
     "location": {
       "column": "6",
-      "line": "182",
+      "line": "192",
       "path": "C:\\STM\\NextionMassage\\Olimex H103\\Nextion\\myNextion.c"
     },
     "name": "incFLAG_END_LINE",
@@ -113400,7 +113190,7 @@
     "display": "void resetFLAG_END_LINE(void)",
     "location": {
       "column": "6",
-      "line": "185",
+      "line": "195",
       "path": "C:\\STM\\NextionMassage\\Olimex H103\\Nextion\\myNextion.c"
     },
     "name": "resetFLAG_END_LINE",
@@ -113414,7 +113204,7 @@
     "display": "uint8_t getFLAG_END_LINE(void)",
     "location": {
       "column": "9",
-      "line": "188",
+      "line": "198",
       "path": "C:\\STM\\NextionMassage\\Olimex H103\\Nextion\\myNextion.c"
     },
     "name": "getFLAG_END_LINE",
@@ -113428,7 +113218,7 @@
     "display": "uint8_t getMotorPower(void)",
     "location": {
       "column": "9",
-      "line": "192",
+      "line": "202",
       "path": "C:\\STM\\NextionMassage\\Olimex H103\\Nextion\\myNextion.c"
     },
     "name": "getMotorPower",
@@ -113442,7 +113232,7 @@
     "display": "uint8_t getWaveform(void)",
     "location": {
       "column": "9",
-      "line": "195",
+      "line": "205",
       "path": "C:\\STM\\NextionMassage\\Olimex H103\\Nextion\\myNextion.c"
     },
     "name": "getWaveform",
@@ -113456,10 +113246,24 @@
     "display": "int8_t getValvePower(void)",
     "location": {
       "column": "8",
-      "line": "198",
+      "line": "208",
       "path": "C:\\STM\\NextionMassage\\Olimex H103\\Nextion\\myNextion.c"
     },
     "name": "getValvePower",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@setValvePower",
+    "What": "Function",
+    "defdec": "Def",
+    "display": "void setValvePower(int8_t)",
+    "location": {
+      "column": "6",
+      "line": "211",
+      "path": "C:\\STM\\NextionMassage\\Olimex H103\\Nextion\\myNextion.c"
+    },
+    "name": "setValvePower",
     "origin": "project_file",
     "scope": null
   },
@@ -113470,7 +113274,7 @@
     "display": "void sendAck(void)",
     "location": {
       "column": "6",
-      "line": "202",
+      "line": "215",
       "path": "C:\\STM\\NextionMassage\\Olimex H103\\Nextion\\myNextion.c"
     },
     "name": "sendAck",
@@ -113484,7 +113288,7 @@
     "display": "void setSharPos(void)",
     "location": {
       "column": "6",
-      "line": "205",
+      "line": "218",
       "path": "C:\\STM\\NextionMassage\\Olimex H103\\Nextion\\myNextion.c"
     },
     "name": "setSharPos",
@@ -114626,227 +114430,213 @@
     "scope": null
   },
   {
-    "ID": "c:@F@usart_init",
-    "What": "Function",
-    "defdec": "Dec",
-    "display": "void usart_init(void)",
-    "location": {
-      "column": "6",
-      "line": "3",
-      "path": "C:\\STM\\NextionMassage\\Olimex H103\\Nextion\\user_USART.h"
-    },
-    "name": "usart_init",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@usart_init",
-    "What": "Function",
-    "defdec": "Dec",
-    "display": "void usart_init(void)",
-    "location": {
-      "column": "6",
-      "line": "3",
-      "path": "C:\\STM\\NextionMassage\\Olimex H103\\Nextion\\user_USART.h"
-    },
-    "name": "usart_init",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@clear_RXBuffer",
-    "What": "Function",
-    "defdec": "Dec",
-    "display": "void clear_RXBuffer(void)",
-    "location": {
-      "column": "6",
-      "line": "4",
-      "path": "C:\\STM\\NextionMassage\\Olimex H103\\Nextion\\user_USART.h"
-    },
-    "name": "clear_RXBuffer",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@clear_RXBuffer",
-    "What": "Function",
-    "defdec": "Dec",
-    "display": "void clear_RXBuffer(void)",
-    "location": {
-      "column": "6",
-      "line": "4",
-      "path": "C:\\STM\\NextionMassage\\Olimex H103\\Nextion\\user_USART.h"
-    },
-    "name": "clear_RXBuffer",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@setRxi",
-    "What": "Function",
-    "defdec": "Dec",
-    "display": "void setRxi(uint16_t)",
-    "location": {
-      "column": "6",
-      "line": "5",
-      "path": "C:\\STM\\NextionMassage\\Olimex H103\\Nextion\\user_USART.h"
-    },
-    "name": "setRxi",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@setRxi",
-    "What": "Function",
-    "defdec": "Dec",
-    "display": "void setRxi(uint16_t)",
-    "location": {
-      "column": "6",
-      "line": "5",
-      "path": "C:\\STM\\NextionMassage\\Olimex H103\\Nextion\\user_USART.h"
-    },
-    "name": "setRxi",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@toBuf",
-    "What": "Function",
-    "defdec": "Dec",
-    "display": "uint8_t toBuf(uint8_t)",
+    "ID": "c:system_stm32f10x.c@4715@macro@SYSCLK_FREQ_72MHz",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "SYSCLK_FREQ_72MHz",
     "location": {
       "column": "9",
-      "line": "6",
-      "path": "C:\\STM\\NextionMassage\\Olimex H103\\Nextion\\user_USART.h"
+      "line": "115",
+      "path": "C:\\STM\\NextionMassage\\Olimex H103\\Nextion\\system_stm32f10x.c"
     },
-    "name": "toBuf",
-    "origin": "user_include",
+    "name": "SYSCLK_FREQ_72MHz",
+    "origin": "project_file",
     "scope": null
   },
   {
-    "ID": "c:@F@toBuf",
-    "What": "Function",
-    "defdec": "Dec",
-    "display": "uint8_t toBuf(uint8_t)",
+    "ID": "c:system_stm32f10x.c@5262@macro@VECT_TAB_OFFSET",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "VECT_TAB_OFFSET",
     "location": {
       "column": "9",
-      "line": "6",
-      "path": "C:\\STM\\NextionMassage\\Olimex H103\\Nextion\\user_USART.h"
+      "line": "128",
+      "path": "C:\\STM\\NextionMassage\\Olimex H103\\Nextion\\system_stm32f10x.c"
     },
-    "name": "toBuf",
-    "origin": "user_include",
+    "name": "VECT_TAB_OFFSET",
+    "origin": "project_file",
     "scope": null
   },
   {
-    "ID": "c:@F@toBuf",
-    "What": "Function",
-    "defdec": "Dec",
-    "display": "uint8_t toBuf(uint8_t)",
+    "ID": "c:@SystemCoreClock",
+    "What": "Variable",
+    "defdec": "Def",
+    "display": "SystemCoreClock",
     "location": {
-      "column": "9",
-      "line": "7",
-      "path": "C:\\STM\\NextionMassage\\Olimex H103\\Nextion\\user_USART.h"
+      "column": "12",
+      "line": "162",
+      "path": "C:\\STM\\NextionMassage\\Olimex H103\\Nextion\\system_stm32f10x.c"
     },
-    "name": "toBuf",
-    "origin": "user_include",
+    "name": "SystemCoreClock",
+    "origin": "project_file",
     "scope": null
   },
   {
-    "ID": "c:@F@toBuf",
-    "What": "Function",
-    "defdec": "Dec",
-    "display": "uint8_t toBuf(uint8_t)",
+    "ID": "c:@AHBPrescTable",
+    "What": "Variable",
+    "defdec": "Def",
+    "display": "AHBPrescTable",
     "location": {
-      "column": "9",
-      "line": "7",
-      "path": "C:\\STM\\NextionMassage\\Olimex H103\\Nextion\\user_USART.h"
+      "column": "13",
+      "line": "167",
+      "path": "C:\\STM\\NextionMassage\\Olimex H103\\Nextion\\system_stm32f10x.c"
     },
-    "name": "toBuf",
-    "origin": "user_include",
+    "name": "AHBPrescTable",
+    "origin": "project_file",
     "scope": null
   },
   {
-    "ID": "c:@F@fromBuf",
+    "ID": "c:system_stm32f10x.c@F@SetSysClock",
     "What": "Function",
     "defdec": "Dec",
-    "display": "uint8_t fromBuf(uint16_t)",
+    "display": "void SetSysClock(void)",
     "location": {
-      "column": "9",
-      "line": "8",
-      "path": "C:\\STM\\NextionMassage\\Olimex H103\\Nextion\\user_USART.h"
+      "column": "13",
+      "line": "176",
+      "path": "C:\\STM\\NextionMassage\\Olimex H103\\Nextion\\system_stm32f10x.c"
     },
-    "name": "fromBuf",
-    "origin": "user_include",
+    "name": "SetSysClock",
+    "origin": "project_file",
     "scope": null
   },
   {
-    "ID": "c:@F@fromBuf",
+    "ID": "c:system_stm32f10x.c@F@SetSysClockTo72",
     "What": "Function",
     "defdec": "Dec",
-    "display": "uint8_t fromBuf(uint16_t)",
+    "display": "void SetSysClockTo72(void)",
     "location": {
-      "column": "9",
-      "line": "8",
-      "path": "C:\\STM\\NextionMassage\\Olimex H103\\Nextion\\user_USART.h"
+      "column": "15",
+      "line": "189",
+      "path": "C:\\STM\\NextionMassage\\Olimex H103\\Nextion\\system_stm32f10x.c"
     },
-    "name": "fromBuf",
-    "origin": "user_include",
+    "name": "SetSysClockTo72",
+    "origin": "project_file",
     "scope": null
   },
   {
-    "ID": "c:@F@USART1_put_char",
+    "ID": "c:@F@SystemInit",
     "What": "Function",
-    "defdec": "Dec",
-    "display": "void USART1_put_char(uint8_t)",
+    "defdec": "Def",
+    "display": "void SystemInit(void)",
     "location": {
       "column": "6",
-      "line": "9",
-      "path": "C:\\STM\\NextionMassage\\Olimex H103\\Nextion\\user_USART.h"
+      "line": "212",
+      "path": "C:\\STM\\NextionMassage\\Olimex H103\\Nextion\\system_stm32f10x.c"
     },
-    "name": "USART1_put_char",
-    "origin": "user_include",
+    "name": "SystemInit",
+    "origin": "project_file",
     "scope": null
   },
   {
-    "ID": "c:@F@USART1_put_char",
+    "ID": "c:@F@SystemCoreClockUpdate",
     "What": "Function",
-    "defdec": "Dec",
-    "display": "void USART1_put_char(uint8_t)",
+    "defdec": "Def",
+    "display": "void SystemCoreClockUpdate(void)",
     "location": {
       "column": "6",
-      "line": "9",
-      "path": "C:\\STM\\NextionMassage\\Olimex H103\\Nextion\\user_USART.h"
+      "line": "306",
+      "path": "C:\\STM\\NextionMassage\\Olimex H103\\Nextion\\system_stm32f10x.c"
     },
-    "name": "USART1_put_char",
-    "origin": "user_include",
+    "name": "SystemCoreClockUpdate",
+    "origin": "project_file",
     "scope": null
   },
   {
-    "ID": "c:@F@USART1_put_string",
-    "What": "Function",
-    "defdec": "Dec",
-    "display": "void USART1_put_string(unsigned char *, uint32_t)",
+    "ID": "c:system_stm32f10x.c@11640@F@SystemCoreClockUpdate@tmp",
+    "What": "Variable",
+    "defdec": "Def",
+    "display": "tmp",
     "location": {
-      "column": "6",
-      "line": "10",
-      "path": "C:\\STM\\NextionMassage\\Olimex H103\\Nextion\\user_USART.h"
+      "column": "12",
+      "line": "308",
+      "path": "C:\\STM\\NextionMassage\\Olimex H103\\Nextion\\system_stm32f10x.c"
     },
-    "name": "USART1_put_string",
-    "origin": "user_include",
+    "name": "tmp",
+    "origin": "project_file",
     "scope": null
   },
   {
-    "ID": "c:@F@USART1_put_string",
-    "What": "Function",
+    "ID": "c:system_stm32f10x.c@11640@F@SystemCoreClockUpdate@pllmull",
+    "What": "Variable",
     "defdec": "Dec",
-    "display": "void USART1_put_string(unsigned char *, uint32_t)",
+    "display": "pllmull",
     "location": {
-      "column": "6",
-      "line": "10",
-      "path": "C:\\STM\\NextionMassage\\Olimex H103\\Nextion\\user_USART.h"
+      "column": "21",
+      "line": "308",
+      "path": "C:\\STM\\NextionMassage\\Olimex H103\\Nextion\\system_stm32f10x.c"
     },
-    "name": "USART1_put_string",
-    "origin": "user_include",
+    "name": "pllmull",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:system_stm32f10x.c@11640@F@SystemCoreClockUpdate@pllsource",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "pllsource",
+    "location": {
+      "column": "34",
+      "line": "308",
+      "path": "C:\\STM\\NextionMassage\\Olimex H103\\Nextion\\system_stm32f10x.c"
+    },
+    "name": "pllsource",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:system_stm32f10x.c@F@SetSysClock",
+    "What": "Function",
+    "defdec": "Def",
+    "display": "void SetSysClock(void)",
+    "location": {
+      "column": "13",
+      "line": "419",
+      "path": "C:\\STM\\NextionMassage\\Olimex H103\\Nextion\\system_stm32f10x.c"
+    },
+    "name": "SetSysClock",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:system_stm32f10x.c@F@SetSysClockTo72",
+    "What": "Function",
+    "defdec": "Def",
+    "display": "void SetSysClockTo72(void)",
+    "location": {
+      "column": "13",
+      "line": "987",
+      "path": "C:\\STM\\NextionMassage\\Olimex H103\\Nextion\\system_stm32f10x.c"
+    },
+    "name": "SetSysClockTo72",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:system_stm32f10x.c@33426@F@SetSysClockTo72@StartUpCounter",
+    "What": "Variable",
+    "defdec": "Def",
+    "display": "StartUpCounter",
+    "location": {
+      "column": "17",
+      "line": "989",
+      "path": "C:\\STM\\NextionMassage\\Olimex H103\\Nextion\\system_stm32f10x.c"
+    },
+    "name": "StartUpCounter",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:system_stm32f10x.c@33426@F@SetSysClockTo72@HSEStatus",
+    "What": "Variable",
+    "defdec": "Dec",
+    "display": "HSEStatus",
+    "location": {
+      "column": "37",
+      "line": "989",
+      "path": "C:\\STM\\NextionMassage\\Olimex H103\\Nextion\\system_stm32f10x.c"
+    },
+    "name": "HSEStatus",
+    "origin": "project_file",
     "scope": null
   },
   {
@@ -115242,510 +115032,6 @@
     "scope": null
   },
   {
-    "ID": "c:@F@USART_IRQProcessFunc",
-    "What": "Function",
-    "defdec": "Dec",
-    "display": "void USART_IRQProcessFunc(uint8_t)",
-    "location": {
-      "column": "6",
-      "line": "3",
-      "path": "C:\\STM\\NextionMassage\\Olimex H103\\Nextion\\myNextion.h"
-    },
-    "name": "USART_IRQProcessFunc",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@USART_IRQProcessFunc",
-    "What": "Function",
-    "defdec": "Dec",
-    "display": "void USART_IRQProcessFunc(uint8_t)",
-    "location": {
-      "column": "6",
-      "line": "3",
-      "path": "C:\\STM\\NextionMassage\\Olimex H103\\Nextion\\myNextion.h"
-    },
-    "name": "USART_IRQProcessFunc",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@nextionEvent",
-    "What": "Function",
-    "defdec": "Dec",
-    "display": "void nextionEvent(void)",
-    "location": {
-      "column": "6",
-      "line": "4",
-      "path": "C:\\STM\\NextionMassage\\Olimex H103\\Nextion\\myNextion.h"
-    },
-    "name": "nextionEvent",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@nextionEvent",
-    "What": "Function",
-    "defdec": "Dec",
-    "display": "void nextionEvent(void)",
-    "location": {
-      "column": "6",
-      "line": "4",
-      "path": "C:\\STM\\NextionMassage\\Olimex H103\\Nextion\\myNextion.h"
-    },
-    "name": "nextionEvent",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@Nextion_SetValue_Number",
-    "What": "Function",
-    "defdec": "Dec",
-    "display": "void Nextion_SetValue_Number(char *, uint32_t)",
-    "location": {
-      "column": "6",
-      "line": "5",
-      "path": "C:\\STM\\NextionMassage\\Olimex H103\\Nextion\\myNextion.h"
-    },
-    "name": "Nextion_SetValue_Number",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@Nextion_SetValue_Number",
-    "What": "Function",
-    "defdec": "Dec",
-    "display": "void Nextion_SetValue_Number(char *, uint32_t)",
-    "location": {
-      "column": "6",
-      "line": "5",
-      "path": "C:\\STM\\NextionMassage\\Olimex H103\\Nextion\\myNextion.h"
-    },
-    "name": "Nextion_SetValue_Number",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@Nextion_SetValue_String",
-    "What": "Function",
-    "defdec": "Dec",
-    "display": "void Nextion_SetValue_String(char *, char *)",
-    "location": {
-      "column": "6",
-      "line": "6",
-      "path": "C:\\STM\\NextionMassage\\Olimex H103\\Nextion\\myNextion.h"
-    },
-    "name": "Nextion_SetValue_String",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@Nextion_SetValue_String",
-    "What": "Function",
-    "defdec": "Dec",
-    "display": "void Nextion_SetValue_String(char *, char *)",
-    "location": {
-      "column": "6",
-      "line": "6",
-      "path": "C:\\STM\\NextionMassage\\Olimex H103\\Nextion\\myNextion.h"
-    },
-    "name": "Nextion_SetValue_String",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@getFLAG_END_LINE",
-    "What": "Function",
-    "defdec": "Dec",
-    "display": "uint8_t getFLAG_END_LINE(void)",
-    "location": {
-      "column": "9",
-      "line": "7",
-      "path": "C:\\STM\\NextionMassage\\Olimex H103\\Nextion\\myNextion.h"
-    },
-    "name": "getFLAG_END_LINE",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@getFLAG_END_LINE",
-    "What": "Function",
-    "defdec": "Dec",
-    "display": "uint8_t getFLAG_END_LINE(void)",
-    "location": {
-      "column": "9",
-      "line": "7",
-      "path": "C:\\STM\\NextionMassage\\Olimex H103\\Nextion\\myNextion.h"
-    },
-    "name": "getFLAG_END_LINE",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@getMotorPower",
-    "What": "Function",
-    "defdec": "Dec",
-    "display": "uint8_t getMotorPower(void)",
-    "location": {
-      "column": "9",
-      "line": "8",
-      "path": "C:\\STM\\NextionMassage\\Olimex H103\\Nextion\\myNextion.h"
-    },
-    "name": "getMotorPower",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@getMotorPower",
-    "What": "Function",
-    "defdec": "Dec",
-    "display": "uint8_t getMotorPower(void)",
-    "location": {
-      "column": "9",
-      "line": "8",
-      "path": "C:\\STM\\NextionMassage\\Olimex H103\\Nextion\\myNextion.h"
-    },
-    "name": "getMotorPower",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@getWaveform",
-    "What": "Function",
-    "defdec": "Dec",
-    "display": "uint8_t getWaveform(void)",
-    "location": {
-      "column": "9",
-      "line": "9",
-      "path": "C:\\STM\\NextionMassage\\Olimex H103\\Nextion\\myNextion.h"
-    },
-    "name": "getWaveform",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@getWaveform",
-    "What": "Function",
-    "defdec": "Dec",
-    "display": "uint8_t getWaveform(void)",
-    "location": {
-      "column": "9",
-      "line": "9",
-      "path": "C:\\STM\\NextionMassage\\Olimex H103\\Nextion\\myNextion.h"
-    },
-    "name": "getWaveform",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@getValvePower",
-    "What": "Function",
-    "defdec": "Dec",
-    "display": "int8_t getValvePower(void)",
-    "location": {
-      "column": "8",
-      "line": "10",
-      "path": "C:\\STM\\NextionMassage\\Olimex H103\\Nextion\\myNextion.h"
-    },
-    "name": "getValvePower",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@getValvePower",
-    "What": "Function",
-    "defdec": "Dec",
-    "display": "int8_t getValvePower(void)",
-    "location": {
-      "column": "8",
-      "line": "10",
-      "path": "C:\\STM\\NextionMassage\\Olimex H103\\Nextion\\myNextion.h"
-    },
-    "name": "getValvePower",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@setSharPos",
-    "What": "Function",
-    "defdec": "Dec",
-    "display": "void setSharPos(void)",
-    "location": {
-      "column": "6",
-      "line": "11",
-      "path": "C:\\STM\\NextionMassage\\Olimex H103\\Nextion\\myNextion.h"
-    },
-    "name": "setSharPos",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@setSharPos",
-    "What": "Function",
-    "defdec": "Dec",
-    "display": "void setSharPos(void)",
-    "location": {
-      "column": "6",
-      "line": "11",
-      "path": "C:\\STM\\NextionMassage\\Olimex H103\\Nextion\\myNextion.h"
-    },
-    "name": "setSharPos",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@sendAck",
-    "What": "Function",
-    "defdec": "Dec",
-    "display": "void sendAck(void)",
-    "location": {
-      "column": "6",
-      "line": "12",
-      "path": "C:\\STM\\NextionMassage\\Olimex H103\\Nextion\\myNextion.h"
-    },
-    "name": "sendAck",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@sendAck",
-    "What": "Function",
-    "defdec": "Dec",
-    "display": "void sendAck(void)",
-    "location": {
-      "column": "6",
-      "line": "12",
-      "path": "C:\\STM\\NextionMassage\\Olimex H103\\Nextion\\myNextion.h"
-    },
-    "name": "sendAck",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@Delay",
-    "What": "Function",
-    "defdec": "Dec",
-    "display": "void Delay(volatile uint32_t)",
-    "location": {
-      "column": "6",
-      "line": "3",
-      "path": "C:\\STM\\NextionMassage\\Olimex H103\\Nextion\\user_TIMER.h"
-    },
-    "name": "Delay",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@Delay",
-    "What": "Function",
-    "defdec": "Dec",
-    "display": "void Delay(volatile uint32_t)",
-    "location": {
-      "column": "6",
-      "line": "3",
-      "path": "C:\\STM\\NextionMassage\\Olimex H103\\Nextion\\user_TIMER.h"
-    },
-    "name": "Delay",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@TimingDelay_Decrement",
-    "What": "Function",
-    "defdec": "Dec",
-    "display": "void TimingDelay_Decrement(void)",
-    "location": {
-      "column": "6",
-      "line": "4",
-      "path": "C:\\STM\\NextionMassage\\Olimex H103\\Nextion\\user_TIMER.h"
-    },
-    "name": "TimingDelay_Decrement",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@TimingDelay_Decrement",
-    "What": "Function",
-    "defdec": "Dec",
-    "display": "void TimingDelay_Decrement(void)",
-    "location": {
-      "column": "6",
-      "line": "4",
-      "path": "C:\\STM\\NextionMassage\\Olimex H103\\Nextion\\user_TIMER.h"
-    },
-    "name": "TimingDelay_Decrement",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@tim4_init",
-    "What": "Function",
-    "defdec": "Dec",
-    "display": "void tim4_init(void)",
-    "location": {
-      "column": "6",
-      "line": "5",
-      "path": "C:\\STM\\NextionMassage\\Olimex H103\\Nextion\\user_TIMER.h"
-    },
-    "name": "tim4_init",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@tim4_init",
-    "What": "Function",
-    "defdec": "Dec",
-    "display": "void tim4_init(void)",
-    "location": {
-      "column": "6",
-      "line": "5",
-      "path": "C:\\STM\\NextionMassage\\Olimex H103\\Nextion\\user_TIMER.h"
-    },
-    "name": "tim4_init",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@tim3_init",
-    "What": "Function",
-    "defdec": "Dec",
-    "display": "void tim3_init(void)",
-    "location": {
-      "column": "6",
-      "line": "6",
-      "path": "C:\\STM\\NextionMassage\\Olimex H103\\Nextion\\user_TIMER.h"
-    },
-    "name": "tim3_init",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@tim3_init",
-    "What": "Function",
-    "defdec": "Dec",
-    "display": "void tim3_init(void)",
-    "location": {
-      "column": "6",
-      "line": "6",
-      "path": "C:\\STM\\NextionMassage\\Olimex H103\\Nextion\\user_TIMER.h"
-    },
-    "name": "tim3_init",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@tim2_init",
-    "What": "Function",
-    "defdec": "Dec",
-    "display": "void tim2_init(void)",
-    "location": {
-      "column": "6",
-      "line": "7",
-      "path": "C:\\STM\\NextionMassage\\Olimex H103\\Nextion\\user_TIMER.h"
-    },
-    "name": "tim2_init",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@tim2_init",
-    "What": "Function",
-    "defdec": "Dec",
-    "display": "void tim2_init(void)",
-    "location": {
-      "column": "6",
-      "line": "7",
-      "path": "C:\\STM\\NextionMassage\\Olimex H103\\Nextion\\user_TIMER.h"
-    },
-    "name": "tim2_init",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:ysizet.h@111@macro@_YSIZET_H",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "_YSIZET_H",
-    "location": {
-      "column": "9",
-      "line": "5",
-      "path": "C:\\Program Files (x86)\\IAR Systems\\Embedded Workbench 8.3\\arm\\inc\\c\\ysizet.h"
-    },
-    "name": "_YSIZET_H",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
-    "ID": "c:ysizet.h@277@macro@_SIZE_T",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "_SIZE_T",
-    "location": {
-      "column": "11",
-      "line": "16",
-      "path": "C:\\Program Files (x86)\\IAR Systems\\Embedded Workbench 8.3\\arm\\inc\\c\\ysizet.h"
-    },
-    "name": "_SIZE_T",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
-    "ID": "c:ysizet.h@296@macro@_STD_USING_SIZE_T",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "_STD_USING_SIZE_T",
-    "location": {
-      "column": "11",
-      "line": "17",
-      "path": "C:\\Program Files (x86)\\IAR Systems\\Embedded Workbench 8.3\\arm\\inc\\c\\ysizet.h"
-    },
-    "name": "_STD_USING_SIZE_T",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
-    "ID": "c:ysizet.h@T@size_t",
-    "What": "Typedef",
-    "defdec": "Def",
-    "display": "_Sizet",
-    "location": {
-      "column": "18",
-      "line": "18",
-      "path": "C:\\Program Files (x86)\\IAR Systems\\Embedded Workbench 8.3\\arm\\inc\\c\\ysizet.h"
-    },
-    "name": "size_t",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
-    "ID": "c:ysizet.h@359@macro@__DATA_PTR_MEM_HELPER1__",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "__DATA_PTR_MEM_HELPER1__",
-    "location": {
-      "column": "9",
-      "line": "21",
-      "path": "C:\\Program Files (x86)\\IAR Systems\\Embedded Workbench 8.3\\arm\\inc\\c\\ysizet.h"
-    },
-    "name": "__DATA_PTR_MEM_HELPER1__",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
-    "ID": "c:ysizet.h@T@__data_size_t",
-    "What": "Typedef",
-    "defdec": "Def",
-    "display": "unsigned int",
-    "location": {
-      "column": "1",
-      "line": "23",
-      "path": "C:\\Program Files (x86)\\IAR Systems\\Embedded Workbench 8.3\\arm\\inc\\c\\ysizet.h"
-    },
-    "name": "__data_size_t",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
     "ID": "c:DLib_Product_string.h@326@macro@_DLIB_PRODUCTS_STRING_H_",
     "What": "MacroDef",
     "defdec": "Def",
@@ -115928,6 +115214,790 @@
     "scope": null
   },
   {
+    "ID": "c:ysizet.h@111@macro@_YSIZET_H",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "_YSIZET_H",
+    "location": {
+      "column": "9",
+      "line": "5",
+      "path": "C:\\Program Files (x86)\\IAR Systems\\Embedded Workbench 8.3\\arm\\inc\\c\\ysizet.h"
+    },
+    "name": "_YSIZET_H",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
+    "ID": "c:ysizet.h@277@macro@_SIZE_T",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "_SIZE_T",
+    "location": {
+      "column": "11",
+      "line": "16",
+      "path": "C:\\Program Files (x86)\\IAR Systems\\Embedded Workbench 8.3\\arm\\inc\\c\\ysizet.h"
+    },
+    "name": "_SIZE_T",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
+    "ID": "c:ysizet.h@296@macro@_STD_USING_SIZE_T",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "_STD_USING_SIZE_T",
+    "location": {
+      "column": "11",
+      "line": "17",
+      "path": "C:\\Program Files (x86)\\IAR Systems\\Embedded Workbench 8.3\\arm\\inc\\c\\ysizet.h"
+    },
+    "name": "_STD_USING_SIZE_T",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
+    "ID": "c:ysizet.h@T@size_t",
+    "What": "Typedef",
+    "defdec": "Def",
+    "display": "_Sizet",
+    "location": {
+      "column": "18",
+      "line": "18",
+      "path": "C:\\Program Files (x86)\\IAR Systems\\Embedded Workbench 8.3\\arm\\inc\\c\\ysizet.h"
+    },
+    "name": "size_t",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
+    "ID": "c:ysizet.h@359@macro@__DATA_PTR_MEM_HELPER1__",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "__DATA_PTR_MEM_HELPER1__",
+    "location": {
+      "column": "9",
+      "line": "21",
+      "path": "C:\\Program Files (x86)\\IAR Systems\\Embedded Workbench 8.3\\arm\\inc\\c\\ysizet.h"
+    },
+    "name": "__DATA_PTR_MEM_HELPER1__",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
+    "ID": "c:ysizet.h@T@__data_size_t",
+    "What": "Typedef",
+    "defdec": "Def",
+    "display": "unsigned int",
+    "location": {
+      "column": "1",
+      "line": "23",
+      "path": "C:\\Program Files (x86)\\IAR Systems\\Embedded Workbench 8.3\\arm\\inc\\c\\ysizet.h"
+    },
+    "name": "__data_size_t",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@usart_init",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "void usart_init(void)",
+    "location": {
+      "column": "6",
+      "line": "3",
+      "path": "C:\\STM\\NextionMassage\\Olimex H103\\Nextion\\user_USART.h"
+    },
+    "name": "usart_init",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@usart_init",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "void usart_init(void)",
+    "location": {
+      "column": "6",
+      "line": "3",
+      "path": "C:\\STM\\NextionMassage\\Olimex H103\\Nextion\\user_USART.h"
+    },
+    "name": "usart_init",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@clear_RXBuffer",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "void clear_RXBuffer(void)",
+    "location": {
+      "column": "6",
+      "line": "4",
+      "path": "C:\\STM\\NextionMassage\\Olimex H103\\Nextion\\user_USART.h"
+    },
+    "name": "clear_RXBuffer",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@clear_RXBuffer",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "void clear_RXBuffer(void)",
+    "location": {
+      "column": "6",
+      "line": "4",
+      "path": "C:\\STM\\NextionMassage\\Olimex H103\\Nextion\\user_USART.h"
+    },
+    "name": "clear_RXBuffer",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@setRxi",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "void setRxi(uint16_t)",
+    "location": {
+      "column": "6",
+      "line": "5",
+      "path": "C:\\STM\\NextionMassage\\Olimex H103\\Nextion\\user_USART.h"
+    },
+    "name": "setRxi",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@setRxi",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "void setRxi(uint16_t)",
+    "location": {
+      "column": "6",
+      "line": "5",
+      "path": "C:\\STM\\NextionMassage\\Olimex H103\\Nextion\\user_USART.h"
+    },
+    "name": "setRxi",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@toBuf",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "uint8_t toBuf(uint8_t)",
+    "location": {
+      "column": "9",
+      "line": "6",
+      "path": "C:\\STM\\NextionMassage\\Olimex H103\\Nextion\\user_USART.h"
+    },
+    "name": "toBuf",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@toBuf",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "uint8_t toBuf(uint8_t)",
+    "location": {
+      "column": "9",
+      "line": "6",
+      "path": "C:\\STM\\NextionMassage\\Olimex H103\\Nextion\\user_USART.h"
+    },
+    "name": "toBuf",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@toBuf",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "uint8_t toBuf(uint8_t)",
+    "location": {
+      "column": "9",
+      "line": "7",
+      "path": "C:\\STM\\NextionMassage\\Olimex H103\\Nextion\\user_USART.h"
+    },
+    "name": "toBuf",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@toBuf",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "uint8_t toBuf(uint8_t)",
+    "location": {
+      "column": "9",
+      "line": "7",
+      "path": "C:\\STM\\NextionMassage\\Olimex H103\\Nextion\\user_USART.h"
+    },
+    "name": "toBuf",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@fromBuf",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "uint8_t fromBuf(uint16_t)",
+    "location": {
+      "column": "9",
+      "line": "8",
+      "path": "C:\\STM\\NextionMassage\\Olimex H103\\Nextion\\user_USART.h"
+    },
+    "name": "fromBuf",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@fromBuf",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "uint8_t fromBuf(uint16_t)",
+    "location": {
+      "column": "9",
+      "line": "8",
+      "path": "C:\\STM\\NextionMassage\\Olimex H103\\Nextion\\user_USART.h"
+    },
+    "name": "fromBuf",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@USART1_put_char",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "void USART1_put_char(uint8_t)",
+    "location": {
+      "column": "6",
+      "line": "9",
+      "path": "C:\\STM\\NextionMassage\\Olimex H103\\Nextion\\user_USART.h"
+    },
+    "name": "USART1_put_char",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@USART1_put_char",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "void USART1_put_char(uint8_t)",
+    "location": {
+      "column": "6",
+      "line": "9",
+      "path": "C:\\STM\\NextionMassage\\Olimex H103\\Nextion\\user_USART.h"
+    },
+    "name": "USART1_put_char",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@USART1_put_string",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "void USART1_put_string(unsigned char *, uint32_t)",
+    "location": {
+      "column": "6",
+      "line": "10",
+      "path": "C:\\STM\\NextionMassage\\Olimex H103\\Nextion\\user_USART.h"
+    },
+    "name": "USART1_put_string",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@USART1_put_string",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "void USART1_put_string(unsigned char *, uint32_t)",
+    "location": {
+      "column": "6",
+      "line": "10",
+      "path": "C:\\STM\\NextionMassage\\Olimex H103\\Nextion\\user_USART.h"
+    },
+    "name": "USART1_put_string",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@USART_IRQProcessFunc",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "void USART_IRQProcessFunc(uint8_t)",
+    "location": {
+      "column": "6",
+      "line": "3",
+      "path": "C:\\STM\\NextionMassage\\Olimex H103\\Nextion\\myNextion.h"
+    },
+    "name": "USART_IRQProcessFunc",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@USART_IRQProcessFunc",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "void USART_IRQProcessFunc(uint8_t)",
+    "location": {
+      "column": "6",
+      "line": "3",
+      "path": "C:\\STM\\NextionMassage\\Olimex H103\\Nextion\\myNextion.h"
+    },
+    "name": "USART_IRQProcessFunc",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@nextionEvent",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "void nextionEvent(void)",
+    "location": {
+      "column": "6",
+      "line": "4",
+      "path": "C:\\STM\\NextionMassage\\Olimex H103\\Nextion\\myNextion.h"
+    },
+    "name": "nextionEvent",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@nextionEvent",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "void nextionEvent(void)",
+    "location": {
+      "column": "6",
+      "line": "4",
+      "path": "C:\\STM\\NextionMassage\\Olimex H103\\Nextion\\myNextion.h"
+    },
+    "name": "nextionEvent",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@Nextion_SetValue_Number",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "void Nextion_SetValue_Number(char *, uint32_t)",
+    "location": {
+      "column": "6",
+      "line": "5",
+      "path": "C:\\STM\\NextionMassage\\Olimex H103\\Nextion\\myNextion.h"
+    },
+    "name": "Nextion_SetValue_Number",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@Nextion_SetValue_Number",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "void Nextion_SetValue_Number(char *, uint32_t)",
+    "location": {
+      "column": "6",
+      "line": "5",
+      "path": "C:\\STM\\NextionMassage\\Olimex H103\\Nextion\\myNextion.h"
+    },
+    "name": "Nextion_SetValue_Number",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@Nextion_SetValue_String",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "void Nextion_SetValue_String(char *, char *)",
+    "location": {
+      "column": "6",
+      "line": "6",
+      "path": "C:\\STM\\NextionMassage\\Olimex H103\\Nextion\\myNextion.h"
+    },
+    "name": "Nextion_SetValue_String",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@Nextion_SetValue_String",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "void Nextion_SetValue_String(char *, char *)",
+    "location": {
+      "column": "6",
+      "line": "6",
+      "path": "C:\\STM\\NextionMassage\\Olimex H103\\Nextion\\myNextion.h"
+    },
+    "name": "Nextion_SetValue_String",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@getFLAG_END_LINE",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "uint8_t getFLAG_END_LINE(void)",
+    "location": {
+      "column": "9",
+      "line": "7",
+      "path": "C:\\STM\\NextionMassage\\Olimex H103\\Nextion\\myNextion.h"
+    },
+    "name": "getFLAG_END_LINE",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@getFLAG_END_LINE",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "uint8_t getFLAG_END_LINE(void)",
+    "location": {
+      "column": "9",
+      "line": "7",
+      "path": "C:\\STM\\NextionMassage\\Olimex H103\\Nextion\\myNextion.h"
+    },
+    "name": "getFLAG_END_LINE",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@getMotorPower",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "uint8_t getMotorPower(void)",
+    "location": {
+      "column": "9",
+      "line": "8",
+      "path": "C:\\STM\\NextionMassage\\Olimex H103\\Nextion\\myNextion.h"
+    },
+    "name": "getMotorPower",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@getMotorPower",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "uint8_t getMotorPower(void)",
+    "location": {
+      "column": "9",
+      "line": "8",
+      "path": "C:\\STM\\NextionMassage\\Olimex H103\\Nextion\\myNextion.h"
+    },
+    "name": "getMotorPower",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@getWaveform",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "uint8_t getWaveform(void)",
+    "location": {
+      "column": "9",
+      "line": "9",
+      "path": "C:\\STM\\NextionMassage\\Olimex H103\\Nextion\\myNextion.h"
+    },
+    "name": "getWaveform",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@getWaveform",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "uint8_t getWaveform(void)",
+    "location": {
+      "column": "9",
+      "line": "9",
+      "path": "C:\\STM\\NextionMassage\\Olimex H103\\Nextion\\myNextion.h"
+    },
+    "name": "getWaveform",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@getValvePower",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "int8_t getValvePower(void)",
+    "location": {
+      "column": "8",
+      "line": "10",
+      "path": "C:\\STM\\NextionMassage\\Olimex H103\\Nextion\\myNextion.h"
+    },
+    "name": "getValvePower",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@getValvePower",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "int8_t getValvePower(void)",
+    "location": {
+      "column": "8",
+      "line": "10",
+      "path": "C:\\STM\\NextionMassage\\Olimex H103\\Nextion\\myNextion.h"
+    },
+    "name": "getValvePower",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@setValvePower",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "void setValvePower(int8_t)",
+    "location": {
+      "column": "6",
+      "line": "11",
+      "path": "C:\\STM\\NextionMassage\\Olimex H103\\Nextion\\myNextion.h"
+    },
+    "name": "setValvePower",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@setValvePower",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "void setValvePower(int8_t)",
+    "location": {
+      "column": "6",
+      "line": "11",
+      "path": "C:\\STM\\NextionMassage\\Olimex H103\\Nextion\\myNextion.h"
+    },
+    "name": "setValvePower",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@setSharPos",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "void setSharPos(void)",
+    "location": {
+      "column": "6",
+      "line": "12",
+      "path": "C:\\STM\\NextionMassage\\Olimex H103\\Nextion\\myNextion.h"
+    },
+    "name": "setSharPos",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@setSharPos",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "void setSharPos(void)",
+    "location": {
+      "column": "6",
+      "line": "12",
+      "path": "C:\\STM\\NextionMassage\\Olimex H103\\Nextion\\myNextion.h"
+    },
+    "name": "setSharPos",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@sendAck",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "void sendAck(void)",
+    "location": {
+      "column": "6",
+      "line": "13",
+      "path": "C:\\STM\\NextionMassage\\Olimex H103\\Nextion\\myNextion.h"
+    },
+    "name": "sendAck",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@sendAck",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "void sendAck(void)",
+    "location": {
+      "column": "6",
+      "line": "13",
+      "path": "C:\\STM\\NextionMassage\\Olimex H103\\Nextion\\myNextion.h"
+    },
+    "name": "sendAck",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@Delay",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "void Delay(volatile uint32_t)",
+    "location": {
+      "column": "6",
+      "line": "3",
+      "path": "C:\\STM\\NextionMassage\\Olimex H103\\Nextion\\user_TIMER.h"
+    },
+    "name": "Delay",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@Delay",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "void Delay(volatile uint32_t)",
+    "location": {
+      "column": "6",
+      "line": "3",
+      "path": "C:\\STM\\NextionMassage\\Olimex H103\\Nextion\\user_TIMER.h"
+    },
+    "name": "Delay",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@TimingDelay_Decrement",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "void TimingDelay_Decrement(void)",
+    "location": {
+      "column": "6",
+      "line": "4",
+      "path": "C:\\STM\\NextionMassage\\Olimex H103\\Nextion\\user_TIMER.h"
+    },
+    "name": "TimingDelay_Decrement",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@TimingDelay_Decrement",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "void TimingDelay_Decrement(void)",
+    "location": {
+      "column": "6",
+      "line": "4",
+      "path": "C:\\STM\\NextionMassage\\Olimex H103\\Nextion\\user_TIMER.h"
+    },
+    "name": "TimingDelay_Decrement",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@tim4_init",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "void tim4_init(void)",
+    "location": {
+      "column": "6",
+      "line": "5",
+      "path": "C:\\STM\\NextionMassage\\Olimex H103\\Nextion\\user_TIMER.h"
+    },
+    "name": "tim4_init",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@tim4_init",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "void tim4_init(void)",
+    "location": {
+      "column": "6",
+      "line": "5",
+      "path": "C:\\STM\\NextionMassage\\Olimex H103\\Nextion\\user_TIMER.h"
+    },
+    "name": "tim4_init",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@tim3_init",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "void tim3_init(void)",
+    "location": {
+      "column": "6",
+      "line": "6",
+      "path": "C:\\STM\\NextionMassage\\Olimex H103\\Nextion\\user_TIMER.h"
+    },
+    "name": "tim3_init",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@tim3_init",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "void tim3_init(void)",
+    "location": {
+      "column": "6",
+      "line": "6",
+      "path": "C:\\STM\\NextionMassage\\Olimex H103\\Nextion\\user_TIMER.h"
+    },
+    "name": "tim3_init",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@tim2_init",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "void tim2_init(void)",
+    "location": {
+      "column": "6",
+      "line": "7",
+      "path": "C:\\STM\\NextionMassage\\Olimex H103\\Nextion\\user_TIMER.h"
+    },
+    "name": "tim2_init",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@tim2_init",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "void tim2_init(void)",
+    "location": {
+      "column": "6",
+      "line": "7",
+      "path": "C:\\STM\\NextionMassage\\Olimex H103\\Nextion\\user_TIMER.h"
+    },
+    "name": "tim2_init",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@tim5_init",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "void tim5_init(uint16_t)",
+    "location": {
+      "column": "6",
+      "line": "8",
+      "path": "C:\\STM\\NextionMassage\\Olimex H103\\Nextion\\user_TIMER.h"
+    },
+    "name": "tim5_init",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@tim5_init",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "void tim5_init(uint16_t)",
+    "location": {
+      "column": "6",
+      "line": "8",
+      "path": "C:\\STM\\NextionMassage\\Olimex H103\\Nextion\\user_TIMER.h"
+    },
+    "name": "tim5_init",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
     "ID": "c:@TimingDelay",
     "What": "Variable",
     "defdec": "Dec",
@@ -116029,7 +116099,7 @@
     "ID": "c:@F@tim5_init",
     "What": "Function",
     "defdec": "Def",
-    "display": "void tim5_init(void)",
+    "display": "void tim5_init(uint16_t)",
     "location": {
       "column": "6",
       "line": "55",
@@ -116040,13 +116110,13 @@
     "scope": null
   },
   {
-    "ID": "c:user_TIMER.c@2064@F@tim5_init@TIMER_InitStructure",
+    "ID": "c:user_TIMER.c@2098@F@tim5_init@TIMER_InitStructure",
     "What": "Variable",
     "defdec": "Def",
     "display": "TIMER_InitStructure",
     "location": {
       "column": "29",
-      "line": "57",
+      "line": "58",
       "path": "C:\\STM\\NextionMassage\\Olimex H103\\Nextion\\user_TIMER.c"
     },
     "name": "TIMER_InitStructure",
@@ -116060,7 +116130,7 @@
     "display": "void Delay(volatile uint32_t)",
     "location": {
       "column": "6",
-      "line": "109",
+      "line": "110",
       "path": "C:\\STM\\NextionMassage\\Olimex H103\\Nextion\\user_TIMER.c"
     },
     "name": "Delay",
@@ -116074,7 +116144,7 @@
     "display": "void TimingDelay_Decrement(void)",
     "location": {
       "column": "6",
-      "line": "116",
+      "line": "117",
       "path": "C:\\STM\\NextionMassage\\Olimex H103\\Nextion\\user_TIMER.c"
     },
     "name": "TimingDelay_Decrement",
@@ -117600,13 +117670,27 @@
     "scope": null
   },
   {
+    "ID": "c:stm32f10x_it.c@1838@F@TIM5_IRQHandler@leftValvePower",
+    "What": "Variable",
+    "defdec": "Def",
+    "display": "leftValvePower",
+    "location": {
+      "column": "12",
+      "line": "69",
+      "path": "C:\\STM\\NextionMassage\\Olimex H103\\Nextion\\stm32f10x_it.c"
+    },
+    "name": "leftValvePower",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
     "ID": "c:@F@USART1_IRQHandler",
     "What": "Function",
     "defdec": "Def",
     "display": "void USART1_IRQHandler(void)",
     "location": {
       "column": "6",
-      "line": "75",
+      "line": "83",
       "path": "C:\\STM\\NextionMassage\\Olimex H103\\Nextion\\stm32f10x_it.c"
     },
     "name": "USART1_IRQHandler",
@@ -117620,7 +117704,7 @@
     "display": "void EXTI0_IRQHandler(void)",
     "location": {
       "column": "6",
-      "line": "92",
+      "line": "100",
       "path": "C:\\STM\\NextionMassage\\Olimex H103\\Nextion\\stm32f10x_it.c"
     },
     "name": "EXTI0_IRQHandler",

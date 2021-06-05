@@ -62,15 +62,23 @@ void TIM4_IRQHandler(void){
     if(waveformCounter >= getWaveform())
       waveformCounter=0;
 }
-//200 ms for 5% change valve position
+//X ms for 5% change valve position
 void TIM5_IRQHandler(void){
-    TIM_ClearITPendingBit(TIM4, TIM_IT_Update);
-    valvePowerCounter+=5;
-    if(valvePowerCounter >= abs(getValvePower())){                              //reach position                                
-        GPIO_SetBits(GPIOD,GPIO_Pin_6);                                        //Stops valve
-        valvePowerCounter=0;
-        TIM_Cmd(TIM5, DISABLE);  
+    TIM_ClearITPendingBit(TIM5, TIM_IT_Update);
+                              //reach position                                
+    int8_t leftValvePower =  abs(getValvePower());
+    if(leftValvePower>50)
+      setValvePower(leftValvePower-1);                                          //slow close
+    else if(leftValvePower<=0){//reach position 
+        TIM_Cmd(TIM5, DISABLE);
+        GPIO_SetBits(GPIOE,GPIO_Pin_6);                                         //Stops valve
+        GPIO_SetBits(GPIOE,GPIO_Pin_0);
     }
+    else{
+      setValvePower(leftValvePower-5);
+    }
+    
+
 }
 void USART1_IRQHandler(void){
   if ((USART1->SR & USART_FLAG_RXNE))

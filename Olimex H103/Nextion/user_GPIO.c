@@ -9,23 +9,26 @@ void GPIO_init(void)
   /* Enable USART1 and GPIOA clock */
   RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOD | RCC_APB2Periph_GPIOA | RCC_APB2Periph_GPIOB| RCC_APB2Periph_GPIOE, ENABLE);
   
+  
   GPIO_InitStructure.GPIO_Pin = GPIO_Pin_6;		                        //Управление семистором
   GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;	
   GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;	
   GPIO_Init(GPIOA, &GPIO_InitStructure);
   
   
-  GPIO_InitStructure.GPIO_Pin = GPIO_Pin_0;		                        //Управление семистором
+  GPIO_InitStructure.GPIO_Pin = GPIO_Pin_6 | GPIO_Pin_0;                        //реле, рвущее питание на ШАР
   GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;	
   GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;	
   GPIO_Init(GPIOE, &GPIO_InitStructure);
-  
+  GPIO_ResetBits(GPIOE,GPIO_Pin_6);
                                 //ШАР           //ЭМ1     //ЭМ2      //компрессор1//компрессор2 /реле вкл.мотора /стоп шар
-  GPIO_InitStructure.GPIO_Pin = GPIO_Pin_0 | GPIO_Pin_1 | GPIO_Pin_2 | GPIO_Pin_3 | GPIO_Pin_4 | GPIO_Pin_5 | GPIO_Pin_6;        		
+  GPIO_InitStructure.GPIO_Pin = GPIO_Pin_0 | GPIO_Pin_1 | GPIO_Pin_2 | GPIO_Pin_3 | GPIO_Pin_4 | GPIO_Pin_5;        		
   GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;	
   GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;	
   GPIO_Init(GPIOD, &GPIO_InitStructure);
 
+  GPIO_SetBits(GPIOD,GPIO_Pin_1);
+  GPIO_SetBits(GPIOD,GPIO_Pin_2);
   GPIO_SetBits(GPIOD,GPIO_Pin_3);
   GPIO_SetBits(GPIOD,GPIO_Pin_4);
   GPIO_SetBits(GPIOD,GPIO_Pin_5);

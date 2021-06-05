@@ -5,3 +5,4 @@ void TimingDelay_Decrement(void);
 void tim4_init(void);
 void tim3_init(void);
 void tim2_init(void);
+void tim5_init(uint16_t period);

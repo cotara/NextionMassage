@@ -1,25 +1,23 @@
-main.pbi: C:\STM\NextionMassage\Olimex\ H103\Nextion\main.c \
-  C:\STM\NextionMassage\Olimex\ H103\Nextion/stm32f10x.h \
-  C:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\arm\CMSIS\Core\Include\core_cm3.h \
-  C:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\arm\inc\c\stdint.h \
-  C:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\arm\inc\c\ycheck.h \
-  C:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\arm\inc\c\yvals.h \
-  C:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\arm\inc\c\DLib_Defaults.h \
-  C:\\Program\ Files\ (x86)\\IAR\ Systems\\Embedded\ Workbench\ 8.3\\arm\\inc\\c\\DLib_Config_Full.h \
-  C:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\arm\inc\c\DLib_Product.h \
-  C:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\arm\CMSIS\Core\Include/cmsis_version.h \
-  C:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\arm\CMSIS\Core\Include/cmsis_compiler.h \
-  C:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\arm\CMSIS\Core\Include\cmsis_iccarm.h \
-  C:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\arm\inc\c\iccarm_builtin.h \
-  C:\STM\NextionMassage\Olimex\ H103\Nextion/system_stm32f10x.h \
-  C:\STM\NextionMassage\Olimex\ H103\Nextion/stm32f10x_conf.h \
-  C:\STM\NextionMassage\Olimex\ H103\Nextion\..\..\..\!STM32F10x_StdPeriph_Lib_V3.5.0_8MGz\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_gpio.h \
+main.pbi: C:\STM\NextionMassage\Olimex\ H103\Nextion\myNextion.h \
+  C:\STM\NextionMassage\Olimex\ H103\Nextion\user_TIMER.h \
+  C:\STM\NextionMassage\Olimex\ H103\Nextion\user_GPIO.h \
+  C:\STM\NextionMassage\Olimex\ H103\Nextion\user_USART.h \
   C:\STM\NextionMassage\Olimex\ H103\Nextion\stm32f10x.h \
-  C:\STM\NextionMassage\Olimex\ H103\Nextion\..\..\..\!STM32F10x_StdPeriph_Lib_V3.5.0_8MGz\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_rcc.h \
-  C:\STM\NextionMassage\Olimex\ H103\Nextion\..\..\..\!STM32F10x_StdPeriph_Lib_V3.5.0_8MGz\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_tim.h \
-  C:\STM\NextionMassage\Olimex\ H103\Nextion\..\..\..\!STM32F10x_StdPeriph_Lib_V3.5.0_8MGz\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_usart.h \
   C:\STM\NextionMassage\Olimex\ H103\Nextion\..\..\..\!STM32F10x_StdPeriph_Lib_V3.5.0_8MGz\Libraries\STM32F10x_StdPeriph_Driver\inc\misc.h \
-  C:\STM\NextionMassage\Olimex\ H103\Nextion/user_USART.h \
-  C:\STM\NextionMassage\Olimex\ H103\Nextion/user_GPIO.h \
-  C:\STM\NextionMassage\Olimex\ H103\Nextion/user_TIMER.h \
-  C:\STM\NextionMassage\Olimex\ H103\Nextion/myNextion.h
+  C:\STM\NextionMassage\Olimex\ H103\Nextion\..\..\..\!STM32F10x_StdPeriph_Lib_V3.5.0_8MGz\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_usart.h \
+  C:\STM\NextionMassage\Olimex\ H103\Nextion\..\..\..\!STM32F10x_StdPeriph_Lib_V3.5.0_8MGz\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_tim.h \
+  C:\STM\NextionMassage\Olimex\ H103\Nextion\..\..\..\!STM32F10x_StdPeriph_Lib_V3.5.0_8MGz\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_rcc.h \
+  C:\STM\NextionMassage\Olimex\ H103\Nextion\..\..\..\!STM32F10x_StdPeriph_Lib_V3.5.0_8MGz\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_gpio.h \
+  C:\STM\NextionMassage\Olimex\ H103\Nextion\stm32f10x_conf.h \
+  C:\STM\NextionMassage\Olimex\ H103\Nextion\system_stm32f10x.h \
+  C:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\arm\inc\c\iccarm_builtin.h \
+  C:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\arm\CMSIS\Core\Include\cmsis_iccarm.h \
+  C:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\arm\CMSIS\Core\Include\cmsis_compiler.h \
+  C:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\arm\CMSIS\Core\Include\cmsis_version.h \
+  C:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\arm\inc\c\DLib_Product.h \
+  C:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\arm\inc\c\DLib_Defaults.h \
+  C:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\arm\inc\c\yvals.h \
+  C:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\arm\inc\c\ycheck.h \
+  C:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\arm\inc\c\stdint.h \
+  C:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\arm\CMSIS\Core\Include\core_cm3.h \
+  C:\STM\NextionMassage\Olimex\ H103\Nextion\main.c

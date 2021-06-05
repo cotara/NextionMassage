@@ -8,5 +8,6 @@ uint8_t getFLAG_END_LINE(void);
 uint8_t getMotorPower();
 uint8_t getWaveform();
 int8_t getValvePower();
+void setValvePower(int8_t diff);
 void setSharPos();
 void sendAck();

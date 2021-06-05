@@ -59,8 +59,7 @@ void nextionEvent(void){
       /********************************MASSAGE 2*******************************/
       else if(page==4){                                                         
         if(element == 0){                                                        //СТАРТ МАССАЖ 2
-          setSharPos();                                                          //устанавливаем мощность рег клапаном
-          if(value!=0){
+         if(value!=0){
              GPIO_ResetBits(GPIOD,GPIO_Pin_3);                                      //включаем компрессоры
              GPIO_ResetBits(GPIOD,GPIO_Pin_4);
              TIM_Cmd(TIM4, ENABLE);                                                 //запускаем алгоритм щелкания клапанами
@@ -72,7 +71,7 @@ void nextionEvent(void){
           }
           sendAck();
         } 
-        else if(element == 1){                                                 //ПАУЗА МАССАЖ 2
+        else if(element == 1){                                                  //ПАУЗА МАССАЖ 2
          GPIO_SetBits(GPIOD,GPIO_Pin_3);                                        
          GPIO_SetBits(GPIOD,GPIO_Pin_4); 
          TIM_Cmd(TIM4, DISABLE);
@@ -110,7 +109,7 @@ void nextionEvent(void){
             sendAck();
           }
         }
-        if(element == 1){                                                       //Электромагнитный клапан 2
+        else if(element == 1){                                                       //Электромагнитный клапан 2
           if(value==1){
             GPIO_SetBits(GPIOD,GPIO_Pin_2);
             sendAck();
@@ -120,11 +119,11 @@ void nextionEvent(void){
             sendAck();
           }
         } 
-        if(element == 2){                                                       //Регулируемый клапан (шар)
+        else if(element == 2){                                                       //Регулируемый клапан (шар)
           setSharPos();
           sendAck();
         } 
-        if(element == 3){                                                       //Компрессор 1
+        else if(element == 3){                                                       //Компрессор 1
           pump1Power=value;
           if(value!=0)          
             GPIO_ResetBits(GPIOD,GPIO_Pin_3);
@@ -132,7 +131,7 @@ void nextionEvent(void){
             GPIO_SetBits(GPIOD,GPIO_Pin_3);  
           sendAck();
         }
-        if(element == 4){                                                       //Компрессор 2
+        else if(element == 4){                                                       //Компрессор 2
           pump2Power=value;
           if(value!=0)          
             GPIO_ResetBits(GPIOD,GPIO_Pin_4);
@@ -140,16 +139,28 @@ void nextionEvent(void){
             GPIO_SetBits(GPIOD,GPIO_Pin_4);  
           sendAck();
         }         
-        if(element == 5){                                                       //Мотор насоса
+        else if(element == 5){                                                       //Мотор насоса
             motorPower=value;
             if(value!=0)          
               GPIO_ResetBits(GPIOD,GPIO_Pin_5);
             else 
               GPIO_SetBits(GPIOD,GPIO_Pin_5); 
             sendAck();
-        }      
+        }
+        else if(element == 6){                                                       //Калибровка шара
+          if(value!=0){
+            if(value!=255)
+              tim5_init(((uint16_t)value-7)*5);                                   //Устанавливаем откалиброванное время 
+            value=255;                                                          //Возващаем клапан на место
+          }
+          else{                                                                 //Команда калибровки
+            tim5_init(1000);                                                    //Включаем клапан на открытие в течение 10 секунд ( с запасом)
+            value=100;  
+          }
+          setSharPos();
+          sendAck();
+        }
       }
-      
       /********************************EDITION*********************************/
       else if(page==2){                                                         //Запрос комплектации
         if(element==0){
@@ -159,14 +170,13 @@ void nextionEvent(void){
           }
         }     
       }
-     clear_RXBuffer();
+ clear_RXBuffer();
 }
 
 void Nextion_SetValue_Number(char *ValueName, uint32_t Value)
 {
   sprintf((char *)StrBuff, "%s=%d", ValueName, Value);
   uint16_t Len = strlen((char *)StrBuff);
-  
   USART1_put_string(StrBuff, Len);
   USART1_put_string((uint8_t *)endMes, 3);
 }
@@ -198,24 +208,34 @@ uint8_t getWaveform(){
 int8_t getValvePower(){
   return valveDiff;
 }
+void setValvePower(int8_t diff){
+   valveDiff = diff;
+}
 //подтверждение получния управляющего сообщения
 void sendAck(){
   Nextion_SetValue_Number("transpState.val", 0);
 }
 void setSharPos(){
     if(value==0)
-      valveDiff=-120;                                                           //С запасом, чтобы точно закрылся
+      valveDiff=-50;                                                           //С запасом, чтобы точно закрылся
     else if(value==100)
-      valveDiff=120;                                                            //С запасом, чтобы точно открылся
+      valveDiff=50;                                                            //С запасом, чтобы точно открылся
+    else if(value==255)                                                         //Полное закрытие не с +5%
+      valveDiff=-127;
     else
       valveDiff=value-valvePower;                                               //На сколько повернуть клапан
     if(valveDiff!=0){                                                           //Если надо хоть на сколько повернуть
-      valvePower=value;                                                         //Сохраняем новое положени еклапана
+      if(value==255)
+        valvePower=0;
+      else
+        valvePower=value;                                                         //Сохраняем новое положени еклапана
+      GPIO_ResetBits(GPIOE,GPIO_Pin_6);                                         //Отпускам клапан со стопора
+      GPIO_ResetBits(GPIOE,GPIO_Pin_0);                                         //Светодиод вкл
       if(valveDiff>0)
         GPIO_SetBits(GPIOD,GPIO_Pin_0);                                         //открываем
       else
         GPIO_ResetBits(GPIOD,GPIO_Pin_0);                                       //Закрываем
-      GPIO_ResetBits(GPIOD,GPIO_Pin_6);                                         //Отпускам клапан со стопора
+      TIM5->CNT=0;
       TIM_Cmd(TIM5, ENABLE);                                                    //Включаем клапан повотора 
     }   
 }
