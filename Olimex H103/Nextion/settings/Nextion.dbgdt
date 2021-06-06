@@ -155,7 +155,7 @@
                     <item>SystemCoreClock</item>
                     <item>currentValvePower</item>
                     <item>valvePowerCounter</item>
-                    <item></item>
+                    <item />
                 </expressions>
                 <col-names>
                     <item>Expression</item>
@@ -963,7 +963,7 @@
                     <item>waveformCounter</item>
                     <item>valveDiff</item>
                     <item>valvePower</item>
-                    <item></item>
+                    <item />
                 </expressions>
                 <col-names>
                     <item>Expression</item>

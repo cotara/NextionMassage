@@ -11,3 +11,4 @@ int8_t getValvePower();
 void setValvePower(int8_t diff);
 void setSharPos();
 void sendAck();
+void sendAckExit();

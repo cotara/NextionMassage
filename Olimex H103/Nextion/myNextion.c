@@ -94,7 +94,13 @@ void nextionEvent(void){
         else if(element==6){                                                     //+мощность
           setSharPos();
           sendAck();
-        }         
+        }
+        else if(element==127){                                                  //Выход из второго массажа
+          sendAckExit();
+          value=255;                                                            //Закрываем шар
+          setSharPos();
+          waveform=1;
+        }        
       } 
       
       /********************************MANUAL*********************************/
@@ -150,7 +156,7 @@ void nextionEvent(void){
         else if(element == 6){                                                       //Калибровка шара
           if(value!=0){
             if(value!=255)
-              tim5_init(((uint16_t)value-7)*5);                                   //Устанавливаем откалиброванное время 
+              tim5_init(((uint16_t)value-7)*5);                                 //Устанавливаем откалиброванное время 
             value=255;                                                          //Возващаем клапан на место
           }
           else{                                                                 //Команда калибровки
@@ -159,6 +165,16 @@ void nextionEvent(void){
           }
           setSharPos();
           sendAck();
+        }
+        else if(element===127){                                                 //Выход со страницы ручного управления
+          sendAckExit();
+          GPIO_ResetBits(GPIOD,GPIO_Pin_1);                                     //Закрыть клапана
+          GPIO_ResetBits(GPIOD,GPIO_Pin_2);
+          value=255;                                                            //Закрываем шар
+          setSharPos();
+          GPIO_SetBits(GPIOD,GPIO_Pin_3);                                       //Выключаем компрессоры
+          GPIO_SetBits(GPIOD,GPIO_Pin_4); 
+          GPIO_SetBits(GPIOD,GPIO_Pin_5);                                       //Выключаем мотор
         }
       }
       /********************************EDITION*********************************/
@@ -214,6 +230,9 @@ void setValvePower(int8_t diff){
 //подтверждение получния управляющего сообщения
 void sendAck(){
   Nextion_SetValue_Number("transpState.val", 0);
+}
+void sendAckExit(){
+  Nextion_SetValue_Number("transpState.val", 2);
 }
 void setSharPos(){
     if(value==0)
