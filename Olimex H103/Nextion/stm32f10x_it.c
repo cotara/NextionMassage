@@ -8,7 +8,7 @@
 
 extern volatile uint8_t   tx_buffer[TX_BUFFER_SIZE];
 extern volatile unsigned long  tx_wr_index,tx_rd_index,tx_counter;
-uint32_t counter=0;
+uint32_t counter=0, ms_counter=0;
 uint8_t waveformCounter=0, valvePowerCounter=0;
 void HardFault_Handler(void){
   while (1)
@@ -28,6 +28,18 @@ void BusFault_Handler(void){
 
 void SysTick_Handler(void){
   TimingDelay_Decrement();
+  ms_counter++;
+  if(ms_counter==5000){
+    ms_counter=0;
+    if(getErrorTick()==0){
+      GPIO_ResetBits(GPIOE,GPIO_Pin_5);                                          //Зажигаем светодиод
+      switchOffAll();
+    }
+    else{
+      GPIO_SetBits(GPIOE,GPIO_Pin_5);
+      setErrorTick(0);
+    }
+  }
 }
 
 /******************************************************************************/

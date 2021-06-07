@@ -1,16 +1,17 @@
 ;******************** (C) COPYRIGHT 2011 STMicroelectronics ********************
-;* File Name          : startup_stm32f10x_md.s
+;* File Name          : startup_stm32f10x_hd.s
 ;* Author             : MCD Application Team
 ;* Version            : V3.5.0
 ;* Date               : 11-March-2011
-;* Description        : STM32F10x Medium Density Devices vector table for 
-;*                      EWARM toolchain.
+;* Description        : STM32F10x High Density Devices vector table for EWARM 
+;*                      toolchain.
 ;*                      This module performs:
 ;*                      - Set the initial SP
-;*                      - Configure the clock system
+;*                      - Configure the clock system and the external SRAM 
+;*                        mounted on STM3210E-EVAL board to be used as data 
+;*                        memory (optional, to be enabled by user)
 ;*                      - Set the initial PC == __iar_program_start,
-;*                      - Set the vector table entries with the exceptions ISR 
-;*                        address.
+;*                      - Set the vector table entries with the exceptions ISR address,
 ;*                      After Reset the Cortex-M3 processor is in Thread mode,
 ;*                      priority is Privileged, and the Stack is set to Main.
 ;********************************************************************************
@@ -36,10 +37,10 @@
 ; table register (VTOR) is initialized to this address if != 0.
 ;
 ; Cortex-M version
-;
-
-        MODULE  ?cstartup
-
+;     
+  
+    MODULE  ?cstartup
+        
         ;; Forward declaration of sections.
         SECTION CSTACK:DATA:NOROOT(3)
 
@@ -50,6 +51,7 @@
         PUBLIC  __vector_table
 
         DATA
+       
 __vector_table
         DCD     sfe(CSTACK)
         DCD     Reset_Handler             ; Reset Handler
@@ -112,7 +114,23 @@ __vector_table
         DCD     EXTI15_10_IRQHandler      ; EXTI Line 15..10
         DCD     RTCAlarm_IRQHandler       ; RTC Alarm through EXTI Line
         DCD     USBWakeUp_IRQHandler      ; USB Wakeup from suspend
-
+        DCD     TIM8_BRK_IRQHandler       ; TIM8 Break
+        DCD     TIM8_UP_IRQHandler        ; TIM8 Update
+        DCD     TIM8_TRG_COM_IRQHandler   ; TIM8 Trigger and Commutation
+        DCD     TIM8_CC_IRQHandler        ; TIM8 Capture Compare
+        DCD     ADC3_IRQHandler           ; ADC3
+        DCD     FSMC_IRQHandler           ; FSMC
+        DCD     SDIO_IRQHandler           ; SDIO
+        DCD     TIM5_IRQHandler           ; TIM5
+        DCD     SPI3_IRQHandler           ; SPI3
+        DCD     UART4_IRQHandler          ; UART4
+        DCD     UART5_IRQHandler          ; UART5
+        DCD     TIM6_IRQHandler           ; TIM6
+        DCD     TIM7_IRQHandler           ; TIM7
+        DCD     DMA2_Channel1_IRQHandler  ; DMA2 Channel1
+        DCD     DMA2_Channel2_IRQHandler  ; DMA2 Channel2
+        DCD     DMA2_Channel3_IRQHandler  ; DMA2 Channel3
+        DCD     DMA2_Channel4_5_IRQHandler ; DMA2 Channel4 & Channel5
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
 ;; Default interrupt handlers.
@@ -126,7 +144,7 @@ Reset_Handler
         BLX     R0
         LDR     R0, =__iar_program_start
         BX      R0
-        
+               
         PUBWEAK NMI_Handler
         SECTION .text:CODE:NOROOT:REORDER(1)
 NMI_Handler
@@ -387,5 +405,92 @@ RTCAlarm_IRQHandler
 USBWakeUp_IRQHandler
         B USBWakeUp_IRQHandler
 
+        PUBWEAK TIM8_BRK_IRQHandler
+        SECTION .text:CODE:NOROOT:REORDER(1)
+TIM8_BRK_IRQHandler
+        B TIM8_BRK_IRQHandler
+
+        PUBWEAK TIM8_UP_IRQHandler
+        SECTION .text:CODE:NOROOT:REORDER(1)
+TIM8_UP_IRQHandler
+        B TIM8_UP_IRQHandler
+
+        PUBWEAK TIM8_TRG_COM_IRQHandler
+        SECTION .text:CODE:NOROOT:REORDER(1)
+TIM8_TRG_COM_IRQHandler
+        B TIM8_TRG_COM_IRQHandler
+
+        PUBWEAK TIM8_CC_IRQHandler
+        SECTION .text:CODE:NOROOT:REORDER(1)
+TIM8_CC_IRQHandler
+        B TIM8_CC_IRQHandler
+
+        PUBWEAK ADC3_IRQHandler
+        SECTION .text:CODE:NOROOT:REORDER(1)
+ADC3_IRQHandler
+        B ADC3_IRQHandler
+
+        PUBWEAK FSMC_IRQHandler
+        SECTION .text:CODE:NOROOT:REORDER(1)
+FSMC_IRQHandler
+        B FSMC_IRQHandler
+
+        PUBWEAK SDIO_IRQHandler
+        SECTION .text:CODE:NOROOT:REORDER(1)
+SDIO_IRQHandler
+        B SDIO_IRQHandler
+
+        PUBWEAK TIM5_IRQHandler
+        SECTION .text:CODE:NOROOT:REORDER(1)
+TIM5_IRQHandler
+        B TIM5_IRQHandler
+
+        PUBWEAK SPI3_IRQHandler
+        SECTION .text:CODE:NOROOT:REORDER(1)
+SPI3_IRQHandler
+        B SPI3_IRQHandler
+
+        PUBWEAK UART4_IRQHandler
+        SECTION .text:CODE:NOROOT:REORDER(1)
+UART4_IRQHandler
+        B UART4_IRQHandler
+
+        PUBWEAK UART5_IRQHandler
+        SECTION .text:CODE:NOROOT:REORDER(1)
+UART5_IRQHandler
+        B UART5_IRQHandler
+
+        PUBWEAK TIM6_IRQHandler
+        SECTION .text:CODE:NOROOT:REORDER(1)
+TIM6_IRQHandler
+        B TIM6_IRQHandler
+
+        PUBWEAK TIM7_IRQHandler
+        SECTION .text:CODE:NOROOT:REORDER(1)
+TIM7_IRQHandler
+        B TIM7_IRQHandler
+
+        PUBWEAK DMA2_Channel1_IRQHandler
+        SECTION .text:CODE:NOROOT:REORDER(1)
+DMA2_Channel1_IRQHandler
+        B DMA2_Channel1_IRQHandler
+
+        PUBWEAK DMA2_Channel2_IRQHandler
+        SECTION .text:CODE:NOROOT:REORDER(1)
+DMA2_Channel2_IRQHandler
+        B DMA2_Channel2_IRQHandler
+
+        PUBWEAK DMA2_Channel3_IRQHandler
+        SECTION .text:CODE:NOROOT:REORDER(1)
+DMA2_Channel3_IRQHandler
+        B DMA2_Channel3_IRQHandler
+
+        PUBWEAK DMA2_Channel4_5_IRQHandler
+        SECTION .text:CODE:NOROOT:REORDER(1)
+DMA2_Channel4_5_IRQHandler
+        B DMA2_Channel4_5_IRQHandler
+        
+        
         END
+
 /******************* (C) COPYRIGHT 2011 STMicroelectronics *****END OF FILE****/

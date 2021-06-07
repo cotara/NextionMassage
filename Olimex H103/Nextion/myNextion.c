@@ -12,8 +12,9 @@ uint8_t command[11]="sendme";
 uint32_t st=0;
 uint8_t endMes[3]={0xFF,0xFF,0xFF};
 static uint8_t StrBuff[64]; 
-uint8_t page,element,value,waveform=150,valvePower,pump1Power=0,pump2Power=0,motorPower=0;
+uint8_t page,element,value,waveform=150,valvePower,motorPower=0;
 int8_t valveDiff=0;
+uint32_t errorTick=0;
 
 void USART_IRQProcessFunc(uint8_t RXc){
     toBuf(RXc);
@@ -130,7 +131,6 @@ void nextionEvent(void){
           sendAck();
         } 
         else if(element == 3){                                                       //Компрессор 1
-          pump1Power=value;
           if(value!=0)          
             GPIO_ResetBits(GPIOD,GPIO_Pin_3);
           else 
@@ -138,7 +138,6 @@ void nextionEvent(void){
           sendAck();
         }
         else if(element == 4){                                                       //Компрессор 2
-          pump2Power=value;
           if(value!=0)          
             GPIO_ResetBits(GPIOD,GPIO_Pin_4);
           else 
@@ -166,15 +165,9 @@ void nextionEvent(void){
           setSharPos();
           sendAck();
         }
-        else if(element===127){                                                 //Выход со страницы ручного управления
+        else if(element==127){                                                 //Выход со страницы ручного управления
           sendAckExit();
-          GPIO_ResetBits(GPIOD,GPIO_Pin_1);                                     //Закрыть клапана
-          GPIO_ResetBits(GPIOD,GPIO_Pin_2);
-          value=255;                                                            //Закрываем шар
-          setSharPos();
-          GPIO_SetBits(GPIOD,GPIO_Pin_3);                                       //Выключаем компрессоры
-          GPIO_SetBits(GPIOD,GPIO_Pin_4); 
-          GPIO_SetBits(GPIOD,GPIO_Pin_5);                                       //Выключаем мотор
+          switchOffAll();
         }
       }
       /********************************EDITION*********************************/
@@ -186,9 +179,23 @@ void nextionEvent(void){
           }
         }     
       }
+      /*********************************Проверка связи*************************/
+      else if(page==1){                                                         //Запрос комплектации
+        if(element==0){
+          if(value==1){
+            errorTick++;
+          }
+        }     
+      }
  clear_RXBuffer();
 }
 
+uint32_t getErrorTick(){
+  return errorTick;
+}
+void setErrorTick(uint32_t tick){
+  errorTick=tick;
+}
 void Nextion_SetValue_Number(char *ValueName, uint32_t Value)
 {
   sprintf((char *)StrBuff, "%s=%d", ValueName, Value);
@@ -247,14 +254,25 @@ void setSharPos(){
       if(value==255)
         valvePower=0;
       else
-        valvePower=value;                                                         //Сохраняем новое положени еклапана
+        valvePower=value;                                                       //Сохраняем новое положени еклапана
       GPIO_ResetBits(GPIOE,GPIO_Pin_6);                                         //Отпускам клапан со стопора
       GPIO_ResetBits(GPIOE,GPIO_Pin_0);                                         //Светодиод вкл
       if(valveDiff>0)
-        GPIO_SetBits(GPIOD,GPIO_Pin_0);                                         //открываем
+        GPIO_ResetBits(GPIOD,GPIO_Pin_0);                                       //открываем
       else
-        GPIO_ResetBits(GPIOD,GPIO_Pin_0);                                       //Закрываем
+        GPIO_SetBits(GPIOD,GPIO_Pin_0);                                         //Закрываем
       TIM5->CNT=0;
       TIM_Cmd(TIM5, ENABLE);                                                    //Включаем клапан повотора 
     }   
 }
+void switchOffAll(){
+  
+  GPIO_ResetBits(GPIOD,GPIO_Pin_1);                                     //Закрыть клапана
+   GPIO_ResetBits(GPIOD,GPIO_Pin_2);
+   value=255;                                                            //Закрываем шар
+   setSharPos();
+   GPIO_SetBits(GPIOD,GPIO_Pin_3);                                       //Выключаем компрессоры
+   GPIO_SetBits(GPIOD,GPIO_Pin_4); 
+   GPIO_SetBits(GPIOD,GPIO_Pin_5);                                       //Выключаем мотор
+}
+  

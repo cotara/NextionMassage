@@ -14,6 +14,9 @@ int main()
   tim4_init();
   tim5_init(300);//default valve full open 3 sec
   GPIO_init();
+  RCC_ClocksTypeDef RCC_Clocks;
+  RCC_GetClocksFreq(&RCC_Clocks);
+  SysTick_Config(RCC_Clocks.HCLK_Frequency /1000);
   while(1){
     //GPIOD->ODR ^= GPIO_Pin_0;
     if(getFLAG_END_LINE() == 3)

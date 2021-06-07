@@ -12,3 +12,6 @@ void setValvePower(int8_t diff);
 void setSharPos();
 void sendAck();
 void sendAckExit();
+uint32_t getErrorTick();
+void setErrorTick(uint32_t tick);
+void switchOffAll();
