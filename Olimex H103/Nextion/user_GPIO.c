@@ -30,11 +30,8 @@ void GPIO_init(void)
   GPIO_SetBits(GPIOD,GPIO_Pin_0);                                               //Полностью открываем шар
   GPIO_ResetBits(GPIOE,GPIO_Pin_6);
   
-  GPIO_SetBits(GPIOD,GPIO_Pin_1);
+  GPIO_SetBits(GPIOD,GPIO_Pin_1);                                               //Открыты и ничего не потребляют
   GPIO_SetBits(GPIOD,GPIO_Pin_2);
-  GPIO_SetBits(GPIOD,GPIO_Pin_3);
-  GPIO_SetBits(GPIOD,GPIO_Pin_4);
-  GPIO_SetBits(GPIOD,GPIO_Pin_5);
 
                                 //Комплектация1/Комплектация 2
   GPIO_InitStructure.GPIO_Pin = GPIO_Pin_14 | GPIO_Pin_15 ;        	        //Джамперы комплектаций	

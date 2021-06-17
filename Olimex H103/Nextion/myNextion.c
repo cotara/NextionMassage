@@ -36,17 +36,17 @@ void nextionEvent(void){
         motorPower=value;
         if(element == 0){                                                        //СТАРТ МАССАЖ 1 
             if(value!=0)                                                        
-              GPIO_ResetBits(GPIOD,GPIO_Pin_5);                                 //реле вкл мотора
+              GPIO_SetBits(GPIOD,GPIO_Pin_5);                                   //реле вкл мотора
             else 
-              GPIO_SetBits(GPIOD,GPIO_Pin_5); 
+              GPIO_ResetBits(GPIOD,GPIO_Pin_5); 
             sendAck();
         }
         else if(element == 1){                                                   //ПАУЗА МАССАЖ 1
-          GPIO_SetBits(GPIOD,GPIO_Pin_5); 
+          GPIO_ResetBits(GPIOD,GPIO_Pin_5); 
           sendAck();
         }
         else if(element==3){                                                     //СТОП МАССАЖ 1
-          GPIO_SetBits(GPIOD,GPIO_Pin_5); 
+          GPIO_ResetBits(GPIOD,GPIO_Pin_5); 
           sendAck();
         }
         else if(element==5){                                                     //-мощность
@@ -61,26 +61,28 @@ void nextionEvent(void){
       else if(page==4){                                                         
         if(element == 0){                                                        //СТАРТ МАССАЖ 2
          if(value!=0){
-             GPIO_ResetBits(GPIOD,GPIO_Pin_3);                                      //включаем компрессоры
-             GPIO_ResetBits(GPIOD,GPIO_Pin_4);
+             GPIO_SetBits(GPIOD,GPIO_Pin_3);                                      //включаем компрессоры
+             GPIO_SetBits(GPIOD,GPIO_Pin_4);
              TIM_Cmd(TIM4, ENABLE);                                                 //запускаем алгоритм щелкания клапанами
           }
           else{
-            GPIO_SetBits(GPIOD,GPIO_Pin_3);                                        
-            GPIO_SetBits(GPIOD,GPIO_Pin_4); 
+            GPIO_ResetBits(GPIOD,GPIO_Pin_3);                                        
+            GPIO_ResetBits(GPIOD,GPIO_Pin_4); 
             TIM_Cmd(TIM4, DISABLE);
           }
           sendAck();
         } 
         else if(element == 1){                                                  //ПАУЗА МАССАЖ 2
-         GPIO_SetBits(GPIOD,GPIO_Pin_3);                                        
-         GPIO_SetBits(GPIOD,GPIO_Pin_4); 
+         GPIO_ResetBits(GPIOD,GPIO_Pin_3);                                        
+         GPIO_ResetBits(GPIOD,GPIO_Pin_4); 
          TIM_Cmd(TIM4, DISABLE);
          sendAck();
         }
         else if(element==3){                                                     //СТОП МАССАЖ 2
-          GPIO_SetBits(GPIOD,GPIO_Pin_3); 
-          GPIO_SetBits(GPIOD,GPIO_Pin_4);
+          GPIO_ResetBits(GPIOD,GPIO_Pin_3);                                     //Компрессоры выкл
+          GPIO_ResetBits(GPIOD,GPIO_Pin_4);
+          GPIO_SetBits(GPIOD,GPIO_Pin_1);                                       //Открываем клапаны
+          GPIO_SetBits(GPIOD,GPIO_Pin_2);
           TIM_Cmd(TIM4, DISABLE);
           sendAck();
         }
@@ -98,6 +100,8 @@ void nextionEvent(void){
         }
         else if(element==127){                                                  //Выход из второго массажа
           sendAckExit();
+          GPIO_SetBits(GPIOD,GPIO_Pin_1);                                       //Открываем клапаны
+          GPIO_SetBits(GPIOD,GPIO_Pin_2);
           value=255;                                                            //Закрываем шар
           setSharPos();
           waveform=1;
@@ -132,24 +136,24 @@ void nextionEvent(void){
         } 
         else if(element == 3){                                                       //Компрессор 1
           if(value!=0)          
-            GPIO_ResetBits(GPIOD,GPIO_Pin_3);
+            GPIO_SetBits(GPIOD,GPIO_Pin_3);
           else 
-            GPIO_SetBits(GPIOD,GPIO_Pin_3);  
+            GPIO_ResetBits(GPIOD,GPIO_Pin_3);  
           sendAck();
         }
         else if(element == 4){                                                       //Компрессор 2
           if(value!=0)          
-            GPIO_ResetBits(GPIOD,GPIO_Pin_4);
+            GPIO_SetBits(GPIOD,GPIO_Pin_4);
           else 
-            GPIO_SetBits(GPIOD,GPIO_Pin_4);  
+            GPIO_ResetBits(GPIOD,GPIO_Pin_4);  
           sendAck();
         }         
         else if(element == 5){                                                       //Мотор насоса
             motorPower=value;
             if(value!=0)          
-              GPIO_ResetBits(GPIOD,GPIO_Pin_5);
+              GPIO_SetBits(GPIOD,GPIO_Pin_5);
             else 
-              GPIO_SetBits(GPIOD,GPIO_Pin_5); 
+              GPIO_ResetBits(GPIOD,GPIO_Pin_5); 
             sendAck();
         }
         else if(element == 6){                                                       //Калибровка шара
@@ -267,12 +271,12 @@ void setSharPos(){
 }
 void switchOffAll(){
   
-  GPIO_ResetBits(GPIOD,GPIO_Pin_1);                                     //Закрыть клапана
-   GPIO_ResetBits(GPIOD,GPIO_Pin_2);
-   value=255;                                                            //Закрываем шар
+   GPIO_SetBits(GPIOD,GPIO_Pin_1);                                              //Открыть клапана
+   GPIO_SetBits(GPIOD,GPIO_Pin_2);
+   value=255;                                                                   //Закрываем шар
    setSharPos();
-   GPIO_SetBits(GPIOD,GPIO_Pin_3);                                       //Выключаем компрессоры
-   GPIO_SetBits(GPIOD,GPIO_Pin_4); 
-   GPIO_SetBits(GPIOD,GPIO_Pin_5);                                       //Выключаем мотор
+   GPIO_ResetBits(GPIOD,GPIO_Pin_3);                                            //Выключаем компрессоры
+   GPIO_ResetBits(GPIOD,GPIO_Pin_4); 
+   GPIO_ResetBits(GPIOD,GPIO_Pin_5);                                            //Выключаем мотор
 }
   

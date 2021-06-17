@@ -63,7 +63,7 @@ void TIM2_IRQHandler(void){
 void TIM4_IRQHandler(void){
     TIM_ClearITPendingBit(TIM4, TIM_IT_Update);
     if(waveformCounter < getWaveform()*8/10){
-      GPIO_SetBits(GPIOD,GPIO_Pin_1); 
+      GPIO_SetBits(GPIOD,GPIO_Pin_1);                                           //80% времени клапана открыты
       GPIO_SetBits(GPIOD,GPIO_Pin_2); 
     }
     else{
