@@ -1,5 +1,38 @@
 #include <stdint.h>
 
+#define M_PWM_OFF GPIO_SetBits(GPIOA,GPIO_Pin_6)                                //Управление семистором
+#define M_PWM_ON GPIO_ResetBits(GPIOA,GPIO_Pin_6)
+
+#define LED1_OFF GPIO_SetBits(GPIOE,GPIO_Pin_0)                                  //Управление светодиодом
+#define LED1_ON GPIO_ResetBits(GPIOE,GPIO_Pin_0)
+
+#define LED2_OFF GPIO_SetBits(GPIOE,GPIO_Pin_5)                                  //Управление светодиодом
+#define LED2_ON GPIO_ResetBits(GPIOE,GPIO_Pin_5)
+
+#define SHAR_STOP GPIO_SetBits(GPIOE,GPIO_Pin_6)                                //Стопор шара
+#define SHAR_START GPIO_ResetBits(GPIOE,GPIO_Pin_6)
+
+#define SHAR_OPEN GPIO_SetBits(GPIOD,GPIO_Pin_0)                                //ШАР
+#define SHAR_CLOSE GPIO_ResetBits(GPIOD,GPIO_Pin_0)
+
+#define VALVE1_OPEN GPIO_SetBits(GPIOD,GPIO_Pin_1)                              //ЭМ1
+#define VALVE1_CLOSE GPIO_ResetBits(GPIOD,GPIO_Pin_1)
+
+#define VALVE2_OPEN GPIO_SetBits(GPIOD,GPIO_Pin_2)                              //ЭМ2
+#define VALVE2_CLOSE GPIO_ResetBits(GPIOD,GPIO_Pin_2)
+
+#define POMP1_ON GPIO_SetBits(GPIOD,GPIO_Pin_3)                                 //Компрессор1
+#define POMP1_OFF GPIO_ResetBits(GPIOD,GPIO_Pin_3)
+
+#define POMP2_ON GPIO_SetBits(GPIOD,GPIO_Pin_4)                                 //Компрессор2
+#define POMP2_OFF GPIO_ResetBits(GPIOD,GPIO_Pin_4)
+
+#define M_ON GPIO_SetBits(GPIOD,GPIO_Pin_5)                                     //Реле вкл мотора
+#define M_OFF GPIO_ResetBits(GPIOD,GPIO_Pin_5)
+
+#define IS_VALVE_IN_LPG GPIO_ReadInputDataBit (GPIOD, GPIO_Pin_14)              //Джампер 1
+#define IS_VAKUUM GPIO_ReadInputDataBit (GPIOD, GPIO_Pin_15)                    //Джампер 2
+
 void USART_IRQProcessFunc(uint8_t);
 void nextionEvent(void);
 void Nextion_SetValue_Number(char *ValueName, uint32_t Value);

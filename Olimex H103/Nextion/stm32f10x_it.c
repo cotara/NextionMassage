@@ -32,11 +32,11 @@ void SysTick_Handler(void){
   if(ms_counter==5000){
     ms_counter=0;
     if(getErrorTick()==0){
-      GPIO_ResetBits(GPIOE,GPIO_Pin_5);                                          //Зажигаем светодиод
+      LED2_ON;                                          //Зажигаем светодиод
       switchOffAll();
     }
     else{
-      GPIO_SetBits(GPIOE,GPIO_Pin_5);
+      LED2_OFF;
       setErrorTick(0);
     }
   }
@@ -54,21 +54,24 @@ void TIM3_IRQHandler(void){
 //Control tiristor
 void TIM2_IRQHandler(void){
     TIM_ClearITPendingBit(TIM2, TIM_IT_Update);
-    //counter++;
     //GPIOD->ODR ^= GPIO_Pin_4;
-    GPIO_ResetBits(GPIOA,GPIO_Pin_6);
+    M_PWM_ON;
     TIM_Cmd(TIM2, DISABLE);
 }
 //Control 1,2 valves
 void TIM4_IRQHandler(void){
     TIM_ClearITPendingBit(TIM4, TIM_IT_Update);
-    if(waveformCounter < getWaveform()*8/10){
-      GPIO_SetBits(GPIOD,GPIO_Pin_1);                                           //80% времени клапана открыты
-      GPIO_SetBits(GPIOD,GPIO_Pin_2); 
+    if(waveformCounter < getWaveform()*5/10){
+      if(getWaveform()==30)                                                     //Клапан в связке с LPG
+        VALVE2_OPEN;    
+      else
+        VALVE1_OPEN;                                                              //80% времени клапана открыты 
     }
     else{
-      GPIO_ResetBits(GPIOD,GPIO_Pin_1);
-      GPIO_ResetBits(GPIOD,GPIO_Pin_2); 
+      if(getWaveform()==30) 
+        VALVE2_CLOSE;
+      else
+        VALVE1_CLOSE;
     }
     waveformCounter++;
     if(waveformCounter >= getWaveform())
@@ -83,8 +86,8 @@ void TIM5_IRQHandler(void){
       setValvePower(leftValvePower-1);                                          //slow close
     else if(leftValvePower<=0){//reach position 
         TIM_Cmd(TIM5, DISABLE);
-        GPIO_SetBits(GPIOE,GPIO_Pin_6);                                         //Stops valve
-        GPIO_SetBits(GPIOE,GPIO_Pin_0);
+        SHAR_STOP;                                                              //Stops shar
+        LED1_OFF;
     }
     else{
       setValvePower(leftValvePower-5);
@@ -110,12 +113,10 @@ void USART1_IRQHandler(void){
 
 
 void EXTI0_IRQHandler(void) {
-	/* Make sure that interrupt flag is set */
 	if (EXTI_GetITStatus(EXTI_Line0) != RESET) {
-                GPIO_SetBits(GPIOA,GPIO_Pin_6);
+                M_PWM_OFF;
                 TIM_SetCounter(TIM2,(uint16_t)getMotorPower());
                 TIM_Cmd(TIM2, ENABLE);
-		/* Clear interrupt flag */
 		EXTI_ClearITPendingBit(EXTI_Line0);
 	}
 }

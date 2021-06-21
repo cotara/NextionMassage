@@ -29,7 +29,7 @@
 **/Obj/*.pbd.*
 **/Obj/*.pbi
 **/Obj/*.pbi.*
-
+**/Obj/*.o
 # Log files
 **.log
 

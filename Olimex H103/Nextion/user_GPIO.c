@@ -2,37 +2,34 @@
 #include "stm32f10x_gpio.h"
 #include "stm32f10x_rcc.h"
 #include "stm32f10x_exti.h"
+#include "myNextion.h"
 void GPIO_init(void)
 {
   GPIO_InitTypeDef GPIO_InitStructure;
   EXTI_InitTypeDef EXTI_InitStruct;
   /* Enable USART1 and GPIOA clock */
   RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOD | RCC_APB2Periph_GPIOA | RCC_APB2Periph_GPIOB| RCC_APB2Periph_GPIOE, ENABLE);
-  
-  
+    
   GPIO_InitStructure.GPIO_Pin = GPIO_Pin_6;		                        //Управление семистором
   GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;	
   GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;	
   GPIO_Init(GPIOA, &GPIO_InitStructure);
   
-  
-  GPIO_InitStructure.GPIO_Pin = GPIO_Pin_6 |GPIO_Pin_5| GPIO_Pin_0;                        //реле, рвущее питание на ШАР
+  GPIO_InitStructure.GPIO_Pin = GPIO_Pin_6 |GPIO_Pin_5| GPIO_Pin_0;             //реле, рвущее питание на ШАР
   GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;	
   GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;	
   GPIO_Init(GPIOE, &GPIO_InitStructure);
-  
-                                //ШАР           //ЭМ1     //ЭМ2      //компрессор1//компрессор2 /реле вкл.мотора /стоп шар
+                                //ШАР           //ЭМ1     //ЭМ2      //компрессор1//компрессор2 /реле вкл.мотора 
   GPIO_InitStructure.GPIO_Pin = GPIO_Pin_0 | GPIO_Pin_1 | GPIO_Pin_2 | GPIO_Pin_3 | GPIO_Pin_4 | GPIO_Pin_5;        		
   GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;	
   GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;	
   GPIO_Init(GPIOD, &GPIO_InitStructure);
   
-  GPIO_SetBits(GPIOD,GPIO_Pin_0);                                               //Полностью открываем шар
-  GPIO_ResetBits(GPIOE,GPIO_Pin_6);
+  SHAR_OPEN;
+  SHAR_START;
   
-  GPIO_SetBits(GPIOD,GPIO_Pin_1);                                               //Открыты и ничего не потребляют
-  GPIO_SetBits(GPIOD,GPIO_Pin_2);
-
+  VALVE1_OPEN;                                                                  
+  VALVE2_OPEN;
                                 //Комплектация1/Комплектация 2
   GPIO_InitStructure.GPIO_Pin = GPIO_Pin_14 | GPIO_Pin_15 ;        	        //Джамперы комплектаций	
   GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;	
