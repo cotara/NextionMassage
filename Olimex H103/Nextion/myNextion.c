@@ -162,7 +162,7 @@ void nextionEvent(void){
             if(value!=0)          
               M_ON;
             else 
-              M_ON; 
+              M_OFF; 
             sendAck();
         }
         else if(element == 6){                                                  //Калибровка шара
