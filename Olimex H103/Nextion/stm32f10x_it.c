@@ -29,11 +29,13 @@ void BusFault_Handler(void){
 void SysTick_Handler(void){
   TimingDelay_Decrement();
   ms_counter++;
+  //Если за 5 секунд ни разу не связались, то отрубаем все.
   if(ms_counter==5000){
     ms_counter=0;
     if(getErrorTick()==0){
       LED2_ON;                                          //Зажигаем светодиод
       switchOffAll();
+      Nextion_SetValue_Number("mode.val", 4);
     }
     else{
       LED2_OFF;
@@ -45,7 +47,7 @@ void SysTick_Handler(void){
 /******************************************************************************/
 /*            STM32F10x Peripherals Interrupt Handlers                        */
 /******************************************************************************/
-//USART bads
+//USART fail control
 void TIM3_IRQHandler(void){
     TIM_ClearITPendingBit(TIM3, TIM_IT_Update);
     TIM_Cmd(TIM3, DISABLE);

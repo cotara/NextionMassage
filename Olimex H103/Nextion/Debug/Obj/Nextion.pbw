@@ -106906,13 +106906,13 @@
     "scope": null
   },
   {
-    "ID": "c:main.c@326@F@main@RCC_Clocks",
+    "ID": "c:main.c@321@F@main@RCC_Clocks",
     "What": "Variable",
     "defdec": "Def",
     "display": "RCC_Clocks",
     "location": {
       "column": "21",
-      "line": "17",
+      "line": "16",
       "path": "C:\\Users\\User\\Documents\\Projects\\Nextion\\Olimex H103\\Nextion\\main.c"
     },
     "name": "RCC_Clocks",
@@ -107906,7 +107906,7 @@
     "display": "uint32_t getErrorTick(void)",
     "location": {
       "column": "10",
-      "line": "206",
+      "line": "207",
       "path": "C:\\Users\\User\\Documents\\Projects\\Nextion\\Olimex H103\\Nextion\\myNextion.c"
     },
     "name": "getErrorTick",
@@ -107920,7 +107920,7 @@
     "display": "void setErrorTick(uint32_t)",
     "location": {
       "column": "6",
-      "line": "209",
+      "line": "210",
       "path": "C:\\Users\\User\\Documents\\Projects\\Nextion\\Olimex H103\\Nextion\\myNextion.c"
     },
     "name": "setErrorTick",
@@ -107934,7 +107934,7 @@
     "display": "void Nextion_SetValue_Number(char *, uint32_t)",
     "location": {
       "column": "6",
-      "line": "212",
+      "line": "213",
       "path": "C:\\Users\\User\\Documents\\Projects\\Nextion\\Olimex H103\\Nextion\\myNextion.c"
     },
     "name": "Nextion_SetValue_Number",
@@ -107942,13 +107942,13 @@
     "scope": null
   },
   {
-    "ID": "c:myNextion.c@9859@F@Nextion_SetValue_Number@Len",
+    "ID": "c:myNextion.c@10050@F@Nextion_SetValue_Number@Len",
     "What": "Variable",
     "defdec": "Def",
     "display": "Len",
     "location": {
       "column": "12",
-      "line": "215",
+      "line": "216",
       "path": "C:\\Users\\User\\Documents\\Projects\\Nextion\\Olimex H103\\Nextion\\myNextion.c"
     },
     "name": "Len",
@@ -107962,7 +107962,7 @@
     "display": "void Nextion_SetValue_String(char *, char *)",
     "location": {
       "column": "6",
-      "line": "219",
+      "line": "220",
       "path": "C:\\Users\\User\\Documents\\Projects\\Nextion\\Olimex H103\\Nextion\\myNextion.c"
     },
     "name": "Nextion_SetValue_String",
@@ -107970,13 +107970,13 @@
     "scope": null
   },
   {
-    "ID": "c:myNextion.c@10103@F@Nextion_SetValue_String@Len",
+    "ID": "c:myNextion.c@10294@F@Nextion_SetValue_String@Len",
     "What": "Variable",
     "defdec": "Def",
     "display": "Len",
     "location": {
       "column": "12",
-      "line": "222",
+      "line": "223",
       "path": "C:\\Users\\User\\Documents\\Projects\\Nextion\\Olimex H103\\Nextion\\myNextion.c"
     },
     "name": "Len",
@@ -107990,7 +107990,7 @@
     "display": "void incFLAG_END_LINE(void)",
     "location": {
       "column": "6",
-      "line": "228",
+      "line": "229",
       "path": "C:\\Users\\User\\Documents\\Projects\\Nextion\\Olimex H103\\Nextion\\myNextion.c"
     },
     "name": "incFLAG_END_LINE",
@@ -108004,7 +108004,7 @@
     "display": "void resetFLAG_END_LINE(void)",
     "location": {
       "column": "6",
-      "line": "231",
+      "line": "232",
       "path": "C:\\Users\\User\\Documents\\Projects\\Nextion\\Olimex H103\\Nextion\\myNextion.c"
     },
     "name": "resetFLAG_END_LINE",
@@ -108018,7 +108018,7 @@
     "display": "uint8_t getFLAG_END_LINE(void)",
     "location": {
       "column": "9",
-      "line": "234",
+      "line": "235",
       "path": "C:\\Users\\User\\Documents\\Projects\\Nextion\\Olimex H103\\Nextion\\myNextion.c"
     },
     "name": "getFLAG_END_LINE",
@@ -108032,7 +108032,7 @@
     "display": "uint8_t getMotorPower(void)",
     "location": {
       "column": "9",
-      "line": "238",
+      "line": "239",
       "path": "C:\\Users\\User\\Documents\\Projects\\Nextion\\Olimex H103\\Nextion\\myNextion.c"
     },
     "name": "getMotorPower",
@@ -108046,7 +108046,7 @@
     "display": "uint8_t getWaveform(void)",
     "location": {
       "column": "9",
-      "line": "241",
+      "line": "242",
       "path": "C:\\Users\\User\\Documents\\Projects\\Nextion\\Olimex H103\\Nextion\\myNextion.c"
     },
     "name": "getWaveform",
@@ -108060,7 +108060,7 @@
     "display": "int8_t getValvePower(void)",
     "location": {
       "column": "8",
-      "line": "244",
+      "line": "245",
       "path": "C:\\Users\\User\\Documents\\Projects\\Nextion\\Olimex H103\\Nextion\\myNextion.c"
     },
     "name": "getValvePower",
@@ -108074,7 +108074,7 @@
     "display": "void setValvePower(int8_t)",
     "location": {
       "column": "6",
-      "line": "247",
+      "line": "248",
       "path": "C:\\Users\\User\\Documents\\Projects\\Nextion\\Olimex H103\\Nextion\\myNextion.c"
     },
     "name": "setValvePower",
@@ -108088,7 +108088,7 @@
     "display": "void sendAck(void)",
     "location": {
       "column": "6",
-      "line": "251",
+      "line": "252",
       "path": "C:\\Users\\User\\Documents\\Projects\\Nextion\\Olimex H103\\Nextion\\myNextion.c"
     },
     "name": "sendAck",
@@ -108102,7 +108102,7 @@
     "display": "void sendAckExit(void)",
     "location": {
       "column": "6",
-      "line": "254",
+      "line": "255",
       "path": "C:\\Users\\User\\Documents\\Projects\\Nextion\\Olimex H103\\Nextion\\myNextion.c"
     },
     "name": "sendAckExit",
@@ -108116,7 +108116,7 @@
     "display": "void setSharPos(void)",
     "location": {
       "column": "6",
-      "line": "257",
+      "line": "258",
       "path": "C:\\Users\\User\\Documents\\Projects\\Nextion\\Olimex H103\\Nextion\\myNextion.c"
     },
     "name": "setSharPos",
@@ -108130,7 +108130,7 @@
     "display": "void switchOffAll(void)",
     "location": {
       "column": "6",
-      "line": "281",
+      "line": "282",
       "path": "C:\\Users\\User\\Documents\\Projects\\Nextion\\Olimex H103\\Nextion\\myNextion.c"
     },
     "name": "switchOffAll",
@@ -112650,7 +112650,7 @@
     "display": "void TIM3_IRQHandler(void)",
     "location": {
       "column": "6",
-      "line": "49",
+      "line": "51",
       "path": "C:\\Users\\User\\Documents\\Projects\\Nextion\\Olimex H103\\Nextion\\stm32f10x_it.c"
     },
     "name": "TIM3_IRQHandler",
@@ -112664,7 +112664,7 @@
     "display": "void TIM2_IRQHandler(void)",
     "location": {
       "column": "6",
-      "line": "55",
+      "line": "57",
       "path": "C:\\Users\\User\\Documents\\Projects\\Nextion\\Olimex H103\\Nextion\\stm32f10x_it.c"
     },
     "name": "TIM2_IRQHandler",
@@ -112678,7 +112678,7 @@
     "display": "void TIM4_IRQHandler(void)",
     "location": {
       "column": "6",
-      "line": "62",
+      "line": "64",
       "path": "C:\\Users\\User\\Documents\\Projects\\Nextion\\Olimex H103\\Nextion\\stm32f10x_it.c"
     },
     "name": "TIM4_IRQHandler",
@@ -112692,7 +112692,7 @@
     "display": "void TIM5_IRQHandler(void)",
     "location": {
       "column": "6",
-      "line": "81",
+      "line": "83",
       "path": "C:\\Users\\User\\Documents\\Projects\\Nextion\\Olimex H103\\Nextion\\stm32f10x_it.c"
     },
     "name": "TIM5_IRQHandler",
@@ -112700,13 +112700,13 @@
     "scope": null
   },
   {
-    "ID": "c:stm32f10x_it.c@2253@F@TIM5_IRQHandler@leftValvePower",
+    "ID": "c:stm32f10x_it.c@2369@F@TIM5_IRQHandler@leftValvePower",
     "What": "Variable",
     "defdec": "Def",
     "display": "leftValvePower",
     "location": {
       "column": "12",
-      "line": "84",
+      "line": "86",
       "path": "C:\\Users\\User\\Documents\\Projects\\Nextion\\Olimex H103\\Nextion\\stm32f10x_it.c"
     },
     "name": "leftValvePower",
@@ -112720,7 +112720,7 @@
     "display": "void USART1_IRQHandler(void)",
     "location": {
       "column": "6",
-      "line": "98",
+      "line": "100",
       "path": "C:\\Users\\User\\Documents\\Projects\\Nextion\\Olimex H103\\Nextion\\stm32f10x_it.c"
     },
     "name": "USART1_IRQHandler",
@@ -112734,7 +112734,7 @@
     "display": "void EXTI0_IRQHandler(void)",
     "location": {
       "column": "6",
-      "line": "115",
+      "line": "117",
       "path": "C:\\Users\\User\\Documents\\Projects\\Nextion\\Olimex H103\\Nextion\\stm32f10x_it.c"
     },
     "name": "EXTI0_IRQHandler",
