@@ -152,9 +152,9 @@ void nextionEvent(void){
         }
         else if(element == 4){                                                  //Компрессор 2
           if(value!=0)          
-            POMP1_ON;
+            POMP2_ON;
           else 
-            POMP1_OFF;  
+            POMP2_OFF;  
           sendAck();
         }         
         else if(element == 5){                                                  //Мотор насоса

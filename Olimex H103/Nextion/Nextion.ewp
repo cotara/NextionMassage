@@ -703,7 +703,7 @@
                 </option>
                 <option>
                     <name>IlinkOutputFile</name>
-                    <state>Nextion.hex</state>
+                    <state>Nextion.out</state>
                 </option>
                 <option>
                     <name>IlinkDebugInfoEnable</name>
