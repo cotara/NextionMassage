@@ -18,11 +18,6 @@
 **/settings/*.wsdt
 **/settings/*.wspos
 
-# IAR Debug Exe
-**/Debug/Exe/
-
-# IAR Debug List
-**/Debug/List
 
 # IAR Debug Obj
 **/Obj/*.pbd
