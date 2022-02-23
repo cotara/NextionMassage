@@ -8,6 +8,7 @@
 
 extern volatile uint8_t   tx_buffer[TX_BUFFER_SIZE];
 extern volatile unsigned long  tx_wr_index,tx_rd_index,tx_counter;
+
 uint32_t counter=0, ms_counter=0;
 uint8_t waveformCounter=0, valvePowerCounter=0;
 void HardFault_Handler(void){
@@ -63,17 +64,21 @@ void TIM2_IRQHandler(void){
 //Control 1,2 valves
 void TIM4_IRQHandler(void){
     TIM_ClearITPendingBit(TIM4, TIM_IT_Update);
-    if(waveformCounter < getWaveform()*5/10){
-      if(getWaveform()==30)                                                     //Клапан в связке с LPG
-        VALVE2_OPEN;    
-      else
-        VALVE1_OPEN;                                                              //80% времени клапана открыты 
+    if(waveformCounter <= getWaveform()*5/10){
+      if(getMode()==0 &&(getJP()==0 || getJP()==1))                              //Проверяем, что мы на странице LPG и комплектация с большим клапаном                                                             //Клапан в связке с LPG
+        BIGVALVE_OPEN;    
+      else{
+        VALVE1_OPEN;                                                            //вакуумные клапаны на 24 в
+        VALVE2_OPEN;
+      }
     }
     else{
-      if(getWaveform()==30) 
-        VALVE2_CLOSE;
-      else
+      if(getMode()==0 &&(getJP()==0 || getJP()==1))
+        BIGVALVE_CLOSE;
+      else{
         VALVE1_CLOSE;
+        VALVE2_CLOSE;
+      }
     }
     waveformCounter++;
     if(waveformCounter >= getWaveform())

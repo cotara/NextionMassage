@@ -21,11 +21,11 @@
 #define VALVE2_OPEN GPIO_SetBits(GPIOD,GPIO_Pin_2)                              //ЭМ2
 #define VALVE2_CLOSE GPIO_ResetBits(GPIOD,GPIO_Pin_2)
 
-#define POMP1_ON GPIO_SetBits(GPIOD,GPIO_Pin_3)                                 //Компрессор1
-#define POMP1_OFF GPIO_ResetBits(GPIOD,GPIO_Pin_3)
+#define POMP_ON GPIO_SetBits(GPIOD,GPIO_Pin_3)                                  //Компрессор1
+#define POMP_OFF GPIO_ResetBits(GPIOD,GPIO_Pin_3)
 
-#define POMP2_ON GPIO_SetBits(GPIOD,GPIO_Pin_4)                                 //Компрессор2
-#define POMP2_OFF GPIO_ResetBits(GPIOD,GPIO_Pin_4)
+#define BIGVALVE_OPEN GPIO_SetBits(GPIOD,GPIO_Pin_4)                              //Большой клапан для LPG
+#define BIGVALVE_CLOSE GPIO_ResetBits(GPIOD,GPIO_Pin_4)
 
 #define M_ON GPIO_SetBits(GPIOD,GPIO_Pin_5)                                     //Реле вкл мотора
 #define M_OFF GPIO_ResetBits(GPIOD,GPIO_Pin_5)
@@ -38,6 +38,8 @@ void nextionEvent(void);
 void Nextion_SetValue_Number(char *ValueName, uint32_t Value);
 void Nextion_SetValue_String(char *ValueName, char *Value);
 uint8_t getFLAG_END_LINE(void);
+uint8_t getJP();
+uint8_t getMode();
 uint8_t getMotorPower();
 uint8_t getWaveform();
 int8_t getValvePower();

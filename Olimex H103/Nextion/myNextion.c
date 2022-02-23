@@ -12,7 +12,7 @@ uint8_t command[11]="sendme";
 uint32_t st=0;
 uint8_t endMes[3]={0xFF,0xFF,0xFF};
 static uint8_t StrBuff[64]; 
-uint8_t page,element,value,waveform=150,valvePower,motorPower=0;
+uint8_t page,element,value,waveform=150,valvePower,motorPower=0, bigValveFreq =0, nowMode=0;
 int8_t valveDiff=0;
 uint32_t errorTick=0;
 
@@ -32,61 +32,70 @@ void nextionEvent(void){
       RX_FLAG_END_LINE=0;
       
       /********************************MASSAGE 1*******************************/
-      if(page==3){                                                              
-        motorPower=value;
-        if(element == 0){                                                        //СТАРТ МАССАЖ 1 
+      if(page==3){
+        nowMode = 0;
+        if(element == 0){                                                       //СТАРТ МАССАЖ 1 
+            motorPower=value;  
             if(value!=0)                                                        
               M_ON;                                                             //реле вкл мотора
             else 
               M_OFF;
-            if(st==1){                                                           //Задействуем клапан в LPG массаже
-              TIM_Cmd(TIM4, ENABLE);                                            //запускаем алгоритм щелкания клапанами
-              waveform=30;                                                      //Ставим на средний режим
+            
+            if(bigValveFreq == 0){
+              waveform=0;
+              BIGVALVE_OPEN;
             }
+            else
+              waveform=100/bigValveFreq;                                         //Устанавливаем частоту переключения большого клапана
+            
+            TIM_Cmd(TIM4, ENABLE);                                            //запускаем алгоритм щелкания клапанами
             sendAck();
         }
-        else if(element == 1){                                                   //ПАУЗА МАССАЖ 1
+        else if(element == 1 || element==3){                                    //СТОП / ПАУЗА МАССАЖ 1
           M_OFF; 
           TIM_Cmd(TIM4, DISABLE);
           sendAck();
         }
-        else if(element==3){                                                     //СТОП МАССАЖ 1
-          M_OFF; 
-          TIM_Cmd(TIM4, DISABLE);
-          sendAck();
-        }
-        else if(element==5){                                                     //-мощность
+        else if(element==5 || element==6){                                      //-/+мощность
           sendAck();
         } 
-        else if(element==6){                                                     //+мощность
+        else if(element==7 || element==8){                                      //-/+частота
+          bigValveFreq = value;
+          if(bigValveFreq == 0){
+              waveform=0;
+              BIGVALVE_OPEN;
+            }
+            else
+              waveform=100/bigValveFreq;                                         //Устанавливаем частоту переключения большого клапана
           sendAck();
-        }         
+        }
+        else if(element==127){                                                  //Выход из второго массажа
+          sendAckExit();
+          bigValveFreq=0;                                                           //Устанавливаем форму массажа в первую
+        }    
       }
       
       /********************************MASSAGE 2*******************************/
       else if(page==4){                                                         
+        nowMode = 1;
         if(element == 0){                                                        //СТАРТ МАССАЖ 2
          if(value!=0){
-             POMP1_ON;                                                          //включаем компрессоры
-             POMP2_ON;
+             POMP_ON;                                                          //включаем компрессоры
              TIM_Cmd(TIM4, ENABLE);                                             //запускаем алгоритм щелкания клапанами
           }
           else{
-            POMP1_OFF;                                        
-            POMP2_OFF; 
+            POMP_OFF;                                        
             TIM_Cmd(TIM4, DISABLE);
           }
           sendAck();
         } 
         else if(element == 1){                                                  //ПАУЗА МАССАЖ 2
-          POMP1_OFF;                                        
-          POMP2_OFF; 
+          POMP_OFF;                                        
           TIM_Cmd(TIM4, DISABLE);
           sendAck();
         }
         else if(element==3){                                                     //СТОП МАССАЖ 2
-          POMP1_OFF;                                        
-          POMP2_OFF; 
+          POMP_OFF;                                        
           VALVE1_OPEN;                                                                  
           VALVE2_OPEN;
           TIM_Cmd(TIM4, DISABLE);
@@ -145,16 +154,16 @@ void nextionEvent(void){
         } 
         else if(element == 3){                                                  //Компрессор 1
           if(value!=0)          
-            POMP1_ON;
+            POMP_ON;
           else 
-            POMP1_OFF;  
+            POMP_OFF;  
           sendAck();
         }
-        else if(element == 4){                                                  //Компрессор 2
+        else if(element == 4){                                                  //Большой клапан
           if(value!=0)          
-            POMP2_ON;
+            BIGVALVE_OPEN;
           else 
-            POMP2_OFF;  
+            BIGVALVE_CLOSE;  
           sendAck();
         }         
         else if(element == 5){                                                  //Мотор насоса
@@ -235,7 +244,12 @@ void resetFLAG_END_LINE(void){
 uint8_t getFLAG_END_LINE(void){
   return RX_FLAG_END_LINE;
 }
-
+uint8_t getJP(){
+  return st;
+}
+uint8_t getMode(){
+  return nowMode;
+}
 uint8_t getMotorPower(){
   return motorPower;
 }
