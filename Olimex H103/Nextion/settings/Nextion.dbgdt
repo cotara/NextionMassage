@@ -963,7 +963,7 @@
                     <item>waveformCounter</item>
                     <item>valveDiff</item>
                     <item>valvePower</item>
-                    <item></item>
+                    <item />
                 </expressions>
                 <col-names>
                     <item>Expression</item>
