@@ -64,6 +64,8 @@ void TIM2_IRQHandler(void){
 //Control 1,2 valves
 void TIM4_IRQHandler(void){
     TIM_ClearITPendingBit(TIM4, TIM_IT_Update);
+    counter+=10;
+    
     if(waveformCounter <= getWaveform()*5/10){
       if(getMode()==0 &&(getJP()==0 || getJP()==1))                              //Проверяем, что мы на странице LPG и комплектация с большим клапаном                                                             //Клапан в связке с LPG
         BIGVALVE_OPEN;    

@@ -24,8 +24,8 @@
 #define POMP_ON GPIO_SetBits(GPIOD,GPIO_Pin_3)                                  //Компрессор1
 #define POMP_OFF GPIO_ResetBits(GPIOD,GPIO_Pin_3)
 
-#define BIGVALVE_OPEN GPIO_SetBits(GPIOD,GPIO_Pin_4)                              //Большой клапан для LPG
-#define BIGVALVE_CLOSE GPIO_ResetBits(GPIOD,GPIO_Pin_4)
+#define BIGVALVE_OPEN GPIO_ResetBits(GPIOD,GPIO_Pin_4)                              //Большой клапан для LPG
+#define BIGVALVE_CLOSE GPIO_SetBits(GPIOD,GPIO_Pin_4)
 
 #define M_ON GPIO_SetBits(GPIOD,GPIO_Pin_5)                                     //Реле вкл мотора
 #define M_OFF GPIO_ResetBits(GPIOD,GPIO_Pin_5)

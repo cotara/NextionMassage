@@ -48,16 +48,18 @@ void nextionEvent(void){
             else
               waveform=100/bigValveFreq;                                         //Устанавливаем частоту переключения большого клапана
             
-            TIM_Cmd(TIM4, ENABLE);                                            //запускаем алгоритм щелкания клапанами
+            TIM_Cmd(TIM4, ENABLE);                                              //запускаем алгоритм щелкания клапанами
             sendAck();
         }
         else if(element == 1 || element==3){                                    //СТОП / ПАУЗА МАССАЖ 1
           M_OFF; 
+          BIGVALVE_OPEN;
           TIM_Cmd(TIM4, DISABLE);
           sendAck();
         }
         else if(element==5 || element==6){                                      //-/+мощность
           sendAck();
+          motorPower=value;
         } 
         else if(element==7 || element==8){                                      //-/+частота
           bigValveFreq = value;
@@ -71,7 +73,7 @@ void nextionEvent(void){
         }
         else if(element==127){                                                  //Выход из второго массажа
           sendAckExit();
-          bigValveFreq=0;                                                           //Устанавливаем форму массажа в первую
+          bigValveFreq=0;                                                       //Устанавливаем форму массажа в первую
         }    
       }
       
