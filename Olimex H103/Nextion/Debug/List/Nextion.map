@@ -1,0 +1,542 @@
+###############################################################################
+#
+# IAR ELF Linker V8.30.1.114/W32 for ARM                  01/Jun/2022  03:11:40
+# Copyright 2007-2018 IAR Systems AB.
+#
+#    Output file  =  
+#        C:\STM\NextionMassage\Olimex H103\Nextion\Debug\Exe\Nextion.out
+#    Map file     =  
+#        C:\STM\NextionMassage\Olimex H103\Nextion\Debug\List\Nextion.map
+#    Command line =  
+#        -f C:\Users\1489~1\AppData\Local\Temp\EW4065.tmp
+#        ("C:\STM\NextionMassage\Olimex H103\Nextion\Debug\Obj\main.o"
+#        "C:\STM\NextionMassage\Olimex H103\Nextion\Debug\Obj\misc.o"
+#        "C:\STM\NextionMassage\Olimex H103\Nextion\Debug\Obj\myNextion.o"
+#        "C:\STM\NextionMassage\Olimex
+#        H103\Nextion\Debug\Obj\startup_stm32f10x_hd.o"
+#        "C:\STM\NextionMassage\Olimex H103\Nextion\Debug\Obj\stm32f10x_exti.o"
+#        "C:\STM\NextionMassage\Olimex H103\Nextion\Debug\Obj\stm32f10x_gpio.o"
+#        "C:\STM\NextionMassage\Olimex H103\Nextion\Debug\Obj\stm32f10x_it.o"
+#        "C:\STM\NextionMassage\Olimex H103\Nextion\Debug\Obj\stm32f10x_rcc.o"
+#        "C:\STM\NextionMassage\Olimex H103\Nextion\Debug\Obj\stm32f10x_tim.o"
+#        "C:\STM\NextionMassage\Olimex
+#        H103\Nextion\Debug\Obj\stm32f10x_usart.o"
+#        "C:\STM\NextionMassage\Olimex
+#        H103\Nextion\Debug\Obj\system_stm32f10x.o"
+#        "C:\STM\NextionMassage\Olimex H103\Nextion\Debug\Obj\user_GPIO.o"
+#        "C:\STM\NextionMassage\Olimex H103\Nextion\Debug\Obj\user_TIMER.o"
+#        "C:\STM\NextionMassage\Olimex H103\Nextion\Debug\Obj\user_USART.o"
+#        --redirect _Printf=_PrintfFullNoMb --redirect _Scanf=_ScanfFullNoMb
+#        --no_out_extension -o "C:\STM\NextionMassage\Olimex
+#        H103\Nextion\Debug\Exe\Nextion.out" --map
+#        "C:\STM\NextionMassage\Olimex H103\Nextion\Debug\List\Nextion.map"
+#        --config "C:\Program Files (x86)\IAR Systems\Embedded Workbench
+#        8.1\arm\config\linker\ST\stm32f103x6.icf" --semihosting --entry
+#        __iar_program_start --vfe --text_out locale)
+#
+###############################################################################
+
+*******************************************************************************
+*** RUNTIME MODEL ATTRIBUTES
+***
+
+CppFlavor       = *
+__SystemLibrary = DLib
+__dlib_version  = 6
+
+
+*******************************************************************************
+*** HEAP SELECTION
+***
+
+The basic heap was selected because no calls to memory allocation
+functions were found in the application outside of system library
+functions, and there are calls to deallocation functions in the
+application.
+
+
+*******************************************************************************
+*** PLACEMENT SUMMARY
+***
+
+"A0":  place at 0x800'0000 { ro section .intvec };
+"P1":  place in [from 0x800'0000 to 0x800'7fff] { ro };
+define block CSTACK with size = 2K, alignment = 8 { };
+define block HEAP with size = 2K, alignment = 8 { };
+"P2":  place in [from 0x2000'0000 to 0x2000'27ff] {
+          rw, block CSTACK, block HEAP };
+initialize by copy { rw };
+
+  Section            Kind         Address    Size  Object
+  -------            ----         -------    ----  ------
+"A0":                                       0x130
+  .intvec            ro code   0x800'0000   0x130  startup_stm32f10x_hd.o [1]
+                             - 0x800'0130   0x130
+
+"P1":                                      0x34c2
+  .text              ro code   0x800'0130   0xe26  xprintffull_nomb.o [2]
+  .text              ro code   0x800'0f56    0x3a  zero_init3.o [4]
+  .text              ro code   0x800'0f90    0x16  strchr.o [4]
+  .text              ro code   0x800'0fa6     0xa  xsprout.o [2]
+  .text              ro code   0x800'0fb0    0x40  xfail_s.o [2]
+  .text              ro code   0x800'0ff0    0x36  strlen.o [4]
+  .text              ro code   0x800'1028    0x58  memchr.o [4]
+  .text              ro code   0x800'1080   0x230  I64DivMod.o [4]
+  .text              ro code   0x800'12b0   0x1a2  DblMul.o [3]
+  .text              ro code   0x800'1454    0xa6  ABImemcpy.o [4]
+  .text              ro code   0x800'14fc    0x70  frexp.o [3]
+  .text              ro code   0x800'156c    0x2e  DblCmpLe.o [3]
+  .text              ro code   0x800'159c    0x2e  DblCmpGe.o [3]
+  .text              ro code   0x800'15cc   0x13a  ldexp.o [3]
+  .text              ro code   0x800'1708    0x3a  DblToS32.o [3]
+  .text              ro code   0x800'1744    0x22  S32ToDbl.o [3]
+  .text              ro code   0x800'1768    0xe2  DblSub.o [3]
+  .text              ro code   0x800'184c   0x246  DblDiv.o [3]
+  .text              ro code   0x800'1a94    0x28  DblToU32.o [3]
+  .text              ro code   0x800'1abc    0x1a  U32ToDbl.o [3]
+  .text              ro code   0x800'1ad8     0x8  xlocale_c.o [2]
+  .text              ro code   0x800'1ae0     0x6  abort.o [2]
+  .text              ro code   0x800'1ae8     0x2  I64DivZer.o [4]
+  .text              ro code   0x800'1aec   0x16a  DblAdd.o [3]
+  .text              ro code   0x800'1c58    0x14  exit.o [5]
+  .text              ro code   0x800'1c6c   0x5f8  myNextion.o [1]
+  .text              ro code   0x800'2264   0x1a0  user_USART.o [1]
+  .text              ro code   0x800'2404   0x308  stm32f10x_tim.o [1]
+  .text              ro code   0x800'270c   0x134  stm32f10x_gpio.o [1]
+  .text              ro code   0x800'2840   0x198  user_TIMER.o [1]
+  .text              ro code   0x800'29d8    0x40  sprintf.o [2]
+  .text              ro code   0x800'2a18   0x144  stm32f10x_rcc.o [1]
+  .text              ro code   0x800'2b5c   0x1c2  stm32f10x_usart.o [1]
+  .text              ro code   0x800'2d20    0x70  misc.o [1]
+  .text              ro code   0x800'2d90   0x260  stm32f10x_it.o [1]
+  .text              ro code   0x800'2ff0     0x8  abs.o [2]
+  .text              ro code   0x800'2ff8    0xb4  stm32f10x_exti.o [1]
+  .text              ro code   0x800'30ac   0x14c  user_GPIO.o [1]
+  .text              ro code   0x800'31f8   0x118  system_stm32f10x.o [1]
+  .text              ro code   0x800'3310    0xaa  main.o [1]
+  .text              ro code   0x800'33ba    0x38  packbits_init_single.o [4]
+  .text              ro code   0x800'33f4    0x28  data_init.o [4]
+  .iar.init_table    const     0x800'341c    0x20  - Linker created -
+  .text              ro code   0x800'343c    0x1e  cmain.o [4]
+  .text              ro code   0x800'345a     0x4  low_level_init.o [2]
+  .text              ro code   0x800'345e     0x4  exit.o [2]
+  .text              ro code   0x800'3464     0xa  cexit.o [4]
+  .rodata            const     0x800'3470    0x10  myNextion.o [1]
+  .text              ro code   0x800'3480    0x10  startup_stm32f10x_hd.o [1]
+  .rodata            const     0x800'3490     0xc  myNextion.o [1]
+  .rodata            const     0x800'349c     0xc  stm32f10x_it.o [1]
+  .text              ro code   0x800'34a8     0xc  cstartup_M.o [4]
+  .rodata            const     0x800'34b4     0x8  myNextion.o [1]
+  .rodata            const     0x800'34bc     0x4  xlocale_c.o [2]
+  .text              ro code   0x800'34c0     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code   0x800'34c4     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code   0x800'34c8     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code   0x800'34cc     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code   0x800'34d0     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code   0x800'34d4     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code   0x800'34d8     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code   0x800'34dc     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code   0x800'34e0     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code   0x800'34e4     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code   0x800'34e8     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code   0x800'34ec     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code   0x800'34f0     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code   0x800'34f4     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code   0x800'34f8     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code   0x800'34fc     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code   0x800'3500     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code   0x800'3504     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code   0x800'3508     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code   0x800'350c     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code   0x800'3510     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code   0x800'3514     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code   0x800'3518     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code   0x800'351c     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code   0x800'3520     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code   0x800'3524     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code   0x800'3528     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code   0x800'352c     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code   0x800'3530     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code   0x800'3534     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code   0x800'3538     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code   0x800'353c     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code   0x800'3540     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code   0x800'3544     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code   0x800'3548     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code   0x800'354c     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code   0x800'3550     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code   0x800'3554     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code   0x800'3558     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code   0x800'355c     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code   0x800'3560     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code   0x800'3564     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code   0x800'3568     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code   0x800'356c     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code   0x800'3570     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code   0x800'3574     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code   0x800'3578     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code   0x800'357c     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code   0x800'3580     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code   0x800'3584     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code   0x800'3588     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code   0x800'358c     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code   0x800'3590     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code   0x800'3594     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code   0x800'3598     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code   0x800'359c     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code   0x800'35a0     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code   0x800'35a4     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code   0x800'35a8     0x4  startup_stm32f10x_hd.o [1]
+  .rodata            const     0x800'35ac     0x0  zero_init3.o [4]
+  .rodata            const     0x800'35ac     0x0  packbits_init_single.o [4]
+  Initializer bytes  const     0x800'35ac    0x46  <for P2-1>
+                             - 0x800'35f2  0x34c2
+
+"P2", part 1 of 3:                           0x51
+  P2-1                        0x2000'0000    0x51  <Init block>
+    .data            inited   0x2000'0000     0x4  myNextion.o [1]
+    .data            inited   0x2000'0004    0x10  stm32f10x_rcc.o [1]
+    .data            inited   0x2000'0014     0x4  stm32f10x_rcc.o [1]
+    .data            inited   0x2000'0018    0x38  xlocale_c.o [2]
+    .data            inited   0x2000'0050     0x1  myNextion.o [1]
+                            - 0x2000'0051    0x51
+
+"P2", part 2 of 3:                          0x124
+  .bss               zero     0x2000'0054    0x64  user_USART.o [1]
+  .bss               zero     0x2000'00b8    0x50  user_USART.o [1]
+  .bss               zero     0x2000'0108    0x40  myNextion.o [1]
+  .bss               zero     0x2000'0148     0x4  myNextion.o [1]
+  .bss               zero     0x2000'014c     0x4  myNextion.o [1]
+  .bss               zero     0x2000'0150     0x4  stm32f10x_it.o [1]
+  .bss               zero     0x2000'0154     0x4  stm32f10x_it.o [1]
+  .bss               zero     0x2000'0158     0x4  user_TIMER.o [1]
+  .bss               zero     0x2000'015c     0x4  user_USART.o [1]
+  .bss               zero     0x2000'0160     0x4  user_USART.o [1]
+  .bss               zero     0x2000'0164     0x4  user_USART.o [1]
+  .bss               zero     0x2000'0168     0x4  xfail_s.o [2]
+  .bss               zero     0x2000'016c     0x1  myNextion.o [1]
+  .bss               zero     0x2000'016d     0x1  myNextion.o [1]
+  .bss               zero     0x2000'016e     0x1  myNextion.o [1]
+  .bss               zero     0x2000'016f     0x1  myNextion.o [1]
+  .bss               zero     0x2000'0170     0x1  myNextion.o [1]
+  .bss               zero     0x2000'0171     0x1  myNextion.o [1]
+  .bss               zero     0x2000'0172     0x1  myNextion.o [1]
+  .bss               zero     0x2000'0173     0x1  myNextion.o [1]
+  .bss               zero     0x2000'0174     0x1  myNextion.o [1]
+  .bss               zero     0x2000'0175     0x1  stm32f10x_it.o [1]
+  .bss               zero     0x2000'0176     0x1  user_USART.o [1]
+                            - 0x2000'0177   0x123
+
+"P2", part 3 of 3:                          0x800
+  CSTACK                      0x2000'0178   0x800  <Block>
+    CSTACK           uninit   0x2000'0178   0x800  <Block tail>
+                            - 0x2000'0978   0x800
+
+Unused ranges:
+
+         From           To    Size
+         ----           --    ----
+   0x800'35f2   0x800'7fff  0x4a0e
+  0x2000'0051  0x2000'0053     0x3
+  0x2000'0978  0x2000'27ff  0x1e88
+
+
+*******************************************************************************
+*** INIT TABLE
+***
+
+          Address      Size
+          -------      ----
+Zero (__iar_zero_init3)
+    1 destination range, total size 0x123:
+          0x2000'0054  0x123
+
+Copy/packbits (__iar_packbits_init_single3)
+    1 source range, total size 0x46 (86% of destination):
+           0x800'35ac   0x46
+    1 destination range, total size 0x51:
+          0x2000'0000   0x51
+
+
+
+*******************************************************************************
+*** MODULE SUMMARY
+***
+
+    Module                  ro code  ro data  rw data
+    ------                  -------  -------  -------
+command line/config:
+    -------------------------------------------------
+    Total:
+
+C:\STM\NextionMassage\Olimex H103\Nextion\Debug\Obj: [1]
+    main.o                      170
+    misc.o                      112
+    myNextion.o               1 528       40       86
+    startup_stm32f10x_hd.o      556
+    stm32f10x_exti.o            180
+    stm32f10x_gpio.o            308
+    stm32f10x_it.o              608       12        9
+    stm32f10x_rcc.o             324       17       20
+    stm32f10x_tim.o             776
+    stm32f10x_usart.o           450
+    system_stm32f10x.o          280
+    user_GPIO.o                 332
+    user_TIMER.o                408                 4
+    user_USART.o                416               193
+    -------------------------------------------------
+    Total:                    6 448       69      312
+
+dl7M_tlf.a: [2]
+    abort.o                       6
+    abs.o                         8
+    exit.o                        4
+    low_level_init.o              4
+    sprintf.o                    64
+    xfail_s.o                    64                 4
+    xlocale_c.o                   8       53       56
+    xprintffull_nomb.o        3 622
+    xsprout.o                    10
+    -------------------------------------------------
+    Total:                    3 790       53       60
+
+m7M_tl.a: [3]
+    DblAdd.o                    362
+    DblCmpGe.o                   46
+    DblCmpLe.o                   46
+    DblDiv.o                    582
+    DblMul.o                    418
+    DblSub.o                    226
+    DblToS32.o                   58
+    DblToU32.o                   40
+    S32ToDbl.o                   34
+    U32ToDbl.o                   26
+    frexp.o                     112
+    ldexp.o                     314
+    -------------------------------------------------
+    Total:                    2 264
+
+rt7M_tl.a: [4]
+    ABImemcpy.o                 166
+    I64DivMod.o                 560
+    I64DivZer.o                   2
+    cexit.o                      10
+    cmain.o                      30
+    cstartup_M.o                 12
+    data_init.o                  40
+    memchr.o                     88
+    packbits_init_single.o       56
+    strchr.o                     22
+    strlen.o                     54
+    zero_init3.o                 58
+    -------------------------------------------------
+    Total:                    1 098
+
+shb_l.a: [5]
+    exit.o                       20
+    -------------------------------------------------
+    Total:                       20
+
+    Gaps                         34        2
+    Linker created                        32    2 048
+-----------------------------------------------------
+    Grand Total:             13 654      156    2 420
+
+
+*******************************************************************************
+*** ENTRY LIST
+***
+
+Entry                       Address   Size  Type      Object
+-----                       -------   ----  ----      ------
+.iar.init_table$$Base    0x800'341c          --   Gb  - Linker created -
+.iar.init_table$$Limit   0x800'343c          --   Gb  - Linker created -
+?main                    0x800'343d         Code  Gb  cmain.o [4]
+ADCPrescTable           0x2000'0014    0x4  Data  Lc  stm32f10x_rcc.o [1]
+APBAHBPrescTable        0x2000'0004   0x10  Data  Lc  stm32f10x_rcc.o [1]
+BusFault_Handler         0x800'2d95    0x2  Code  Gb  stm32f10x_it.o [1]
+CSTACK$$Base            0x2000'0178          --   Gb  - Linker created -
+CSTACK$$Limit           0x2000'0978          --   Gb  - Linker created -
+EXTI0_IRQHandler         0x800'2f7f   0x38  Code  Gb  stm32f10x_it.o [1]
+EXTI_ClearITPendingBit   0x800'3091    0x6  Code  Gb  stm32f10x_exti.o [1]
+EXTI_GetITStatus         0x800'3071   0x20  Code  Gb  stm32f10x_exti.o [1]
+EXTI_Init                0x800'2ff9   0x78  Code  Gb  stm32f10x_exti.o [1]
+GPIO_EXTILineConfig      0x800'27ed   0x50  Code  Gb  stm32f10x_gpio.o [1]
+GPIO_Init                0x800'270d   0xc0  Code  Gb  stm32f10x_gpio.o [1]
+GPIO_ReadInputDataBit    0x800'27cd   0x14  Code  Gb  stm32f10x_gpio.o [1]
+GPIO_ResetBits           0x800'27e7    0x6  Code  Gb  stm32f10x_gpio.o [1]
+GPIO_SetBits             0x800'27e1    0x6  Code  Gb  stm32f10x_gpio.o [1]
+GPIO_init                0x800'30ed   0xee  Code  Gb  user_GPIO.o [1]
+HardFault_Handler        0x800'2d91    0x2  Code  Gb  stm32f10x_it.o [1]
+LoadInt                  0x800'02df   0x7a  Code  Lc  xprintffull_nomb.o [2]
+MemManage_Handler        0x800'2d93    0x2  Code  Gb  stm32f10x_it.o [1]
+NVIC_Init                0x800'2d21   0x60  Code  Gb  misc.o [1]
+Nextion_SetValue_Number
+                         0x800'20b5   0x2a  Code  Gb  myNextion.o [1]
+RCC_APB1PeriphClockCmd   0x800'2ae1   0x1c  Code  Gb  stm32f10x_rcc.o [1]
+RCC_APB1PeriphResetCmd   0x800'2b19   0x1c  Code  Gb  stm32f10x_rcc.o [1]
+RCC_APB2PeriphClockCmd   0x800'2ac5   0x1c  Code  Gb  stm32f10x_rcc.o [1]
+RCC_APB2PeriphResetCmd   0x800'2afd   0x1c  Code  Gb  stm32f10x_rcc.o [1]
+RCC_GetClocksFreq        0x800'2a19   0xac  Code  Gb  stm32f10x_rcc.o [1]
+RX_BUF                  0x2000'00b8   0x50  Data  Gb  user_USART.o [1]
+RX_FLAG_END_LINE        0x2000'016c    0x1  Data  Gb  myNextion.o [1]
+RXi                     0x2000'0176    0x1  Data  Gb  user_USART.o [1]
+Region$$Table$$Base      0x800'341c          --   Gb  - Linker created -
+Region$$Table$$Limit     0x800'343c          --   Gb  - Linker created -
+SetSysClock              0x800'323d    0x8  Code  Lc  system_stm32f10x.o [1]
+SetSysClockTo72          0x800'3245   0xae  Code  Lc  system_stm32f10x.o [1]
+StrBuff                 0x2000'0108   0x40  Data  Lc  myNextion.o [1]
+SysTick_Config           0x800'3335   0x2e  Code  Lc  main.o [1]
+SysTick_Handler          0x800'2d97   0x4a  Code  Gb  stm32f10x_it.o [1]
+SystemInit               0x800'31f9   0x44  Code  Gb  system_stm32f10x.o [1]
+TIM2_IRQHandler          0x800'2dfd   0x20  Code  Gb  stm32f10x_it.o [1]
+TIM3_IRQHandler          0x800'2de1   0x1c  Code  Gb  stm32f10x_it.o [1]
+TIM4_IRQHandler          0x800'2e1d   0xac  Code  Gb  stm32f10x_it.o [1]
+TIM5_IRQHandler          0x800'2ec9   0x56  Code  Gb  stm32f10x_it.o [1]
+TIM_ClearITPendingBit    0x800'26c5    0x8  Code  Gb  stm32f10x_tim.o [1]
+TIM_Cmd                  0x800'268d   0x1c  Code  Gb  stm32f10x_tim.o [1]
+TIM_DeInit               0x800'2405  0x1de  Code  Gb  stm32f10x_tim.o [1]
+TIM_ITConfig             0x800'26a9   0x18  Code  Gb  stm32f10x_tim.o [1]
+TIM_SetCounter           0x800'26c1    0x4  Code  Gb  stm32f10x_tim.o [1]
+TIM_TimeBaseInit         0x800'25e3   0x92  Code  Gb  stm32f10x_tim.o [1]
+TIM_TimeBaseStructInit   0x800'2675   0x18  Code  Gb  stm32f10x_tim.o [1]
+TimingDelay             0x2000'0158    0x4  Data  Gb  user_TIMER.o [1]
+TimingDelay_Decrement    0x800'29ab   0x10  Code  Gb  user_TIMER.o [1]
+USART1_IRQHandler        0x800'2f1f   0x60  Code  Gb  stm32f10x_it.o [1]
+USART1_put_char          0x800'2367   0x64  Code  Gb  user_USART.o [1]
+USART1_put_string        0x800'23ed   0x18  Code  Gb  user_USART.o [1]
+USART_Cmd                0x800'2c21   0x1c  Code  Gb  stm32f10x_usart.o [1]
+USART_GetFlagStatus      0x800'2ca1   0x1a  Code  Gb  stm32f10x_usart.o [1]
+USART_GetITStatus        0x800'2cbb   0x64  Code  Gb  stm32f10x_usart.o [1]
+USART_IRQProcessFunc     0x800'1c6d   0x3c  Code  Gb  myNextion.o [1]
+USART_ITConfig           0x800'2c3d   0x54  Code  Gb  stm32f10x_usart.o [1]
+USART_Init               0x800'2b5d   0xbc  Code  Gb  stm32f10x_usart.o [1]
+USART_ReceiveData        0x800'2c99    0x8  Code  Gb  stm32f10x_usart.o [1]
+USART_SendData           0x800'2c91    0x8  Code  Gb  stm32f10x_usart.o [1]
+_GenldFullNoMb           0x800'0c55  0x274  Code  Lc  xprintffull_nomb.o [2]
+_LdtobFullNoMb           0x800'0829  0x400  Code  Lc  xprintffull_nomb.o [2]
+_LitobFullNoMb           0x800'06d1  0x112  Code  Lc  xprintffull_nomb.o [2]
+_Locale_lconv           0x2000'0018   0x38  Data  Lc  xlocale_c.o [2]
+_PrintfFullNoMb          0x800'0131  0x19e  Code  Gb  xprintffull_nomb.o [2]
+_PutcharsFullNoMb        0x800'0ec9   0x2e  Code  Lc  xprintffull_nomb.o [2]
+_PutfldFullNoMb          0x800'0359  0x26c  Code  Lc  xprintffull_nomb.o [2]
+_PuttxtFullNoMb          0x800'05c5  0x10c  Code  Lc  xprintffull_nomb.o [2]
+_SProut                  0x800'0fa7    0xa  Code  Gb  xsprout.o [2]
+__NVIC_EnableIRQ         0x800'30ad   0x1c  Code  Lc  user_GPIO.o [1]
+__NVIC_EnableIRQ         0x800'2841   0x1c  Code  Lc  user_TIMER.o [1]
+__NVIC_SetPriority       0x800'3311   0x24  Code  Lc  main.o [1]
+__NVIC_SetPriority       0x800'30c9   0x24  Code  Lc  user_GPIO.o [1]
+__NVIC_SetPriority       0x800'285d   0x24  Code  Lc  user_TIMER.o [1]
+__aeabi_cdcmple          0x800'156d         Code  Gb  DblCmpLe.o [3]
+__aeabi_cdrcmple         0x800'159d         Code  Gb  DblCmpGe.o [3]
+__aeabi_d2iz             0x800'1709         Code  Gb  DblToS32.o [3]
+__aeabi_d2uiz            0x800'1a95         Code  Gb  DblToU32.o [3]
+__aeabi_ddiv             0x800'184d         Code  Gb  DblDiv.o [3]
+__aeabi_dmul             0x800'12b1         Code  Gb  DblMul.o [3]
+__aeabi_dsub             0x800'1769         Code  Gb  DblSub.o [3]
+__aeabi_i2d              0x800'1745         Code  Gb  S32ToDbl.o [3]
+__aeabi_ldiv0            0x800'1ae9         Code  Gb  I64DivZer.o [4]
+__aeabi_memcpy           0x800'1455         Code  Gb  ABImemcpy.o [4]
+__aeabi_memcpy4          0x800'1475         Code  Gb  ABImemcpy.o [4]
+__aeabi_memcpy8          0x800'1475         Code  Gb  ABImemcpy.o [4]
+__aeabi_ui2d             0x800'1abd         Code  Gb  U32ToDbl.o [3]
+__aeabi_uldivmod         0x800'1081         Code  Gb  I64DivMod.o [4]
+__cmain                  0x800'343d         Code  Gb  cmain.o [4]
+__exit                   0x800'1c59   0x14  Code  Gb  exit.o [5]
+__iar_Fail_s             0x800'0fb1   0x1c  Code  Gb  xfail_s.o [2]
+__iar_Memchr             0x800'1029         Code  Gb  memchr.o [4]
+__iar_Strchr             0x800'0f91         Code  Gb  strchr.o [4]
+__iar_dadd               0x800'1779         Code  Gb  DblSub.o [3]
+__iar_data_init3         0x800'33f5   0x28  Code  Gb  data_init.o [4]
+__iar_dsub               0x800'1aed         Code  Gb  DblAdd.o [3]
+__iar_dsubStart          0x800'1aff         Code  Gb  DblAdd.o [3]
+__iar_frexp              0x800'1509         Code  Gb  frexp.o [3]
+__iar_frexp64            0x800'14fd         Code  Gb  frexp.o [3]
+__iar_frexpl             0x800'1509         Code  Gb  frexp.o [3]
+__iar_ldexp64            0x800'15cd         Code  Gb  ldexp.o [3]
+__iar_packbits_init_single3
+                         0x800'33bb   0x38  Code  Gb  packbits_init_single.o [4]
+__iar_program_start      0x800'34a9         Code  Gb  cstartup_M.o [4]
+__iar_scalbln64          0x800'15cd         Code  Gb  ldexp.o [3]
+__iar_scalbn64           0x800'15cd         Code  Gb  ldexp.o [3]
+__iar_zero_init3         0x800'0f57   0x3a  Code  Gb  zero_init3.o [4]
+__low_level_init         0x800'345b    0x4  Code  Gb  low_level_init.o [2]
+__vector_table           0x800'0000         Data  Gb  startup_stm32f10x_hd.o [1]
+_call_main               0x800'3449         Code  Gb  cmain.o [4]
+_exit                    0x800'3465         Code  Gb  cexit.o [4]
+_main                    0x800'3457         Code  Gb  cmain.o [4]
+abort                    0x800'1ae1    0x6  Code  Gb  abort.o [2]
+abs                      0x800'2ff1    0x8  Code  Gb  abs.o [2]
+bigValveFreq            0x2000'0172    0x1  Data  Gb  myNextion.o [1]
+clear_RXBuffer           0x800'231b   0x22  Code  Gb  user_USART.o [1]
+counter                 0x2000'0150    0x4  Data  Gb  stm32f10x_it.o [1]
+element                 0x2000'016e    0x1  Data  Gb  myNextion.o [1]
+endMes                  0x2000'0000    0x4  Data  Gb  myNextion.o [1]
+errorTick               0x2000'014c    0x4  Data  Gb  myNextion.o [1]
+exit                     0x800'345f    0x4  Code  Gb  exit.o [2]
+frexp                    0x800'14fd         Code  Gb  frexp.o [3]
+frexpl                   0x800'14fd         Code  Gb  frexp.o [3]
+fromBuf                  0x800'235f    0x8  Code  Gb  user_USART.o [1]
+getErrorTick             0x800'20a9    0x6  Code  Gb  myNextion.o [1]
+getFLAG_END_LINE         0x800'20df    0x6  Code  Gb  myNextion.o [1]
+getJP                    0x800'20e5    0x8  Code  Gb  myNextion.o [1]
+getMode                  0x800'20ed    0x6  Code  Gb  myNextion.o [1]
+getMotorPower            0x800'20f3    0x6  Code  Gb  myNextion.o [1]
+getValvePower            0x800'20ff    0x8  Code  Gb  myNextion.o [1]
+getWaveform              0x800'20f9    0x6  Code  Gb  myNextion.o [1]
+ldexp                    0x800'15cd         Code  Gb  ldexp.o [3]
+ldexpl                   0x800'15cd         Code  Gb  ldexp.o [3]
+localeconv               0x800'1ad9    0x4  Code  Gb  xlocale_c.o [2]
+main                     0x800'3379   0x42  Code  Gb  main.o [1]
+memchr                   0x800'1029         Code  Gb  memchr.o [4]
+motorPower              0x2000'0171    0x1  Data  Gb  myNextion.o [1]
+ms_counter              0x2000'0154    0x4  Data  Gb  stm32f10x_it.o [1]
+nextionEvent             0x800'1ca9  0x400  Code  Gb  myNextion.o [1]
+nowMode                 0x2000'0173    0x1  Data  Gb  myNextion.o [1]
+page                    0x2000'016d    0x1  Data  Gb  myNextion.o [1]
+scalbln                  0x800'15cd         Code  Gb  ldexp.o [3]
+scalblnl                 0x800'15cd         Code  Gb  ldexp.o [3]
+scalbn                   0x800'15cd         Code  Gb  ldexp.o [3]
+scalbnl                  0x800'15cd         Code  Gb  ldexp.o [3]
+scale                    0x800'07e3   0x46  Code  Lc  xprintffull_nomb.o [2]
+sec_hand                0x2000'0168    0x4  Data  Lc  xfail_s.o [2]
+sendAck                  0x800'210d    0xc  Code  Gb  myNextion.o [1]
+sendAckExit              0x800'2119    0xc  Code  Gb  myNextion.o [1]
+setErrorTick             0x800'20af    0x6  Code  Gb  myNextion.o [1]
+setRxi                   0x800'233d    0x6  Code  Gb  user_USART.o [1]
+setSharPos               0x800'2125   0x9c  Code  Gb  myNextion.o [1]
+setValvePower            0x800'2107    0x6  Code  Gb  myNextion.o [1]
+sprintf                  0x800'29d9   0x40  Code  Gb  sprintf.o [2]
+st                      0x2000'0148    0x4  Data  Gb  myNextion.o [1]
+strchr                   0x800'0f91         Code  Gb  strchr.o [4]
+strlen                   0x800'0ff1         Code  Gb  strlen.o [4]
+switchOffAll             0x800'21c1   0x48  Code  Gb  myNextion.o [1]
+tim2_init                0x800'28cb   0x4a  Code  Gb  user_TIMER.o [1]
+tim3_init                0x800'2881   0x4a  Code  Gb  user_TIMER.o [1]
+tim4_init                0x800'2915   0x48  Code  Gb  user_TIMER.o [1]
+tim5_init                0x800'295d   0x4e  Code  Gb  user_TIMER.o [1]
+toBuf                    0x800'2343   0x1c  Code  Gb  user_USART.o [1]
+tx_buffer               0x2000'0054   0x64  Data  Gb  user_USART.o [1]
+tx_counter              0x2000'0164    0x4  Data  Gb  user_USART.o [1]
+tx_rd_index             0x2000'0160    0x4  Data  Gb  user_USART.o [1]
+tx_wr_index             0x2000'015c    0x4  Data  Gb  user_USART.o [1]
+usart_init               0x800'2265   0xb6  Code  Gb  user_USART.o [1]
+value                   0x2000'016f    0x1  Data  Gb  myNextion.o [1]
+valveDiff               0x2000'0174    0x1  Data  Gb  myNextion.o [1]
+valvePower              0x2000'0170    0x1  Data  Gb  myNextion.o [1]
+waveform                0x2000'0050    0x1  Data  Gb  myNextion.o [1]
+waveformCounter         0x2000'0175    0x1  Data  Gb  stm32f10x_it.o [1]
+
+
+[1] = C:\STM\NextionMassage\Olimex H103\Nextion\Debug\Obj
+[2] = dl7M_tlf.a
+[3] = m7M_tl.a
+[4] = rt7M_tl.a
+[5] = shb_l.a
+
+  13 654 bytes of readonly  code memory
+     156 bytes of readonly  data memory
+   2 420 bytes of readwrite data memory
+
+Errors: none
+Warnings: none

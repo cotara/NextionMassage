@@ -966,7 +966,7 @@
                     <item>ms_counter</item>
                     <item>waveform</item>
                     <item>counter</item>
-                    <item></item>
+                    <item />
                 </expressions>
                 <col-names>
                     <item>Expression</item>
