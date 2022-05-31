@@ -42,3 +42,5 @@ Backup*
 
 # Trash files
 **.bak
+*.out
+*.pbw
