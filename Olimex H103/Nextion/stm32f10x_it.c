@@ -61,7 +61,7 @@ void TIM2_IRQHandler(void){
     M_PWM_ON;
     TIM_Cmd(TIM2, DISABLE);
 }
-//Control 1,2 valves
+//Control 1,2 valves♦
 void TIM4_IRQHandler(void){
     TIM_ClearITPendingBit(TIM4, TIM_IT_Update);
     counter+=10;
