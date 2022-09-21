@@ -273,10 +273,10 @@ void sendAckExit(){
 }
 void setSharPos(){
     if(value==0)
-      valveDiff=-50;                                                           //С запасом, чтобы точно закрылся
+      valveDiff=-50;                                                           //С запасом, чтобы точно открылся
     else if(value==100)
-      valveDiff=50;                                                            //С запасом, чтобы точно открылся
-    else if(value==255)                                                         //Полное закрытие не с +5%
+      valveDiff=50;                                                            //С запасом, чтобы точно закрылся
+    else if(value==255)                                                         //Полное открытие не с +5%
       valveDiff=-127;
     else
       valveDiff=value-valvePower;                                               //На сколько повернуть клапан
