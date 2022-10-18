@@ -10,7 +10,7 @@ extern volatile uint8_t   tx_buffer[TX_BUFFER_SIZE];
 extern volatile unsigned long  tx_wr_index,tx_rd_index,tx_counter;
 
 uint32_t counter=0, ms_counter=0;
-uint8_t waveformCounter=0, valvePowerCounter=0;
+uint8_t waveformCounter=0;
 void HardFault_Handler(void){
   while (1)
   {}
@@ -51,6 +51,7 @@ void SysTick_Handler(void){
 //USART fail control
 void TIM3_IRQHandler(void){
     TIM_ClearITPendingBit(TIM3, TIM_IT_Update);
+    //LED1_TOOGLE;
     TIM_Cmd(TIM3, DISABLE);
     setRxi(0);
 }
@@ -61,7 +62,7 @@ void TIM2_IRQHandler(void){
     M_PWM_ON;
     TIM_Cmd(TIM2, DISABLE);
 }
-//Control 1,2 valves♦
+//Control 1,2 valves
 void TIM4_IRQHandler(void){
     TIM_ClearITPendingBit(TIM4, TIM_IT_Update);
     counter+=10;
@@ -86,24 +87,18 @@ void TIM4_IRQHandler(void){
     if(waveformCounter >= getWaveform())
       waveformCounter=0;
 }
-//X ms for 5% change valve position
+//
 void TIM5_IRQHandler(void){
-    TIM_ClearITPendingBit(TIM5, TIM_IT_Update);
-                              //reach position                                
-    int8_t leftValvePower =  abs(getValvePower());
-    if(leftValvePower>50)
-      setValvePower(leftValvePower-1);                                          //slow close
-    else if(leftValvePower<=0){//reach position 
-        TIM_Cmd(TIM5, DISABLE);
-        SHAR_STOP;                                                              //Stops shar
-        LED1_OFF;
-    }
-    else{
-      setValvePower(leftValvePower-5);
-    }
-    
-
+  if (TIM_GetITStatus(TIM5,TIM_IT_Update)!=RESET){
+    sendAck();
+    LED1_TOOGLE;
+    SHAR_STOP;
+  }
+  TIM_ClearITPendingBit(TIM5, TIM_IT_Update);
+  TIM_Cmd(TIM5, DISABLE);
 }
+
+
 void USART1_IRQHandler(void){
   if ((USART1->SR & USART_FLAG_RXNE))
    USART_IRQProcessFunc(USART_ReceiveData(USART1));    

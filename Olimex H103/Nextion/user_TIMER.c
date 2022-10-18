@@ -10,7 +10,7 @@ void tim3_init(void){
     TIM_TimeBaseStructInit(&TIMER_InitStructure);
     TIMER_InitStructure.TIM_CounterMode = TIM_CounterMode_Up;
     TIMER_InitStructure.TIM_Prescaler = 720-1;                                  //10 мкс
-    TIMER_InitStructure.TIM_Period = 1000;                                      //10 мс при 72 МГц
+    TIMER_InitStructure.TIM_Period = 100;                                       //10 мс при 72 МГц
     TIM_TimeBaseInit(TIM3, &TIMER_InitStructure);
     TIM_ITConfig(TIM3, TIM_IT_Update, ENABLE);
     //TIM_Cmd(TIM3, ENABLE);
@@ -60,9 +60,10 @@ void tim5_init(uint16_t period){
 
     TIM_TimeBaseStructInit(&TIMER_InitStructure);
     TIMER_InitStructure.TIM_CounterMode = TIM_CounterMode_Up;
-    TIMER_InitStructure.TIM_Prescaler = 36000-1;                                //500мкс
-    TIMER_InitStructure.TIM_Period = period;                                    
+    TIMER_InitStructure.TIM_Prescaler = 7200-1;                                 //100мкс
+    TIMER_InitStructure.TIM_Period = 10*period-1;                                    
     TIM_TimeBaseInit(TIM5, &TIMER_InitStructure);
+    TIM_ClearFlag(TIM5,TIM_IT_Update);
     TIM_ITConfig(TIM5, TIM_IT_Update, ENABLE);
     //TIM_Cmd(TIM5, ENABLE);
   

@@ -12,13 +12,16 @@ uint8_t command[11]="sendme";
 uint32_t st=0;
 uint8_t endMes[3]={0xFF,0xFF,0xFF};
 static uint8_t StrBuff[64]; 
-uint8_t page,element,value,waveform=150,valvePower,motorPower=0, bigValveFreq =0, nowMode=0;
-int8_t valveDiff=0;
+uint8_t page,element,value,waveform=150,motorPower=0, bigValveFreq =0, nowMode=0;
+uint16_t sharTimes[6]= {10,10,10,10,10,3500};
+uint8_t sharState=5;
 uint32_t errorTick=0;
-
+uint8_t direction = 1; // на открытие
+uint16_t shift = 300;
 void USART_IRQProcessFunc(uint8_t RXc){
     toBuf(RXc);
     TIM_Cmd(TIM3, DISABLE);
+    TIM3->CNT = 0;
     if (RXc == 0xFF)                                                            //Если пришел признак окончания команды (их должно быть 3)
        RX_FLAG_END_LINE++;
     if(RX_FLAG_END_LINE!=3)                                                     //Если команда пришла еще не полностью, запускаем таймер сброса
@@ -26,6 +29,11 @@ void USART_IRQProcessFunc(uint8_t RXc){
 }
 
 void nextionEvent(void){
+      if(getRxi()<6){
+        clear_RXBuffer();
+        RX_FLAG_END_LINE=0;
+        return;
+      }
       page = fromBuf(0);                                                        // номер страницы
       element = fromBuf(1);                                                     //номер кнопки (элемента). 
       value = fromBuf(3);                                                       //значение 
@@ -82,7 +90,7 @@ void nextionEvent(void){
         nowMode = 1;
         if(element == 0){                                                        //СТАРТ МАССАЖ 2
          if(value!=0){
-             POMP_ON;                                                          //включаем компрессоры
+             POMP_ON;                                                           //включаем компрессоры
              TIM_Cmd(TIM4, ENABLE);                                             //запускаем алгоритм щелкания клапанами
           }
           else{
@@ -108,23 +116,17 @@ void nextionEvent(void){
           sendAck();
         } 
         else if(element==5){                                                     //-мощность
-          setSharPos();
-          sendAck();
+          setSharPos(value);
         } 
         else if(element==6){                                                     //+мощность
-          setSharPos();
-          sendAck();
+          setSharPos(value);
         }
-        else if(element==126){                                                  //Вход во второй режим массажа
-          tim5_init(((uint16_t)value-7)*5);                                     //Инициализируем калибровку шарового клапана
-        }  
+
         else if(element==127){                                                  //Выход из второго массажа
           sendAckExit();
           VALVE1_OPEN;                                                                  
           VALVE2_OPEN;
-          value=255;                                                            //Закрываем шар
-          setSharPos();
-          waveform=150;                                                           //Устанавливаем форму массажа в первую
+          waveform=150;                                                         //Устанавливаем форму массажа в первую
         }        
       } 
       
@@ -150,10 +152,6 @@ void nextionEvent(void){
             sendAck();
           }
         } 
-        else if(element == 2){                                                  //Регулируемый клапан (шар)
-          setSharPos();
-          sendAck();
-        } 
         else if(element == 3){                                                  //Компрессор 1
           if(value!=0)          
             POMP_ON;
@@ -163,9 +161,10 @@ void nextionEvent(void){
         }
         else if(element == 4){                                                  //Большой клапан
           if(value!=0)          
-            BIGVALVE_OPEN;
+             BIGVALVE_CLOSE;
           else 
-            BIGVALVE_CLOSE;  
+             BIGVALVE_OPEN;
+              
           sendAck();
         }         
         else if(element == 5){                                                  //Мотор насоса
@@ -176,25 +175,27 @@ void nextionEvent(void){
               M_OFF; 
             sendAck();
         }
-        else if(element == 6){                                                  //Калибровка шара
-          if(value!=0){
-            if(value!=255)
-              if(value>10)                                                      //Чтобы при вычитании 10 не получилось отрицательное число
-                tim5_init(((uint16_t)value-10)*5);                                 //Устанавливаем откалиброванное время c поправкой 1000 мс на реакцию пользователя
-            value=255;                                                          //Возващаем клапан на место
-          }
-          else{                                                                 //Команда калибровки
-            tim5_init(1000);                                                    //Включаем клапан на открытие в течение 10 секунд ( с запасом)
-            value=100;  
-          }
-          setSharPos();
+        else if(element==127){                                                  //Выход со страницы ручного управления
+          switchOffAll();
+          sendAckExit();
+        }
+      }
+      /********************************SHAR SETTINGS***************************/
+      else if(page==13){
+        if(element == 0 || element == 1 || element == 2 || element == 3 || element == 4){
+          sharTimes[element] = value*10;
+          sendAck();
+        }
+        if(element == 5 ){
+          shift = value*10;
           sendAck();
         }
         else if(element==127){                                                  //Выход со страницы ручного управления
+          setSharPos(5);
           sendAckExit();
-          switchOffAll();
         }
       }
+          
       /********************************EDITION*********************************/
       else if(page==2){                                                         //Запрос комплектации
         if(element==0){
@@ -258,11 +259,11 @@ uint8_t getMotorPower(){
 uint8_t getWaveform(){
   return waveform;
 }
-int8_t getValvePower(){
-  return valveDiff;
+uint8_t getSharState(){
+  return sharState;
 }
-void setValvePower(int8_t diff){
-   valveDiff = diff;
+void setSharState(uint8_t diff){
+   sharState = diff;
 }
 //подтверждение получния управляющего сообщения
 void sendAck(){
@@ -271,39 +272,52 @@ void sendAck(){
 void sendAckExit(){
   Nextion_SetValue_Number("transpState.val", 2);
 }
-void setSharPos(){
-    if(value==0)
-      valveDiff=-50;                                                           //С запасом, чтобы точно открылся
-    else if(value==100)
-      valveDiff=50;                                                            //С запасом, чтобы точно закрылся
-    else if(value==255)                                                         //Полное открытие не с +5%
-      valveDiff=-127;
+void setSharPos(uint8_t pos){
+    
+  
+  if(pos == sharState){
+    //sendAck();
+    return;
+  }
+  if(sharState > pos){                                                           //Открываем шар
+    SHAR_OPEN;
+    if(direction==0){
+        if(sharState==5)
+            tim5_init(sharTimes[pos]);                                          //Если закрываем с 5 на 4, то сдвига не надо
+        else
+            tim5_init(sharTimes[pos]+shift);                                    //компенация от изменения направления
+    }
     else
-      valveDiff=value-valvePower;                                               //На сколько повернуть клапан
-    if(valveDiff!=0){                                                           //Если надо хоть на сколько повернуть
-      if(value==255)
-        valvePower=0;
-      else
-        valvePower=value;                                                       //Сохраняем новое положение клапана
-      if(valveDiff>0)
-        SHAR_CLOSE;                                                             //Закрываем
-      else
-        SHAR_OPEN;                                                              //Открываем
-      SHAR_START;
-      LED1_ON;
-      TIM5->CNT=0;
-      TIM_Cmd(TIM5, ENABLE);                                                    //Включаем клапан повотора 
-    }   
+      tim5_init(sharTimes[pos]);
+    direction = 1;                                                           //открываем
+  }
+  else if(sharState < pos){                                                      //Закрываем шар
+      if(pos==5)
+          tim5_init(sharTimes[pos]);                                            //Полное закрытие
+      else{
+          if(direction==1)
+            tim5_init(sharTimes[pos-1]+shift);
+          else
+            tim5_init(sharTimes[pos-1]);
+      }
+      direction = 0;                                                        //Закрываем
+      SHAR_CLOSE;
+  }
+  
+  SHAR_START;
+  TIM_Cmd(TIM5, ENABLE);
+  setSharState(pos);
 }
 void switchOffAll(){
   
-   GPIO_SetBits(GPIOD,GPIO_Pin_1);                                              //Открыть клапана
-   GPIO_SetBits(GPIOD,GPIO_Pin_2);
+   VALVE1_OPEN;
+   VALVE2_OPEN;
    value=255;                                                                   //Закрываем шар
-   setSharPos();
-   GPIO_ResetBits(GPIOD,GPIO_Pin_3);                                            //Выключаем компрессоры
-   GPIO_ResetBits(GPIOD,GPIO_Pin_4); 
-   GPIO_ResetBits(GPIOD,GPIO_Pin_5);                                            //Выключаем мотор
+   setSharPos(5);
+   POMP_OFF;
+   BIGVALVE_OPEN;
+   M_OFF;
+
    TIM_Cmd(TIM5, DISABLE);                                                      //Таймер поворота шара
    TIM_Cmd(TIM4, DISABLE);                                                      //Таймер дрыгания клапанов
 }
