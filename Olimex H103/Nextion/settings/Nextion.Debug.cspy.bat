@@ -25,7 +25,7 @@ if not "%~1" == "" goto debugFile
 
 @echo on 
 
-"C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.1\common\bin\cspybat" -f "C:\Users\User\Documents\Projects\Nextion\Olimex H103\Nextion\settings\Nextion.Debug.general.xcl" --backend -f "C:\Users\User\Documents\Projects\Nextion\Olimex H103\Nextion\settings\Nextion.Debug.driver.xcl" 
+"C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.1\common\bin\cspybat" -f "C:\STM\NextionMassage\Olimex H103\Nextion\settings\Nextion.Debug.general.xcl" --backend -f "C:\STM\NextionMassage\Olimex H103\Nextion\settings\Nextion.Debug.driver.xcl" 
 
 @echo off 
 goto end 
@@ -34,7 +34,7 @@ goto end
 
 @echo on 
 
-"C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.1\common\bin\cspybat" -f "C:\Users\User\Documents\Projects\Nextion\Olimex H103\Nextion\settings\Nextion.Debug.general.xcl" "--debug_file=%~1" --backend -f "C:\Users\User\Documents\Projects\Nextion\Olimex H103\Nextion\settings\Nextion.Debug.driver.xcl" 
+"C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.1\common\bin\cspybat" -f "C:\STM\NextionMassage\Olimex H103\Nextion\settings\Nextion.Debug.general.xcl" "--debug_file=%~1" --backend -f "C:\STM\NextionMassage\Olimex H103\Nextion\settings\Nextion.Debug.driver.xcl" 
 
 @echo off 
 :end
