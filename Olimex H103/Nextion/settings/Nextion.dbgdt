@@ -974,7 +974,7 @@
                     <item>RX_BUF</item>
                     <item>errorTick</item>
                     <item>RXi</item>
-                    <item></item>
+                    <item />
                 </expressions>
                 <col-names>
                     <item>Expression</item>
