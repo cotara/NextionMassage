@@ -31,7 +31,7 @@
         <MultiCoreRunAll>1</MultiCoreRunAll>
     </Simulator>
     <StLinkDriver>
-        <stlinkserialNo>21452467</stlinkserialNo>
+        <stlinkserialNo>21480287</stlinkserialNo>
         <stlinkfoundProbes />
         <stlinkResetStyle>0</stlinkResetStyle>
         <stlinkResetStrategy>1</stlinkResetStrategy>
@@ -39,7 +39,7 @@
         <LeaveTargetRunning>_ 0</LeaveTargetRunning>
     </StLinkDriver>
     <DebugChecksum>
-        <Checksum>1498064616</Checksum>
+        <Checksum>3373496942</Checksum>
     </DebugChecksum>
     <Exceptions>
         <StopOnUncaught>_ 0</StopOnUncaught>
@@ -76,10 +76,11 @@
         <ITMlogFile>$PROJ_DIR$\ITM.log</ITMlogFile>
     </SWOTraceHWSettings>
     <watch_formats>
-        <Fmt0>{W}42:valveDiff	3	0</Fmt0>
-        <Fmt1>{W}42:valvePower	3	0</Fmt1>
-        <Fmt2>{W}42:waveform	3	0</Fmt2>
-        <Fmt3>{W}42:waveformCounter	3	0</Fmt3>
+        <Fmt0>{W}42:motorPower	3	0</Fmt0>
+        <Fmt1>{W}42:valveDiff	3	0</Fmt1>
+        <Fmt2>{W}42:valvePower	3	0</Fmt2>
+        <Fmt3>{W}42:waveform	3	0</Fmt3>
+        <Fmt4>{W}42:waveformCounter	3	0</Fmt4>
     </watch_formats>
     <Trace2>
         <Enabled>0</Enabled>

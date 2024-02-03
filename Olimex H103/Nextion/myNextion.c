@@ -18,6 +18,8 @@ uint8_t sharState=5;
 uint32_t errorTick=0;
 uint8_t direction = 1; // на открытие
 uint16_t shift = 300;
+
+extern uint8_t waveformCounter;
 void USART_IRQProcessFunc(uint8_t RXc){
     toBuf(RXc);
     TIM_Cmd(TIM3, DISABLE);
@@ -61,8 +63,9 @@ void nextionEvent(void){
         }
         else if(element == 1 || element==3){                                    //СТОП / ПАУЗА МАССАЖ 1
           M_OFF; 
-          BIGVALVE_OPEN;
           TIM_Cmd(TIM4, DISABLE);
+          waveformCounter=0;
+          BIGVALVE_OPEN;
           sendAck();
         }
         else if(element==5 || element==6){                                      //-/+мощность
@@ -75,7 +78,7 @@ void nextionEvent(void){
               waveform=0;
               BIGVALVE_OPEN;
             }
-            else
+          else
               waveform=100/bigValveFreq;                                         //Устанавливаем частоту переключения большого клапана
           sendAck();
         }
@@ -126,6 +129,9 @@ void nextionEvent(void){
           sendAckExit();
           VALVE1_OPEN;                                                                  
           VALVE2_OPEN;
+          setSharPos(5);                                                        //Полностьтю закрываем шаровый клапан (полный вакуум)
+          if(st == 2)
+            BIGVALVE_OPEN;                                                        //В случае с алмазным массажем
           waveform=150;                                                         //Устанавливаем форму массажа в первую
         }        
       } 

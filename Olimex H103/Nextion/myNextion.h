@@ -10,8 +10,8 @@
 #define LED2_OFF GPIO_SetBits(GPIOE,GPIO_Pin_5)                                  //Управление светодиодом
 #define LED2_ON GPIO_ResetBits(GPIOE,GPIO_Pin_5)
 
-#define SHAR_STOP GPIO_SetBits(GPIOE,GPIO_Pin_7)                                //Стопор шара
-#define SHAR_START GPIO_ResetBits(GPIOE,GPIO_Pin_7)
+#define SHAR_START GPIO_SetBits(GPIOE,GPIO_Pin_7)                                //Стопор шара
+#define SHAR_STOP GPIO_ResetBits(GPIOE,GPIO_Pin_7)
 
 #define SHAR_OPEN GPIO_SetBits(GPIOD,GPIO_Pin_0)                                //ШАР
 #define SHAR_CLOSE GPIO_ResetBits(GPIOD,GPIO_Pin_0)
