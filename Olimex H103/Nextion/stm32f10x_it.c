@@ -118,10 +118,13 @@ void USART1_IRQHandler(void){
 
 void EXTI0_IRQHandler(void) {
 	if (EXTI_GetITStatus(EXTI_Line0) != RESET) {
-                M_PWM_OFF;
-                TIM_SetCounter(TIM2,(uint16_t)getMotorPower());
-                TIM_Cmd(TIM2, ENABLE);
-		EXTI_ClearITPendingBit(EXTI_Line0);
+            EXTI_ClearITPendingBit(EXTI_Line0);
+            //if( getMotorPower() == 0) return;
+            
+            M_PWM_OFF;
+            TIM_SetCounter(TIM2,(uint16_t)getMotorPower());
+            TIM_Cmd(TIM2, ENABLE);
+		
 	}
 }
 /*******************************************************************************/
